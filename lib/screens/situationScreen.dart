@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 
-class SituationScreen extends StatelessWidget {
-  const SituationScreen({Key? key}) :super(key: key);
-
+class SituationScreen extends StatefulWidget {
+  const SituationScreen({super.key});
   @override
-  Widget build(BuildContext context) {
+  State<StatefulWidget> createState() => _SituationScreenState();
+
+}
+
+class _SituationScreenState extends State<SituationScreen> {
+  @override
+  Widget build (BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.lightBlue,
-          title: Text("You are in the situation screen")
-      ),
-      body: Center(
-        child: Text("This is the adventure"),
-      )
-    );
-  }
-}
+      backgroundColor: Colors.lightBlue,
+      title: Text("You are in the situation screen")
+    ),
+  body: Center(
+    child: Text("This is the adventure"),
+  )
+  );
+}}

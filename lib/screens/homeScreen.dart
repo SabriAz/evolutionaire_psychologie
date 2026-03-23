@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
 }
 
 class HomeScreenBody extends StatelessWidget {
-  const HomeScreenBody({Key? key}) : super(key: key);
+  const HomeScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
