@@ -10,7 +10,7 @@ class Situation {
 class Choice{
   final int id;
   final String description;
-  final String outcome;
+  final int outcome;
 
 
   const Choice ({required this.id, required this.description, required this.outcome});

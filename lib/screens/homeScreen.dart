@@ -1,3 +1,4 @@
+import 'package:firebase_demo_test/models/situations.dart';
 import 'package:flutter/material.dart';
 import 'situationScreen.dart';
 
@@ -29,7 +30,7 @@ class HomeScreenBody extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (_) => SituationScreen()
+                      builder: (_) => SituationScreen(situation: situations[0],)
                   )
               );
             }
