@@ -8,6 +8,9 @@ class SituationScreen extends StatefulWidget {
 }
 
 class _SituationScreenState extends State<SituationScreen> {
+
+  int? selectedChoice;
+
   @override
   Widget build (BuildContext context) {
     return Scaffold(
@@ -15,8 +18,13 @@ class _SituationScreenState extends State<SituationScreen> {
       backgroundColor: Colors.lightBlue,
       title: Text("You are in the situation screen")
     ),
-  body: Center(
-    child: Text("This is the adventure"),
+  body: Row(
+    children:[
+      ElevatedButton(onPressed: () {}, child: Text("Keuze 1")),
+      ElevatedButton(onPressed: () {}, child: Text("Keuze 2")),
+      ElevatedButton(onPressed: () {}, child: Text("Keuze 3"))
+
+    ]
   )
   );
 }}
