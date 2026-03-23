@@ -18,13 +18,28 @@ class _SituationScreenState extends State<SituationScreen> {
       backgroundColor: Colors.lightBlue,
       title: Text("You are in the situation screen")
     ),
-  body: Row(
+  body: Column(
+    children: [
+    Row (
     children:[
-      ElevatedButton(onPressed: () {}, child: Text("Keuze 1")),
-      ElevatedButton(onPressed: () {}, child: Text("Keuze 2")),
-      ElevatedButton(onPressed: () {}, child: Text("Keuze 3"))
-
+      ElevatedButton(onPressed: () {
+        setState(() {
+          selectedChoice = 1;
+        });
+      }, child: Text("Keuze 1")),
+      ElevatedButton(onPressed: () {
+        setState(() {
+          selectedChoice = 2;
+        });
+      }, child: Text("Keuze 2")),
+      ElevatedButton(onPressed: () {
+        setState(() {
+          selectedChoice = 3;
+        });
+      }, child: Text("Keuze 3")),
     ]
-  )
+  ),
+      Text("$selectedChoice")
+  ])
   );
 }}
