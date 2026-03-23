@@ -5,7 +5,8 @@ import '../models/situation.dart';
 
 class ExplanationScreen extends StatelessWidget {
   final Choice choice;
-  const ExplanationScreen({super.key, required this.choice});
+  final Situation situation;
+  const ExplanationScreen({super.key, required this.choice, required this.situation});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class ExplanationScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Text("Super goede uitleg..."),
+          Text(situation.explanation),
           ElevatedButton(
             child: Text("Volgende"),
             onPressed: () {

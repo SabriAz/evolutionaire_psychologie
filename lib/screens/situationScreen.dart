@@ -34,7 +34,7 @@ class _SituationScreenState extends State<SituationScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (_) => ExplanationScreen(choice: choice,))
+                    builder: (_) => ExplanationScreen(choice: choice, situation: widget.situation,))
               );
             });
           },

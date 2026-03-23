@@ -21,8 +21,9 @@ List <Situation> situations = [
             id: 4,
             description: "Ren weg",
             outcome: 2)
-
-  ]),
+      ],
+    explanation: "Zoet voedsel was zeldzaam in de oertijd. Je brein ontwikkelde een sterke voorkeur voor zoet omdat het veel energie bevatte. Daarom is taart of snoep vandaag zo moeilijk te weerstaan — je brein reageert nog steeds alsof suiker zeldzaam is!"
+  ),
   Situation(
       id: 2,
       description: "Je hebt net gegeten en voelt je zwaar. Rust of bewegen?",
@@ -39,5 +40,7 @@ List <Situation> situations = [
             id: 7,
             description: "Doe lichte beweging",
             outcome: 3),
-      ])
+      ],
+      explanation: "In de oertijd was energie sparen levensbelangrijk. Je brein beloont rust omdat beweging vroeger energie kostte die je nodig had voor jagen of vluchten. Daarom voelt de bank zo aantrekkelijk — je oerbrein denkt nog steeds dat je energie moet sparen!"
+  )
 ];
