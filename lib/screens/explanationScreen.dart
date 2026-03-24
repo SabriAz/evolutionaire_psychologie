@@ -11,20 +11,26 @@ class ExplanationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.red,
-      ),
-      body: Column(
+      body: Stack(
         children: [
-          Text(situation.explanation),
-          ElevatedButton(
-            child: Text("Volgende"),
-            onPressed: () {
-            Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                    builder: (_) => SituationScreen(situation: situations.firstWhere((situation) => situation.id == choice.outcome))));
-          },)
+          Image.asset(
+            situation.explanationImagePath,
+              fit: BoxFit.cover,
+              width: double.infinity
+          ),
+          Column(
+            children: [
+              Text(situation.explanation),
+              ElevatedButton(
+                child: Text("Volgende"),
+                onPressed: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => SituationScreen(situation: situations.firstWhere((situation) => situation.id == choice.outcome))));
+              },)
+            ]
+          )
         ]
       )
     );

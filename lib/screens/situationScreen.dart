@@ -18,31 +18,30 @@ class _SituationScreenState extends State<SituationScreen> {
   @override
   Widget build (BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-      backgroundColor: Colors.lightBlue,
-      title: Text("You are in the situation screen")
-    ),
-      body: Column(
+      body:Stack(
+      children: [
+        Image.asset(
+          widget.situation.situationImagePath,
+          fit: BoxFit.cover,
+          width: double.infinity
+        ),
+        Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(widget.situation.description),
-          Expanded(
-            child: Center(
-              child: selectedChoice != null
-                  ? Text("Je hebt gekozen voor keuze $selectedChoice")
-                  : SizedBox()
-            )
-          ),
           Align(
             child: Padding(
               padding: EdgeInsets.only(bottom: 20),
               child: Row (
               mainAxisAlignment: MainAxisAlignment.center,
-              children: widget.situation.choices.map((choice) => ChoiceButton( choice: choice,
-                onPressed: () {
-                  setState(() {
-                    selectedChoice = choice.id;
-                  });
+              children: widget.situation.choices.map((choice) => Padding (
+                padding: EdgeInsets.symmetric(horizontal: 6),
+                child: ChoiceButton(
+                  choice: choice,
+                  onPressed: () {
+                    setState(() {
+                      selectedChoice = choice.id;
+                    });
                   Future.delayed(Duration(seconds: 1), () {
                     Navigator.push(
                       context,
@@ -51,12 +50,12 @@ class _SituationScreenState extends State<SituationScreen> {
                     );
                   });
                 },
-              )).toList()
-            ),
+              ))).toList()
+              ),
+            )
           )
-          )
-        ]
-      )
+        ])
+      ])
     );
   }
 }

@@ -12,8 +12,9 @@ class ChoiceButton extends StatelessWidget{
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.black.withValues(alpha: 0.1),
+          backgroundColor: Colors.black.withValues(alpha: 0.3),
           foregroundColor: Colors.white,
+          side: BorderSide(color: Colors.white, width: 1.5),
         ),
         onPressed: onPressed,
         child: Text(choice.description));
