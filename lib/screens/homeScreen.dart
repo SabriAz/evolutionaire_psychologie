@@ -1,9 +1,9 @@
+import 'package:firebase_demo_test/models/situations.dart';
 import 'package:flutter/material.dart';
 import 'situationScreen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) :super(key: key);
-
+  const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
 }
 
 class HomeScreenBody extends StatelessWidget {
-  const HomeScreenBody({Key? key}) : super(key: key);
+  const HomeScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class HomeScreenBody extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (_) => SituationScreen()
+                      builder: (_) => SituationScreen(situation: situations[0],)
                   )
               );
             }
