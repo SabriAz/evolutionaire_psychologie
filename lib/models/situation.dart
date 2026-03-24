@@ -3,8 +3,10 @@ class Situation {
   final String description;
   final List <Choice> choices;
   final String explanation;
+  final String situationImagePath;
+  final String explanationImagePath;
 
-  const Situation ({required this.id, required this.description, required this.choices, required this.explanation});
+  const Situation ({required this.id, required this.description, required this.choices, required this.explanation, required this.situationImagePath, required this.explanationImagePath});
 
 }
 

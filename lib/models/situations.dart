@@ -22,7 +22,9 @@ List <Situation> situations = [
             description: "Ren weg",
             outcome: 2)
       ],
-    explanation: "Zoet voedsel was zeldzaam in de oertijd. Je brein ontwikkelde een sterke voorkeur voor zoet omdat het veel energie bevatte. Daarom is taart of snoep vandaag zo moeilijk te weerstaan — je brein reageert nog steeds alsof suiker zeldzaam is!"
+    explanation: "Zoet voedsel was zeldzaam in de oertijd. Je brein ontwikkelde een sterke voorkeur voor zoet omdat het veel energie bevatte. Daarom is taart of snoep vandaag zo moeilijk te weerstaan — je brein reageert nog steeds alsof suiker zeldzaam is!",
+    situationImagePath: "assets/images/bear_situation",
+    explanationImagePath: "assets/images/bear_explanation"
   ),
   Situation(
       id: 2,
@@ -41,6 +43,8 @@ List <Situation> situations = [
             description: "Doe lichte beweging",
             outcome: 3),
       ],
-      explanation: "In de oertijd was energie sparen levensbelangrijk. Je brein beloont rust omdat beweging vroeger energie kostte die je nodig had voor jagen of vluchten. Daarom voelt de bank zo aantrekkelijk — je oerbrein denkt nog steeds dat je energie moet sparen!"
+      explanation: "In de oertijd was energie sparen levensbelangrijk. Je brein beloont rust omdat beweging vroeger energie kostte die je nodig had voor jagen of vluchten. Daarom voelt de bank zo aantrekkelijk — je oerbrein denkt nog steeds dat je energie moet sparen!",
+      situationImagePath: "assets/images/bear_situation_2",
+      explanationImagePath: "assets/images/bear_explanation_2"
   )
 ];

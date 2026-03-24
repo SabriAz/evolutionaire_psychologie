@@ -1,5 +1,6 @@
 import 'package:firebase_demo_test/models/situation.dart';
 import 'package:firebase_demo_test/screens/explanationScreen.dart';
+import 'package:firebase_demo_test/widgets/choice_button.dart';
 import 'package:flutter/material.dart';
 
 class SituationScreen extends StatefulWidget {
@@ -21,29 +22,41 @@ class _SituationScreenState extends State<SituationScreen> {
       backgroundColor: Colors.lightBlue,
       title: Text("You are in the situation screen")
     ),
-  body: Column(
-    children: [
-      Text(widget.situation.description),
-      Row (
-        children: widget.situation.choices.map((choice) => ElevatedButton(
-          onPressed: () {
-            setState(() {
-              selectedChoice = choice.id;
-            });
-            Future.delayed(Duration(seconds: 1), () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (_) => ExplanationScreen(choice: choice, situation: widget.situation,))
-              );
-            });
-          },
-          child: Text(choice.description),
-      )).toList()
-    ),
-        if (selectedChoice != null)
-        Text("Je heb gekozen voor keuze $selectedChoice")
-    ])
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(widget.situation.description),
+          Expanded(
+            child: Center(
+              child: selectedChoice != null
+                  ? Text("Je hebt gekozen voor keuze $selectedChoice")
+                  : SizedBox()
+            )
+          ),
+          Align(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 20),
+              child: Row (
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: widget.situation.choices.map((choice) => ChoiceButton( choice: choice,
+                onPressed: () {
+                  setState(() {
+                    selectedChoice = choice.id;
+                  });
+                  Future.delayed(Duration(seconds: 1), () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => ExplanationScreen(choice: choice, situation: widget.situation,))
+                    );
+                  });
+                },
+              )).toList()
+            ),
+          )
+          )
+        ]
+      )
     );
   }
 }
