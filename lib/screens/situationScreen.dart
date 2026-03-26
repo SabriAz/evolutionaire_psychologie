@@ -28,10 +28,30 @@ class _SituationScreenState extends State<SituationScreen> {
         Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(widget.situation.description),
+          Center(
+            child: Stack(
+              children: [
+                Text(
+                  widget.situation.description,
+                  style: TextStyle(
+                    fontSize: 24,
+                    foreground: Paint()
+                      ..style = PaintingStyle.stroke
+                      ..strokeWidth = 4
+                      ..color = Colors.black,
+                  ),
+                ),
+                Text(
+                  widget.situation.description,
+                  style: TextStyle(fontSize: 24, color: Colors.white),
+                ),
+              ]
+            )
+          ),
           Align(
             child: Padding(
               padding: EdgeInsets.only(bottom: 20),
+
               child: Row (
               mainAxisAlignment: MainAxisAlignment.center,
               children: widget.situation.choices.map((choice) => Padding (
