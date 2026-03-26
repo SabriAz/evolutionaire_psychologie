@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 
 class SituationScreen extends StatefulWidget {
   final Situation situation;
+  final List<Situation> situations;
 
-  const SituationScreen({super.key, required this.situation});
+  const SituationScreen({super.key, required this.situation, required this.situations});
   @override
   State<StatefulWidget> createState() => _SituationScreenState();
 
@@ -28,7 +29,26 @@ class _SituationScreenState extends State<SituationScreen> {
         Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(widget.situation.description),
+          Center(
+            child: Stack(
+              children: [
+                Text(
+                  widget.situation.description,
+                  style: TextStyle(
+                    fontSize: 24,
+                    foreground: Paint()
+                      ..style = PaintingStyle.stroke
+                      ..strokeWidth = 4
+                      ..color = Colors.black,
+                  ),
+                ),
+                Text(
+                  widget.situation.description,
+                  style: TextStyle(fontSize: 24, color: Colors.white),
+                ),
+              ]
+            )
+          ),
           Align(
             child: Padding(
               padding: EdgeInsets.only(bottom: 20),
@@ -46,7 +66,7 @@ class _SituationScreenState extends State<SituationScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (_) => ExplanationScreen(choice: choice, situation: widget.situation,))
+                          builder: (_) => ExplanationScreen(choice: choice, situation: widget.situation, situations: widget.situations))
                     );
                   });
                 },
