@@ -28,18 +28,53 @@ class HomeScreenBody extends StatelessWidget {
             ),
 
             Align(
-              alignment: Alignment.bottomRight,
-              child: ElevatedButton(
-                child: Text("Start adventure"),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => SituationScreen(situation: situations[0]),
+              alignment: Alignment.bottomCenter,
+
+              child: Padding(
+                padding: EdgeInsets.all(20),
+
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.black.withValues(alpha: 0.3),
+                      foregroundColor: Colors.white,
+                      side: BorderSide(color: Colors.white, width: 1.5),
                     ),
-                  );
-                },
-              ),
+
+                    child: Text("Prehistorische tijd"),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => SituationScreen(situation: situations[0]),
+                        ),
+                      );
+                    },
+                  ),
+
+                  SizedBox(width: 8,),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.black.withValues(alpha: 0.3),
+                      foregroundColor: Colors.white,
+                      side: BorderSide(color: Colors.white, width: 1.5),
+                    ),
+
+                      child: Text("Moderne tijd"),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => SituationScreen(situation: situations[0]),
+                            )
+                        );
+                      },
+                  )
+                ],
+              )
+              )
             ),
           ],
         ),
