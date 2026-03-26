@@ -20,7 +20,26 @@ class ExplanationScreen extends StatelessWidget {
           ),
           Column(
             children: [
-              Text(situation.explanation),
+              Center(
+                child: Stack(
+                  children: [
+                    Text(
+                      situation.explanation,
+                      style: TextStyle(
+                        fontSize: 24,
+                        foreground: Paint()
+                          ..style = PaintingStyle.stroke
+                          ..strokeWidth = 4
+                          ..color = Colors.black,
+                      ),
+                    ),
+                    Text(
+                      situation.explanation,
+                      style: TextStyle(fontSize: 24, color: Colors.white),
+                    ),
+                  ],
+                )
+              ),
               ElevatedButton(
                 child: Text("Volgende"),
                 onPressed: () {
