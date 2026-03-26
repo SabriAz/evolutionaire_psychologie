@@ -1,6 +1,7 @@
 import 'package:firebase_demo_test/models/situation.dart';
 import 'package:firebase_demo_test/screens/explanationScreen.dart';
 import 'package:firebase_demo_test/widgets/choice_button.dart';
+import 'package:firebase_demo_test/widgets/timer.dart';
 import 'package:flutter/material.dart';
 
 class SituationScreen extends StatefulWidget {
@@ -26,6 +27,7 @@ class _SituationScreenState extends State<SituationScreen> {
           fit: BoxFit.cover,
           width: double.infinity
         ),
+        CountdownTimer(timer: 10),
         Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
