@@ -18,26 +18,31 @@ class HomeScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.green,
-      ),
+        body: Stack(
+          children: [
+            Image.asset(
+              "assets/images/homescreen_background.png",
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: double.infinity,
+            ),
 
-      body: Align(
-        alignment: Alignment.bottomRight,
-          child: ElevatedButton(
-            child: Text("Start adventure"),
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (_) => SituationScreen(situation: situations[0],)
-                  )
-              );
-            }
-        )
-      ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: ElevatedButton(
+                child: Text("Start adventure"),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => SituationScreen(situation: situations[0]),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
     );
   }
 }
-
-
