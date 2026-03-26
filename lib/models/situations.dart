@@ -1,6 +1,6 @@
 import 'package:firebase_demo_test/models/situation.dart';
 
-List <Situation> prehistorische_situations = [
+List <Situation> prehistoric_situations = [
   Situation(
       id: 1,
       description: "Prehistorische situatie 1",

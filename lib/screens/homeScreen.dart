@@ -48,7 +48,7 @@ class HomeScreenBody extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => SituationScreen(situation: situations[0]),
+                          builder: (_) => SituationScreen(situation: prehistoric_situations[0], situations: prehistoric_situations,),
                         ),
                       );
                     },
@@ -67,7 +67,7 @@ class HomeScreenBody extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (_) => SituationScreen(situation: situations[0]),
+                              builder: (_) => SituationScreen(situation: modern_situations[0], situations: modern_situations,),
                             )
                         );
                       },
