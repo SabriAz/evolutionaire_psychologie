@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 
 class SituationScreen extends StatefulWidget {
   final Situation situation;
+  final List<Situation> situations;
 
-  const SituationScreen({super.key, required this.situation});
+  const SituationScreen({super.key, required this.situation, required this.situations});
   @override
   State<StatefulWidget> createState() => _SituationScreenState();
 
@@ -51,7 +52,6 @@ class _SituationScreenState extends State<SituationScreen> {
           Align(
             child: Padding(
               padding: EdgeInsets.only(bottom: 20),
-
               child: Row (
               mainAxisAlignment: MainAxisAlignment.center,
               children: widget.situation.choices.map((choice) => Padding (
@@ -66,7 +66,7 @@ class _SituationScreenState extends State<SituationScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (_) => ExplanationScreen(choice: choice, situation: widget.situation,))
+                          builder: (_) => ExplanationScreen(choice: choice, situation: widget.situation, situations: widget.situations))
                     );
                   });
                 },
