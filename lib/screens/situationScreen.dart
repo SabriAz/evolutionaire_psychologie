@@ -1,6 +1,7 @@
 import 'package:firebase_demo_test/models/situation.dart';
 import 'package:firebase_demo_test/screens/explanationScreen.dart';
 import 'package:firebase_demo_test/widgets/choice_button.dart';
+import 'package:firebase_demo_test/widgets/timer.dart';
 import 'package:flutter/material.dart';
 
 class SituationScreen extends StatefulWidget {
@@ -25,6 +26,23 @@ class _SituationScreenState extends State<SituationScreen> {
           widget.situation.situationImagePath,
           fit: BoxFit.cover,
           width: double.infinity
+        ),
+        Positioned(
+          top: 16,
+          left: 16,
+          child: CountdownTimer(
+          timer: 10,
+          onFinished: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (_) => ExplanationScreen(
+                      choice: widget.situation.choices[0],
+                      situation: widget.situation,
+                      situations: widget.situations
+                  )
+              )
+            )
+          ),
         ),
         Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
