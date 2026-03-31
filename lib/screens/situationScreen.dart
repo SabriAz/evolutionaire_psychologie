@@ -29,8 +29,8 @@ class _SituationScreenState extends State<SituationScreen> {
         ),
 
         Positioned(
-          top: 40,
-          left: 16,
+          top: 30,
+          right: 16,
           child: IconButton(
             style: IconButton.styleFrom(
               backgroundColor: Colors.brown,
