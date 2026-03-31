@@ -3,8 +3,9 @@ import 'dart:async';
 
 class CountdownTimer extends StatefulWidget{
   final int timer;
+  final VoidCallback onFinished;
 
-  const CountdownTimer({required this.timer});
+  const CountdownTimer({required this.timer, required this.onFinished});
 
   @override
   State<StatefulWidget> createState() => _TimerState();
@@ -17,23 +18,70 @@ class _TimerState extends State<CountdownTimer> {
     super.initState();
     currentSeconds = widget.timer;
     Timer.periodic(Duration(seconds: 1), (t) {
+      if (!mounted) return;
       setState(() {
         currentSeconds--;
       });
+      if (currentSeconds == 0) {
+        t.cancel();
+        widget.onFinished();
+
+      };
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Center(
-        child: CircularProgressIndicator()
+    return Container(
+      width: 70,
+      height: 70,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Color(0xFF99783C),
+        border: Border.all(
+            color: Color(0xFF99783C),
+            width: 4
         ),
-        Center(
-            child: Text("$currentSeconds")
-        )
-      ],
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black,
+            blurRadius: 6,
+            offset: Offset(2, 2)
+          ),
+        ],
+      ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          SizedBox(
+            width: 62,
+            height: 62,
+            child: CircularProgressIndicator(
+              value: currentSeconds / widget.timer,
+              strokeWidth: 5,
+              backgroundColor: Color(0xFF99783C),
+              valueColor: AlwaysStoppedAnimation<Color>(
+                Color(0xFF99783C)
+              ),
+            ),
+          ),
+          Text(
+            "$currentSeconds",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              shadows: [
+                Shadow(
+                  color: Colors.black54,
+                  blurRadius: 4,
+                  offset: Offset(1, 1)
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

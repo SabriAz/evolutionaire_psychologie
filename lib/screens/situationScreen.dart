@@ -27,7 +27,23 @@ class _SituationScreenState extends State<SituationScreen> {
           fit: BoxFit.cover,
           width: double.infinity
         ),
-        CountdownTimer(timer: 10),
+        Positioned(
+          top: 16,
+          left: 16,
+          child: CountdownTimer(
+          timer: 10,
+          onFinished: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (_) => ExplanationScreen(
+                      choice: widget.situation.choices[0],
+                      situation: widget.situation,
+                      situations: widget.situations
+                  )
+              )
+            )
+          ),
+        ),
         Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
