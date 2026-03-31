@@ -1,5 +1,6 @@
 import 'package:firebase_demo_test/models/situation.dart';
 import 'package:firebase_demo_test/screens/explanationScreen.dart';
+import 'package:firebase_demo_test/screens/homeScreen.dart';
 import 'package:firebase_demo_test/widgets/choice_button.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +27,43 @@ class _SituationScreenState extends State<SituationScreen> {
           fit: BoxFit.cover,
           width: double.infinity
         ),
+
+        Positioned(
+          top: 40,
+          left: 16,
+          child: IconButton(
+              icon: Icon(Icons.home, color: Colors.white, size: 32),
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text("Terug naar hoofdscherm"),
+                      content: Text("Weet je zeker dat je terug wil naar het hoofdscherm"),
+                      actions: [
+                        TextButton(
+                        child: Text("Annuleren"),
+                        onPressed: () {
+                              Navigator.pop(context);
+                            },
+                        ),
+                        TextButton(
+                          child: Text("Ja"),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => HomeScreen(),
+                                )
+                            );
+                          },
+                        )
+                      ],
+                    ),
+                );
+            },
+          ),
+        ),
+
         Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
