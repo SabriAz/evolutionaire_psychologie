@@ -32,34 +32,39 @@ class _SituationScreenState extends State<SituationScreen> {
           top: 40,
           left: 16,
           child: IconButton(
-              icon: Icon(Icons.home, color: Colors.white, size: 32),
-              onPressed: () {
-                showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                      title: Text("Terug naar hoofdscherm"),
-                      content: Text("Weet je zeker dat je terug wil naar het hoofdscherm"),
-                      actions: [
-                        TextButton(
-                        child: Text("Annuleren"),
-                        onPressed: () {
-                              Navigator.pop(context);
-                            },
-                        ),
-                        TextButton(
-                          child: Text("Ja"),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (_) => HomeScreen(),
-                                )
-                            );
-                          },
-                        )
-                      ],
+            style: IconButton.styleFrom(
+              backgroundColor: Colors.brown,
+              shape: CircleBorder(),
+              padding: EdgeInsets.all(10),
+            ),
+            icon: Icon(Icons.home, color: Colors.white, size: 32),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: Text("Terug naar hoofdscherm"),
+                  content: Text("Weet je zeker dat je terug wil naar het hoofdscherm"),
+                  actions: [
+                    TextButton(
+                      child: Text("Annuleren"),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                     ),
-                );
+                    TextButton(
+                      child: Text("Ja"),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => HomeScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              );
             },
           ),
         ),
