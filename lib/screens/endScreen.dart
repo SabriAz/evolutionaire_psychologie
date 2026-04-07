@@ -36,7 +36,7 @@ class EndScreenBody extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Achtergrond
+          // Background
           Image.asset(
             "assets/images/homescreen_background.png",
             fit: BoxFit.cover,
@@ -44,12 +44,12 @@ class EndScreenBody extends StatelessWidget {
             height: double.infinity,
           ),
 
-          // Donkere overlay
+          // Fade background
           Container(
             color: Colors.black.withValues(alpha: 0.4),
           ),
 
-          // Titel bovenin
+          // Title
           Positioned(
             top: 50,
             left: 0,
@@ -85,7 +85,7 @@ class EndScreenBody extends StatelessWidget {
             ),
           ),
 
-          // Artikelen in midden
+          // Relevant articles that are based on users favorite scenario's
           Positioned.fill(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -134,7 +134,7 @@ class EndScreenBody extends StatelessWidget {
             ),
           ),
 
-          // Home knop onderaan
+          // Home button
           Positioned(
             bottom: 40,
             left: 0,
