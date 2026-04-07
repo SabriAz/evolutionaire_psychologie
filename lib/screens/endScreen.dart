@@ -87,13 +87,14 @@ class EndScreenBody extends StatelessWidget {
 
           // Relevant articles that are based on users favorite scenario's
           Positioned.fill(
+            top: 80,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 50),
                   child: Align(
-                    alignment: Alignment.centerLeft,
+                    alignment: Alignment.center,
                     child: Text(
                       "Lees meer:",
                       style: TextStyle(
