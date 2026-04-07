@@ -35,7 +35,7 @@ class _ExplanationScreenState extends State<ExplanationScreen>
     );
 
     _slideAnimation = Tween<Offset>(
-      begin: const Offset(1.5, 0), // komt van rechts
+      begin: const Offset(1.5, 0),
       end: Offset.zero,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutBack));
 
@@ -68,7 +68,6 @@ class _ExplanationScreenState extends State<ExplanationScreen>
               height: double.infinity
           ),
 
-          // Tik om character te laten verschijnen
           if (!_characterVisible)
             Positioned.fill(
                 child: GestureDetector(
@@ -110,7 +109,6 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          // Speech bubble
                           Container(
                             margin: const EdgeInsets.only(right: 80),
                             padding: const EdgeInsets.all(16),
@@ -133,7 +131,6 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                               ),
                             ),
                           ),
-                          // Karakter afbeelding
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -151,8 +148,6 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                 ),
               ),
             ),
-
-          // Knop om naar volgende situatie te gaan verschijnt wanneer gebruiker nog een keer drukt op scherm
           if (_characterVisible)
             Positioned(
               bottom: 24,
@@ -168,14 +163,17 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(
-                        builder: (_) =>
-                            SituationScreen(
-                              situation: widget.situations.firstWhere(
-                                    (s) => s.id == widget.choice.outcome,
-                              ),
-                              situations: widget.situations,
-                            ),
+                      PageRouteBuilder(
+                        pageBuilder: (_, __, ___) => SituationScreen(
+                          situation: widget.situations.firstWhere(
+                                (s) => s.id == widget.choice.outcome,
+                          ),
+                          situations: widget.situations,
+                        ),
+                        transitionsBuilder: (_, animation, __, child) {
+                          return FadeTransition(opacity: animation, child: child);
+                        },
+                        transitionDuration: Duration(milliseconds: 600),
                       ),
                     );
                   },
