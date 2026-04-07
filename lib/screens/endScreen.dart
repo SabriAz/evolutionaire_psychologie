@@ -36,7 +36,7 @@ class EndScreenBody extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-
+          // Achtergrond
           Image.asset(
             "assets/images/homescreen_background.png",
             fit: BoxFit.cover,
@@ -44,48 +44,55 @@ class EndScreenBody extends StatelessWidget {
             height: double.infinity,
           ),
 
-
+          // Donkere overlay
           Container(
             color: Colors.black.withValues(alpha: 0.4),
           ),
 
-
-          SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-
-                  Text(
-                    "Goed gedaan!",
-                    style: TextStyle(
-                      fontFamily: 'JejuHallasan',
-                      fontSize: 32,
-                      color: Color(0xFF99783C),
-                      shadows: [
-                        Shadow(color: Colors.black, blurRadius: 6)
-                      ],
-                    ),
+          // Titel bovenin
+          Positioned(
+            top: 50,
+            left: 0,
+            right: 0,
+            child: Column(
+              children: [
+                Text(
+                  "Goed gedaan!",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'JejuHallasan',
+                    fontSize: 32,
+                    color: Color(0xFF99783C),
+                    shadows: [
+                      Shadow(color: Colors.black, blurRadius: 6)
+                    ],
                   ),
-                  SizedBox(height: 8),
-
-
-                  Text(
-                    "Je hebt het avontuur voltooid.",
-                    style: TextStyle(
-                      fontFamily: 'JejuHallasan',
-                      fontSize: 16,
-                      color: Colors.white,
-                      shadows: [
-                        Shadow(color: Colors.black, blurRadius: 4)
-                      ],
-                    ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  "Je hebt het avontuur voltooid.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'JejuHallasan',
+                    fontSize: 16,
+                    color: Colors.white,
+                    shadows: [
+                      Shadow(color: Colors.black, blurRadius: 4)
+                    ],
                   ),
-                  SizedBox(height: 24),
+                ),
+              ],
+            ),
+          ),
 
-
-                  Align(
+          // Artikelen in midden
+          Positioned.fill(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Lees meer:",
@@ -97,53 +104,57 @@ class EndScreenBody extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                ),
+                SizedBox(height: 10),
 
-                  // Artikelen als buttons
-                  ...articles.map((article) => Padding(
-                    padding: EdgeInsets.only(bottom: 10),
-                    child: GestureDetector(
-                      onTap: () => launchUrl(Uri.parse(article["url"]!)),
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                        decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: 0.6), // zwart 60% opacity
-                          border: Border.all(color: Colors.white, width: 1.5), // witte border
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Text(
-                          article["title"]!,
-                          style: TextStyle(
-                            fontFamily: 'Inter', // Inter font voor buttons
-                            color: Colors.white,
-                            fontSize: 14,
-                          ),
+                ...articles.map((article) => Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  child: GestureDetector(
+                    onTap: () => launchUrl(Uri.parse(article["url"]!)),
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                      decoration: BoxDecoration(
+                        color: Colors.black.withValues(alpha: 0.6),
+                        border: Border.all(color: Colors.white, width: 1.5),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        article["title"]!,
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          color: Colors.white,
+                          fontSize: 14,
                         ),
                       ),
                     ),
-                  )),
-
-                  Spacer(),
-
-                  // Home knop
-                  IconButton(
-                    style: IconButton.styleFrom(
-                      backgroundColor: Color(0xFF99783C),
-                      shape: CircleBorder(),
-                      padding: EdgeInsets.all(16),
-                    ),
-                    icon: Icon(Icons.home, color: Colors.white, size: 32),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => HomeScreen(),
-                          ),
-                      );
-                    },
                   ),
-                ],
+                )),
+              ],
+            ),
+          ),
+
+          // Home knop onderaan
+          Positioned(
+            bottom: 40,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: IconButton(
+                style: IconButton.styleFrom(
+                  backgroundColor: Color(0xFF99783C),
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.all(16),
+                ),
+                icon: Icon(Icons.home, color: Colors.white, size: 32),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => HomeScreen(),
+                    ),
+                  );
+                },
               ),
             ),
           ),
