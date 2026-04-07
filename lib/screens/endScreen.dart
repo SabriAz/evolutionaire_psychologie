@@ -136,8 +136,8 @@ class EndScreenBody extends StatelessWidget {
 
           // Home button
           Positioned(
-            bottom: 40,
-            left: 0,
+            top: 30,
+            left: 750,
             right: 0,
             child: Center(
               child: IconButton(
