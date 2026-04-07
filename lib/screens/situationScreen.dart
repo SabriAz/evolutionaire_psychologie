@@ -16,6 +16,7 @@ class SituationScreen extends StatefulWidget {
 
 class _SituationScreenState extends State<SituationScreen> {
   int? selectedChoice;
+  bool _choiceMade = false;
 
   @override
   Widget build (BuildContext context) {
@@ -31,17 +32,22 @@ class _SituationScreenState extends State<SituationScreen> {
           top: 16,
           left: 16,
           child: CountdownTimer(
-          timer: 10,
-          onFinished: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (_) => ExplanationScreen(
-                      choice: widget.situation.choices[0],
-                      situation: widget.situation,
-                      situations: widget.situations
-                  )
-              )
-            )
+            timer: 10,
+            stopped: _choiceMade,
+            onFinished: () {
+              if (!_choiceMade) { // ← TOEVOEGEN
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => ExplanationScreen(
+                          choice: widget.situation.choices[0],
+                          situation: widget.situation,
+                          situations: widget.situations,
+                    ),
+                  ),
+                );
+              }
+            }
           ),
         ),
         Column(
@@ -79,8 +85,9 @@ class _SituationScreenState extends State<SituationScreen> {
                   onPressed: () {
                     setState(() {
                       selectedChoice = choice.id;
+                      _choiceMade = true;
                     });
-                  Future.delayed(Duration(seconds: 1), () {
+                  Future.delayed(Duration(milliseconds: 500), () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
