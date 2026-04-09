@@ -17,10 +17,6 @@ List <Situation> prehistoric_situations = [
             id: 3,
             description: "Ren weg!",
             outcome: 2),
-        Choice(
-            id: 4,
-            description: "Ren heel hard weg!!",
-            outcome: 2)
       ],
     explanation: "Zoet voedsel was zeldzaam in de oertijd. Je brein ontwikkelde een sterke voorkeur voor zoet omdat het veel energie bevatte. Daarom is taart of snoep vandaag zo moeilijk te weerstaan — je brein reageert nog steeds alsof suiker zeldzaam is!",
     situationImagePath: "assets/images/bear_situation.png",
