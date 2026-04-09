@@ -8,8 +8,8 @@ void main()
 {
   // runApp(myStatefullApp());
 
-  // runApp(HomeScreen());
+  runApp(HomeScreen());
 
-  runApp(EndScreen());
+  // runApp(EndScreen());
 
 }
