@@ -1,6 +1,7 @@
 import 'package:firebase_demo_test/models/situations.dart';
 import 'package:flutter/material.dart';
 import 'situationScreen.dart';
+import 'IntroVideoScreen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -48,7 +49,9 @@ class HomeScreenBody extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => SituationScreen(situation: prehistoric_situations[0], situations: prehistoric_situations,),
+                          builder: (_) => IntroVideoScreen(
+                            situations: prehistoric_situations,
+                          ),
                         ),
                       );
                     },
