@@ -19,21 +19,39 @@ class _SituationScreenState extends State<SituationScreen> {
   int? selectedChoiceId;
   bool _choiceMade = false;
 
-  void _navigateToExplanation(Choice choice) {
-    Navigator.push(
-      context,
-      PageRouteBuilder(
-        pageBuilder: (_, __, ___) => ExplanationScreen(
-          choice: choice,
-          situation: widget.situation,
-          situations: widget.situations,
+  void _navigateNext(Choice choice) {
+    if (widget.situation.explanationNeeded) {
+      Navigator.push(
+        context,
+        PageRouteBuilder(
+          pageBuilder: (_, __, ___) => ExplanationScreen(
+            choice: choice,
+            situation: widget.situation,
+            situations: widget.situations,
+          ),
+          transitionsBuilder: (_, animation, __, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+          transitionDuration: Duration(milliseconds: 600),
         ),
-        transitionsBuilder: (_, animation, __, child) {
-          return FadeTransition(opacity: animation, child: child);
-        },
-        transitionDuration: Duration(milliseconds: 600),
-      ),
-    );
+      );
+    } else {
+      Navigator.pushReplacement(
+        context,
+        PageRouteBuilder(
+          pageBuilder: (_, __, ___) => SituationScreen(
+            situation: widget.situations.firstWhere(
+                  (s) => s.id == choice.outcome,
+            ),
+            situations: widget.situations,
+          ),
+          transitionsBuilder: (_, animation, __, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+          transitionDuration: Duration(milliseconds: 600),
+        ),
+      );
+    }
   }
 
   @override
@@ -74,11 +92,10 @@ class _SituationScreenState extends State<SituationScreen> {
                       TextButton(
                         child: Text("Ja"),
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
-                            MaterialPageRoute(
-                              builder: (_) => HomeScreen(),
-                            ),
+                            MaterialPageRoute(builder: (_) => HomeScreen()),
+                                (route) => false,
                           );
                         },
                       ),
@@ -97,7 +114,7 @@ class _SituationScreenState extends State<SituationScreen> {
               stopped: _choiceMade,
               onFinished: () {
                 if (!_choiceMade) {
-                  _navigateToExplanation(widget.situation.choices[0]);
+                  _navigateNext(widget.situation.choices[0]);
                 }
               },
             ),
@@ -148,7 +165,7 @@ class _SituationScreenState extends State<SituationScreen> {
                             _choiceMade = true;
                           });
                           Future.delayed(Duration(milliseconds: 600), () {
-                            _navigateToExplanation(choice);
+                            _navigateNext(choice);
                           });
                         },
                       ),
