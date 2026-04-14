@@ -36,7 +36,7 @@ List<Situation> prehistoric_situations = [
   // ─── START ───
   Situation(
     id: 1,
-    description: "Je wordt wakker 300.000 jaar geleden in een kamp. Voedsel is schaars. Je maag knort.",
+    description: "Je wordt wakker 300.000 jaar geleden en je zit midden in de oertijd. In de verte zie je een kamp.",
     choices: [
       Choice(id: 1, description: "Verken het kamp", outcome: 2),
       Choice(id: 2, description: "Verlaat het kamp", outcome: 3),
