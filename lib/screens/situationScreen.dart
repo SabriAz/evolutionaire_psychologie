@@ -124,7 +124,7 @@ class _SituationScreenState extends State<SituationScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 40, left: 16, right: 16),
+                padding: const EdgeInsets.only(top: 40, left: 100, right: 90),
                 child: Center(
                   child: Stack(
                     children: [
