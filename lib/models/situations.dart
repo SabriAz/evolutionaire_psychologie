@@ -36,13 +36,13 @@ List<Situation> prehistoric_situations = [
   // ─── START ───
   Situation(
     id: 1,
-    description: "Je wordt wakker 300.000 jaar geleden in een kamp. Het ziet er grimmig uit.",
+    description: "Je wordt wakker 300.000 jaar geleden in een kamp. Voedsel is schaars. Je maag knort.",
     choices: [
       Choice(id: 1, description: "Verken het kamp", outcome: 2),
       Choice(id: 2, description: "Verlaat het kamp", outcome: 3),
     ],
     explanationNeeded: true,
-    explanation: "Energie besparen",
+    explanation: "In de oertijd moest energie worden gespaard voor jagen of vluchten. Het brein stimuleert daarom rust. Vandaag zorgt dat ervoor dat je sneller kiest voor gemak en dingen uitstelt.",
     situationImagePath: "assets/images/bear_situation.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
@@ -85,7 +85,7 @@ List<Situation> prehistoric_situations = [
       Choice(id: 3, description: "Praat met hem", outcome: 7),
     ],
     explanationNeeded: true,
-    explanation: "Hiërarchie binnen de groep",
+    explanation: "Je positie in de groep bepaalde je overleving, dus het brein vergelijkt je met anderen. Vandaag gebeurt dat via social media, wat kan zorgen voor onzekerheid en druk.",
     situationImagePath: "assets/images/bear_situation.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
@@ -114,7 +114,7 @@ List<Situation> prehistoric_situations = [
       Choice(id: 3, description: "Praat met hem", outcome: 7),
     ],
     explanationNeeded: true,
-    explanation: "Hiërarchie binnen de groep",
+    explanation: "Je positie in de groep bepaalde je overleving, dus het brein vergelijkt je met anderen. Vandaag gebeurt dat via social media, wat kan zorgen voor onzekerheid en druk.",
     situationImagePath: "assets/images/bear_situation.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
@@ -169,7 +169,7 @@ List<Situation> prehistoric_situations = [
       Choice(id: 2, description: "Loop door", outcome: 14),
     ],
     explanationNeeded: true,
-    explanation: "Nieuwe kansen ontdekken",
+    explanation: "Nieuwsgierigheid hielp om voedsel en veiligheid te vinden. Vandaag zorgt dat voor constante afleiding door nieuwe prikkels zoals je telefoon.",
     situationImagePath: "assets/images/bear_situation.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
@@ -183,7 +183,7 @@ List<Situation> prehistoric_situations = [
       Choice(id: 2, description: "Loop door", outcome: 14),
     ],
     explanationNeeded: true,
-    explanation: "Nieuwe kansen ontdekken",
+    explanation: "Nieuwsgierigheid hielp om voedsel en veiligheid te vinden. Vandaag zorgt dat voor constante afleiding door nieuwe prikkels zoals je telefoon.",
     situationImagePath: "assets/images/bear_situation.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
@@ -191,9 +191,11 @@ List<Situation> prehistoric_situations = [
   // ─── PERSOON NEGEERT JE (via tent) ───
   Situation(
     id: 12,
+    description: "Iemand ziet je… hij ontwijkt oogcontact",
     description: "Je ziet iemand in de verte. Hij negeert je",
     choices: [
       Choice(id: 1, description: "Ga naar hem toe", outcome: 18),
+      Choice(id: 2, description: "Loop door", outcome: 21),
       Choice(id: 2, description: "Verstop je", outcome: 16),
     ],
     explanationNeeded: false,
@@ -233,7 +235,7 @@ List<Situation> prehistoric_situations = [
   // ─── GROT EINDIGT, PERSOON NEGEERT JE ───
   Situation(
     id: 15,
-    description: "De grot eindigt en iemand ziet je.. en negeert je",
+    description: "De grot eindigt en iemand kijkt kort jouw kant op, en draait weer weg...",
     choices: [
       Choice(id: 1, description: "Ga naar hem toe", outcome: 18),
       Choice(id: 2, description: "Loop door", outcome: 17),
@@ -247,10 +249,10 @@ List<Situation> prehistoric_situations = [
   // ─── GEEN VOEDSEL, PERSOON NEGEERT JE ───
   Situation(
     id: 16,
-    description: "Geen voedsel, maar iemand ziet je... hij negeert je.",
+    description: "Geen voedsel, maar iemand ziet je, hij vermijdt oogcontact",
     choices: [
       Choice(id: 1, description: "Ga naar hem toe", outcome: 18),
-      Choice(id: 2, description: "Loop door", outcome: 18),
+      Choice(id: 2, description: "Loop door", outcome: 21),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -283,7 +285,7 @@ List<Situation> prehistoric_situations = [
       Choice(id: 4, description: "Val aan", outcome: 96), //, if fighting is not 1
     ],
     explanationNeeded: true,
-    explanation: "Afhankelijkheid van de groep",
+    explanation: "Alleen zijn was gevaarlijk, dus het brein let sterk op sociale signalen. Vandaag kan geen reactie krijgen voelen als afwijzing, ook al is dat niet echt zo.",
     situationImagePath: "assets/images/bear_situation.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
