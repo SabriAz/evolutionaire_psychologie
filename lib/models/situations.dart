@@ -189,10 +189,10 @@ List<Situation> prehistoric_situations = [
   // ─── PERSOON NEGEERT JE (via tent) ───
   Situation(
     id: 12,
-    description: "Iemand ziet je… en negeert je.",
+    description: "Iemand ziet je… hij ontwijkt oogcontact",
     choices: [
       Choice(id: 1, description: "Ga naar hem toe", outcome: 18),
-      Choice(id: 2, description: "Loop door", outcome: 16),
+      Choice(id: 2, description: "Loop door", outcome: 21),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -231,7 +231,7 @@ List<Situation> prehistoric_situations = [
   // ─── GROT EINDIGT, PERSOON NEGEERT JE ───
   Situation(
     id: 15,
-    description: "De grot eindigt en iemand ziet je.. en negeert je",
+    description: "De grot eindigt en iemand kijkt kort jouw kant op, en draait weer weg...",
     choices: [
       Choice(id: 1, description: "Ga naar hem toe", outcome: 18),
       Choice(id: 2, description: "Loop door", outcome: 17),
@@ -245,10 +245,10 @@ List<Situation> prehistoric_situations = [
   // ─── GEEN VOEDSEL, PERSOON NEGEERT JE ───
   Situation(
     id: 16,
-    description: "Geen voedsel, maar iemand ziet je... hij negeert je.",
+    description: "Geen voedsel, maar iemand ziet je, hij vermijdt oogcontact",
     choices: [
       Choice(id: 1, description: "Ga naar hem toe", outcome: 18),
-      Choice(id: 2, description: "Loop door", outcome: 18),
+      Choice(id: 2, description: "Loop door", outcome: 21),
     ],
     explanationNeeded: false,
     explanation: "",
