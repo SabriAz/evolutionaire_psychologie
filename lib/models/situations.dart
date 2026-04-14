@@ -277,10 +277,10 @@ List<Situation> prehistoric_situations = [
     id: 18,
     description: "Hij blijft je negeren.",
     choices: [
-      Choice(id: 1, description: "Praat, if social 1", outcome: 97),
-      Choice(id: 2, description: "Praat, if social is not 1", outcome: 96),
-      Choice(id: 3, description: "Val aan, if fighting 1", outcome: 95),
-      Choice(id: 4, description: "Val aan, if fighting is not 1", outcome: 96),
+      Choice(id: 1, description: "Praat", outcome: 97), //if social 1
+      Choice(id: 2, description: "Praat", outcome: 96), //, if social is not 1
+      Choice(id: 3, description: "Val aan", outcome: 95), //, if fighting 1
+      Choice(id: 4, description: "Val aan", outcome: 96), //, if fighting is not 1
     ],
     explanationNeeded: true,
     explanation: "Afhankelijkheid van de groep",
@@ -291,7 +291,7 @@ List<Situation> prehistoric_situations = [
   // ─── JE VERZAMELT ETEN ───
   Situation(
     id: 19,
-    description: "Je verzamelt het eten (Food +1).",
+    description: "Je verzamelt het eten.", // (Food +1)
     choices: [
       Choice(id: 1, description: "Ga door", outcome: 20),
     ],
@@ -390,11 +390,11 @@ List<Situation> prehistoric_situations = [
     id: 26,
     description: "Een enorme beer staat voor je.",
     choices: [
-      Choice(id: 1, description: "Val aan, if fighting is 2", outcome: 93),
-      Choice(id: 2, description: "Val aan, if social is 2", outcome: 92),
-      Choice(id: 3, description: "Val aan, if fighting is not 2 and/ or social is not 2", outcome: 99),
-      Choice(id: 4, description: "Ren weg, if food is 1", outcome: 91),
-      Choice(id: 5, description: "Ren weg, if food is not 1", outcome: 99),
+      Choice(id: 1, description: "Val aan", outcome: 93), //, if fighting is 2
+      Choice(id: 2, description: "Val aan", outcome: 92), //, if social is 2
+      Choice(id: 3, description: "Val aan", outcome: 99), //, if fighting is not 2 and/ or social is not 2
+      Choice(id: 4, description: "Ren weg", outcome: 91), //, if food is 1
+      Choice(id: 5, description: "Ren weg", outcome: 99), //, if food is not 1
       Choice(id: 6, description: "Twijfel", outcome: 99),
     ],
     explanationNeeded: true,
@@ -408,15 +408,15 @@ List<Situation> prehistoric_situations = [
     id: 27,
     description: "Je komt een wolf tegen.",
     choices: [
-      Choice(id: 1, description: "Val aan, if fighting is 1", outcome: 90),
-      Choice(id: 2, description: "Val aan, if social is 2", outcome: 89),
-      Choice(id: 3, description: "Val aan, if fighting is not 1 and/ or social is not 2", outcome: 99),
-      Choice(id: 4, description: "Ren weg, if food is 2", outcome: 88),
-      Choice(id: 5, description: "Ren weg, if food is not 2", outcome: 99),
+      Choice(id: 1, description: "Val aan", outcome: 90), //, if fighting is 1
+      Choice(id: 2, description: "Val aan", outcome: 89), //, if social is 2
+      Choice(id: 3, description: "Val aan", outcome: 99), //, if fighting is not 1 and/ or social is not 2
+      Choice(id: 4, description: "Ren weg", outcome: 88), //, if food is 2
+      Choice(id: 5, description: "Ren weg", outcome: 99), //, if food is not 2
       Choice(id: 6, description: "Twijfel", outcome: 99),
     ],
     explanationNeeded: true,
-    explanation: "Bij gevaar schakelde het lichaam direct over op actie (fight-or-flight). Vandaag gebeurt dat bij stress, wat kan leiden tot langdurige spanning. ",
+    explanation: "Bij gevaar schakelde het lichaam direct over op actie en instinct (fight-or-flight). Vandaag gebeurt dat bij stress, wat kan leiden tot langdurige spanning. ",
     situationImagePath: "assets/images/bear_situation.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
