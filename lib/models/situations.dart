@@ -192,7 +192,6 @@ List<Situation> prehistoric_situations = [
   Situation(
     id: 12,
     description: "Iemand ziet je… hij ontwijkt oogcontact",
-    description: "Je ziet iemand in de verte. Hij negeert je",
     choices: [
       Choice(id: 1, description: "Ga naar hem toe", outcome: 18),
       Choice(id: 2, description: "Loop door", outcome: 21),
