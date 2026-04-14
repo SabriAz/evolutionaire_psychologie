@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/menu_button.dart';
 import 'homeScreen.dart';
 import 'resultScreen.dart';
 import 'IntroVideoScreen.dart';
@@ -29,13 +30,13 @@ class EndScreen extends StatelessWidget {
               children: [
                 Text(
                   isWin ? "Je hebt het overleefd" : "Game Over",
-                  style: TextStyle(fontSize: 28, color: Colors.white),
+                  style: const TextStyle(fontSize: 28, color: Colors.white),
                 ),
 
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
 
-                ElevatedButton(
-                  child: Text("Home"),
+                MenuButton(
+                  text: "Home",
                   onPressed: () {
                     Navigator.pushAndRemoveUntil(
                       context,
@@ -45,8 +46,10 @@ class EndScreen extends StatelessWidget {
                   },
                 ),
 
-                ElevatedButton(
-                  child: Text("Opnieuw spelen"),
+                const SizedBox(height: 12),
+
+                MenuButton(
+                  text: "Opnieuw spelen",
                   onPressed: () {
                     Navigator.pushAndRemoveUntil(
                       context,
@@ -60,8 +63,10 @@ class EndScreen extends StatelessWidget {
                   },
                 ),
 
-                ElevatedButton(
-                  child: Text("Resultaten"),
+                const SizedBox(height: 12),
+
+                MenuButton(
+                  text: "Resultaten",
                   onPressed: () {
                     Navigator.push(
                       context,
