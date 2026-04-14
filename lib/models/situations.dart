@@ -36,7 +36,7 @@ List<Situation> prehistoric_situations = [
   // ─── START ───
   Situation(
     id: 1,
-    description: "Je wordt wakker 300.000 jaar geleden in een kamp. Voedsel is schaars. Je maag knort.",
+    description: "Je wordt wakker 300.000 jaar geleden in een kamp. Het ziet er grimmig uit.",
     choices: [
       Choice(id: 1, description: "Verken het kamp", outcome: 2),
       Choice(id: 2, description: "Verlaat het kamp", outcome: 3),
@@ -66,7 +66,7 @@ List<Situation> prehistoric_situations = [
     id: 3,
     description: "Je loopt weg, maar ziet de stam overleggen.",
     choices: [
-      Choice(id: 1, description: "Loop naar je stam toe", outcome: 5),
+      Choice(id: 1, description: "Loop naar de stam toe", outcome: 5),
       Choice(id: 2, description: "Ga door", outcome: 5),
     ],
     explanationNeeded: false,
@@ -89,12 +89,13 @@ List<Situation> prehistoric_situations = [
     situationImagePath: "assets/images/bear_situation.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
+
   // ─── GESPREK KAMP (links) → STAMLID ───
   Situation(
     id: 98,
-    description: "Je vindt een speer. Je voelt je sterker. (Fighting +1)",
+    description: "Je vindt een speer. Je voelt je sterker.", //(Fighting +1)
     choices: [
-      Choice(id: 1, description: "Ga terug naar de stam (Social +1)", outcome: 8),
+      Choice(id: 1, description: "Ga terug naar de stam", outcome: 8), //(Social +1)
       Choice(id: 2, description: "Verlaat het kamp", outcome: 9),
     ],
     explanationNeeded: false,
@@ -102,6 +103,7 @@ List<Situation> prehistoric_situations = [
     situationImagePath: "assets/images/bear_situation.png",
     explanationImagePath: "",
   ),
+
   // ─── GESPREK KAMP (links) → STAMLID ───
   Situation(
     id: 5,
@@ -122,7 +124,7 @@ List<Situation> prehistoric_situations = [
     id: 7,
     description: "Hij knikt en wenkt je mee naar de groep.",
     choices: [
-      Choice(id: 1, description: "Ga mee (Social +1)", outcome: 8),
+      Choice(id: 1, description: "Ga mee", outcome: 8), //(Social +1)
       Choice(id: 2, description: "Verlaat het kamp", outcome: 9),
     ],
     explanationNeeded: false,
@@ -189,10 +191,10 @@ List<Situation> prehistoric_situations = [
   // ─── PERSOON NEGEERT JE (via tent) ───
   Situation(
     id: 12,
-    description: "Iemand ziet je… en negeert je.",
+    description: "Je ziet iemand in de verte. Hij negeert je",
     choices: [
       Choice(id: 1, description: "Ga naar hem toe", outcome: 18),
-      Choice(id: 2, description: "Loop door", outcome: 16),
+      Choice(id: 2, description: "Verstop je", outcome: 16),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -203,7 +205,7 @@ List<Situation> prehistoric_situations = [
   // ─── WAPEN IN GROT ───
   Situation(
     id: 13,
-    description: "Je vindt een wapen. (Fighting +1)",
+    description: "Je vindt een wapen.", //(Fighting +1)
     choices: [
       Choice(id: 1, description: "Ga terug", outcome: 14),
       Choice(id: 2, description: "Verken verder", outcome: 15),
@@ -435,20 +437,6 @@ List<Situation> prehistoric_situations = [
 
   // ─── GAME OVER ───
   Situation(
-    id: 93,
-    description: "Je verslaat de beer met je wapens.",
-    choices: [
-      Choice(id: 1, description: "Ga terug naar kamp", outcome: 100),
-    ],
-    explanationNeeded: false,
-    explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
-    explanationImagePath: "",
-  ),
-
-
-  // ─── GAME OVER ───
-  Situation(
     id: 89,
     description: "Je stam schiet je te hulp en vermoordt de wolf.",
     choices: [
@@ -490,6 +478,19 @@ List<Situation> prehistoric_situations = [
   Situation(
     id: 92,
     description: "Je stam schiet je te hulp en vermoordt de beer.",
+    choices: [
+      Choice(id: 1, description: "Ga terug naar kamp", outcome: 100),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  // ─── GAME OVER ───
+  Situation(
+    id: 93,
+    description: "Je verslaat de beer met je wapens.",
     choices: [
       Choice(id: 1, description: "Ga terug naar kamp", outcome: 100),
     ],
