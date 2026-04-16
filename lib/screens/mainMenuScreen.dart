@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'homeScreen.dart';
+import 'modeSelectScreen.dart';
 
-class IntroScreen extends StatelessWidget {
-  const IntroScreen({super.key});
+class MainMenuScreen extends StatelessWidget {
+  const MainMenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ class IntroScreen extends StatelessWidget {
                         () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => const HomeScreen()),
+                        MaterialPageRoute(builder: (context) => const ModeSelectScreen()),
                       );
                     }
                 ),

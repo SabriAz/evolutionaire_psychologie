@@ -1,9 +1,10 @@
 import 'package:firebase_demo_test/models/situation.dart';
-import 'package:firebase_demo_test/screens/explanationScreen.dart';
-import 'package:firebase_demo_test/screens/homeScreen.dart';
 import 'package:firebase_demo_test/widgets/choice_button.dart';
 import 'package:firebase_demo_test/widgets/timer.dart';
 import 'package:flutter/material.dart';
+import 'explanationScreen.dart';
+import 'endScreen.dart';
+import 'mainMenuScreen.dart';
 
 class SituationScreen extends StatefulWidget {
   final Situation situation;
@@ -20,6 +21,25 @@ class _SituationScreenState extends State<SituationScreen> {
   bool _choiceMade = false;
 
   void _navigateNext(Choice choice) {
+    if (choice.outcome == 99) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (_) => EndScreen(isWin: false),
+        ),
+      );
+      return;
+    }
+
+    if ([88,89,90,91,92,93].contains(choice.outcome)) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (_) => EndScreen(isWin: true),
+        ),
+      );
+      return;
+    }
     if (widget.situation.explanationNeeded) {
       Navigator.push(
         context,
@@ -94,7 +114,7 @@ class _SituationScreenState extends State<SituationScreen> {
                         onPressed: () {
                           Navigator.pushAndRemoveUntil(
                             context,
-                            MaterialPageRoute(builder: (_) => HomeScreen()),
+                            MaterialPageRoute(builder: (_) => MainMenuScreen()),
                                 (route) => false,
                           );
                         },
