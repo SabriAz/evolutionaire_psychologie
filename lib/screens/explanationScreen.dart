@@ -122,7 +122,8 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                             children: [
                               Image.asset(
                                 "assets/images/modern_guide.png",
-                                height: 200,
+                                height: 250,
+                                width: 250,
                                 fit: BoxFit.contain,
                               ),
                             ],
