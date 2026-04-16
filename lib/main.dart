@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      // HIER GEBRUIK JE DE NIEUWE NAAM:
       home: const IntroScreen(),
     );
   }
