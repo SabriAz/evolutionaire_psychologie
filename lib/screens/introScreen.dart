@@ -55,7 +55,7 @@ class IntroScreen extends StatelessWidget {
                     context,
                     "Start spel",
                         () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(builder: (context) => const HomeScreen()),
                       );
