@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'modeSelectScreen.dart';
+import '../widgets/menu_button.dart';
 
 class MainMenuScreen extends StatelessWidget {
   const MainMenuScreen({super.key});
@@ -19,7 +20,6 @@ class MainMenuScreen extends StatelessWidget {
               ),
             ),
           ),
-
 
           Container(
             color: Colors.black.withOpacity(0.3),
@@ -51,53 +51,36 @@ class MainMenuScreen extends StatelessWidget {
 
                 const SizedBox(height: 60),
 
-                _buildMenuButton(
-                    context,
-                    "Start spel",
-                        () {
+                SizedBox(
+                  width: 180,
+                  height: 45,
+                  child: MenuButton(
+                    text: "Start spel",
+                    onPressed: () {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(builder: (context) => const ModeSelectScreen()),
                       );
-                    }
+                    },
+                  ),
                 ),
 
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
 
-                _buildMenuButton(
-                    context,
-                    "Extra's",
-                        () {
+                SizedBox(
+                  width: 180,
+                  height: 45,
+                  child: MenuButton(
+                    text: "Extra's",
+                    onPressed: () {
                       print("Extra's geopend");
-                    }
+                    },
+                  ),
                 ),
               ],
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildMenuButton(BuildContext context, String label, VoidCallback onPressed) {
-    return SizedBox(
-      width: 280,
-      height: 65,
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFF5A5A5A),
-          foregroundColor: Colors.white,
-          elevation: 10,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
-            side: const BorderSide(color: Colors.white54, width: 1),
-          ),
-        ),
-        child: Text(
-          label,
-          style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-        ),
       ),
     );
   }
