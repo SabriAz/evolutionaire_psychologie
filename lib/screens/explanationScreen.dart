@@ -137,14 +137,15 @@ class _ExplanationScreenState extends State<ExplanationScreen>
           if (_characterVisible)
             Positioned(
               bottom: 24,
-              left: 24,
+              right: 30,
               child: FadeTransition(
                 opacity: _fadeAnimation,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black.withValues(alpha: 0.6),
+                    backgroundColor: Colors.black.withValues(alpha: 0.4),
                     foregroundColor: Colors.white,
                     side: const BorderSide(color: Colors.white, width: 1.5),
+                    padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 28),
                   ),
                   onPressed: () {
                     Navigator.pushReplacement(
@@ -163,11 +164,12 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                       ),
                     );
                   },
-                  child: const Text("Volgende"),
+                  child: const Text("Volgende",
+                    style: TextStyle(fontSize: 20),
+                  ),
                 ),
               ),
             ),
-
         ],
       ),
     );
