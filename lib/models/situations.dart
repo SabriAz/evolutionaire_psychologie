@@ -241,7 +241,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/storyImages/15.grot_eindigdt.png",
+    situationImagePath: "assets/images/storyImages/15.grot_eindigd.png",
     explanationImagePath: "",
   ),
 
@@ -340,7 +340,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Informatie was schaars, dus het brein bleef zoeken naar nieuwe info. Vandaag zorgt dat voor eindeloos scrollen en minder focus.",
-    situationImagePath: "assets/images/storyImages/22.muurtekening.png",
+    situationImagePath: "assets/images/storyImages/22.muurtekening_vaag.png",
     explanationImagePath: "assets/images/explanationImages/6.focus_split.png",
   ),
 
