@@ -43,7 +43,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "In de oertijd moest energie worden gespaard voor jagen of vluchten. Het brein stimuleert daarom rust. Vandaag zorgt dat ervoor dat je sneller kiest voor gemak en dingen uitstelt.",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/01.wakker_worden.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
 
@@ -57,7 +57,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/02.stam_praten.png",
     explanationImagePath: "",
   ),
 
@@ -71,7 +71,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/03.weglopen.png",
     explanationImagePath: "",
   ),
 
@@ -86,21 +86,21 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Je positie in de groep bepaalde je overleving, dus het brein vergelijkt je met anderen. Vandaag gebeurt dat via social media, wat kan zorgen voor onzekerheid en druk.",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/05.stamlid_spreekt.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
 
   // ─── GESPREK KAMP (links) → STAMLID ───
   Situation(
     id: 98,
-    description: "Je vindt een speer. Je voelt je sterker.", //(Fighting +1)
+    description: "Je vindt een speer. Je voelt je sterker.",
     choices: [
-      Choice(id: 1, description: "Ga terug naar de stam", outcome: 8), //(Social +1)
+      Choice(id: 1, description: "Ga terug naar de stam", outcome: 8),
       Choice(id: 2, description: "Verlaat het kamp", outcome: 9),
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/98.speer.png",
     explanationImagePath: "",
   ),
 
@@ -115,7 +115,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Je positie in de groep bepaalde je overleving, dus het brein vergelijkt je met anderen. Vandaag gebeurt dat via social media, wat kan zorgen voor onzekerheid en druk.",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/05.stamlid_spreekt.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
 
@@ -124,12 +124,12 @@ List<Situation> prehistoric_situations = [
     id: 7,
     description: "Hij knikt en wenkt je mee naar de groep.",
     choices: [
-      Choice(id: 1, description: "Ga mee", outcome: 8), //(Social +1)
+      Choice(id: 1, description: "Ga mee", outcome: 8),
       Choice(id: 2, description: "Verlaat het kamp", outcome: 9),
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/07.meegevraagd.png",
     explanationImagePath: "",
   ),
 
@@ -142,7 +142,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/08.bespreking.png",
     explanationImagePath: "",
   ),
 
@@ -156,7 +156,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/09.kruispunt.png",
     explanationImagePath: "",
   ),
 
@@ -170,7 +170,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Nieuwsgierigheid hielp om voedsel en veiligheid te vinden. Vandaag zorgt dat voor constante afleiding door nieuwe prikkels zoals je telefoon.",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/10.verlaten_tent.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
 
@@ -184,7 +184,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Nieuwsgierigheid hielp om voedsel en veiligheid te vinden. Vandaag zorgt dat voor constante afleiding door nieuwe prikkels zoals je telefoon.",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/11.grot.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
 
@@ -199,25 +199,25 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/12.persoon_negeert.png",
     explanationImagePath: "",
   ),
 
   // ─── WAPEN IN GROT ───
   Situation(
     id: 13,
-    description: "Je vindt een wapen.", //(Fighting +1)
+    description: "Je vindt een wapen.",
     choices: [
       Choice(id: 1, description: "Ga terug", outcome: 14),
       Choice(id: 2, description: "Verken verder", outcome: 15),
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/98.speer.png",
     explanationImagePath: "",
   ),
 
-  // ─── MAAG KNORT (loop door grot) ───
+  // ─── MAAG KNORT ───
   Situation(
     id: 14,
     description: "Je honger wordt sterker.",
@@ -227,7 +227,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/14_honger_groeit.png",
     explanationImagePath: "",
   ),
 
@@ -241,7 +241,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/15.grot_eindigdt.png",
     explanationImagePath: "",
   ),
 
@@ -255,7 +255,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/16.geen_voedsel.png",
     explanationImagePath: "",
   ),
 
@@ -269,7 +269,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/17.boom_met_fruit .png",
     explanationImagePath: "",
   ),
 
@@ -278,27 +278,27 @@ List<Situation> prehistoric_situations = [
     id: 18,
     description: "Hij blijft je negeren.",
     choices: [
-      Choice(id: 1, description: "Praat", outcome: 97), //if social 1
-      Choice(id: 2, description: "Praat", outcome: 96), //, if social is not 1
-      Choice(id: 3, description: "Val aan", outcome: 95), //, if fighting 1
-      Choice(id: 4, description: "Val aan", outcome: 96), //, if fighting is not 1
+      Choice(id: 1, description: "Praat", outcome: 97),
+      Choice(id: 2, description: "Praat", outcome: 96),
+      Choice(id: 3, description: "Val aan", outcome: 95),
+      Choice(id: 4, description: "Val aan", outcome: 96),
     ],
     explanationNeeded: true,
     explanation: "Alleen zijn was gevaarlijk, dus het brein let sterk op sociale signalen. Vandaag kan geen reactie krijgen voelen als afwijzing, ook al is dat niet echt zo.",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/18_blijft_negeren.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
 
   // ─── JE VERZAMELT ETEN ───
   Situation(
     id: 19,
-    description: "Je verzamelt het eten.", // (Food +1)
+    description: "Je verzamelt het eten.",
     choices: [
       Choice(id: 1, description: "Ga door", outcome: 20),
     ],
     explanationNeeded: true,
-    explanation: "Voedsel was schaars, dus je moest eten zodra je het vond.Vandaag is eten overal, maar je brein werkt nog hetzelfde, wat leidt tot overeten.",
-    situationImagePath: "assets/images/bear_situation.png",
+    explanation: "Voedsel was schaars, dus je moest eten zodra je het vond. Vandaag is eten overal, maar je brein werkt nog hetzelfde, wat leidt tot overeten.",
+    situationImagePath: "assets/images/scenarioImages/19.eten_verzamelen.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
 
@@ -311,8 +311,8 @@ List<Situation> prehistoric_situations = [
       Choice(id: 2, description: "Eet alles (Food +1)", outcome: 21),
     ],
     explanationNeeded: true,
-    explanation: "Het brein leerde vooruitdenken om risico’s te vermijden. Vandaag leidt dat tot piekeren over dingen zoals werk of geld.",
-    situationImagePath: "assets/images/bear_situation.png",
+    explanation: "Het brein leerde vooruitdenken om risico's te vermijden. Vandaag leidt dat tot piekeren over dingen zoals werk of geld.",
+    situationImagePath: "assets/images/scenarioImages/20.meer_eten.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
 
@@ -326,7 +326,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/21.kruispunt_2.png",
     explanationImagePath: "",
   ),
 
@@ -339,8 +339,8 @@ List<Situation> prehistoric_situations = [
       Choice(id: 2, description: "Ga door", outcome: 26),
     ],
     explanationNeeded: true,
-    explanation: "Informatie was schaars, dus het brein bleef zoeken naar nieuwe info. Vandaag zorgt dat voor eindeloos scrollen en minder focus. ",
-    situationImagePath: "assets/images/bear_situation.png",
+    explanation: "Informatie was schaars, dus het brein bleef zoeken naar nieuwe info. Vandaag zorgt dat voor eindeloos scrollen en minder focus.",
+    situationImagePath: "assets/images/scenarioImages/22.muurtekening.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
 
@@ -353,8 +353,8 @@ List<Situation> prehistoric_situations = [
       Choice(id: 2, description: "Ga door", outcome: 27),
     ],
     explanationNeeded: true,
-    explanation: "Informatie was schaars, dus het brein bleef zoeken naar nieuwe info.Vandaag zorgt dat voor eindeloos scrollen en minder focus. ",
-    situationImagePath: "assets/images/bear_situation.png",
+    explanation: "Informatie was schaars, dus het brein bleef zoeken naar nieuwe info. Vandaag zorgt dat voor eindeloos scrollen en minder focus.",
+    situationImagePath: "assets/images/scenarioImages/23.muurtekening_alternatief.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
 
@@ -368,7 +368,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/24.beef_tekening.png",
     explanationImagePath: "",
   ),
 
@@ -382,25 +382,25 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/25.wolf_tekening.png",
     explanationImagePath: "",
   ),
 
-//   ─── BEER ───
+  // ─── BEER ───
   Situation(
     id: 26,
     description: "Een enorme beer staat voor je.",
     choices: [
-      Choice(id: 1, description: "Val aan", outcome: 93), //, if fighting is 2
-      Choice(id: 2, description: "Val aan", outcome: 92), //, if social is 2
-      Choice(id: 3, description: "Val aan", outcome: 99), //, if fighting is not 2 and/ or social is not 2
-      Choice(id: 4, description: "Ren weg", outcome: 91), //, if food is 1
-      Choice(id: 5, description: "Ren weg", outcome: 99), //, if food is not 1
+      Choice(id: 1, description: "Val aan", outcome: 93),
+      Choice(id: 2, description: "Val aan", outcome: 92),
+      Choice(id: 3, description: "Val aan", outcome: 99),
+      Choice(id: 4, description: "Ren weg", outcome: 91),
+      Choice(id: 5, description: "Ren weg", outcome: 99),
       Choice(id: 6, description: "Twijfel", outcome: 99),
     ],
     explanationNeeded: true,
-    explanation: "Bij gevaar schakelde het lichaam direct over op actie (fight-or-flight). Vandaag gebeurt dat bij stress, wat kan leiden tot langdurige spanning. ",
-    situationImagePath: "assets/images/bear_situation.png",
+    explanation: "Bij gevaar schakelde het lichaam direct over op actie (fight-or-flight). Vandaag gebeurt dat bij stress, wat kan leiden tot langdurige spanning.",
+    situationImagePath: "assets/images/scenarioImages/26.beer_encounter.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
 
@@ -409,19 +409,18 @@ List<Situation> prehistoric_situations = [
     id: 27,
     description: "Je komt een wolf tegen.",
     choices: [
-      Choice(id: 1, description: "Val aan", outcome: 90), //, if fighting is 1
-      Choice(id: 2, description: "Val aan", outcome: 89), //, if social is 2
-      Choice(id: 3, description: "Val aan", outcome: 99), //, if fighting is not 1 and/ or social is not 2
-      Choice(id: 4, description: "Ren weg", outcome: 88), //, if food is 2
-      Choice(id: 5, description: "Ren weg", outcome: 99), //, if food is not 2
+      Choice(id: 1, description: "Val aan", outcome: 90),
+      Choice(id: 2, description: "Val aan", outcome: 89),
+      Choice(id: 3, description: "Val aan", outcome: 99),
+      Choice(id: 4, description: "Ren weg", outcome: 88),
+      Choice(id: 5, description: "Ren weg", outcome: 99),
       Choice(id: 6, description: "Twijfel", outcome: 99),
     ],
     explanationNeeded: true,
-    explanation: "Bij gevaar schakelde het lichaam direct over op actie en instinct (fight-or-flight). Vandaag gebeurt dat bij stress, wat kan leiden tot langdurige spanning. ",
-    situationImagePath: "assets/images/bear_situation.png",
+    explanation: "Bij gevaar schakelde het lichaam direct over op actie en instinct (fight-or-flight). Vandaag gebeurt dat bij stress, wat kan leiden tot langdurige spanning.",
+    situationImagePath: "assets/images/scenarioImages/27.wolf_encounter.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
-
 
   // ─── GAME OVER ───
   Situation(
@@ -432,7 +431,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/88.wegvluchten_wolf.png",
     explanationImagePath: "",
   ),
 
@@ -445,7 +444,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/89.stam_helpt.png",
     explanationImagePath: "",
   ),
 
@@ -458,7 +457,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/90.wolf_verslaan.png",
     explanationImagePath: "",
   ),
 
@@ -471,7 +470,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/91.wegvluchten_beer.png",
     explanationImagePath: "",
   ),
 
@@ -484,7 +483,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/92.stam_helpt_bij_beer.png",
     explanationImagePath: "",
   ),
 
@@ -497,11 +496,11 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/93.beer_verslaan.png",
     explanationImagePath: "",
   ),
 
-  // ─── JE VERZAMELT ETEN ───
+  // ─── STERVEN HONGER ───
   Situation(
     id: 94,
     description: "Het tekort aan voeding wordt je teveel..",
@@ -510,11 +509,11 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/94.sterven_honger.png",
     explanationImagePath: "",
   ),
 
-  // ─── JE VERZAMELT ETEN ───
+  // ─── VERSLAAT HEM ───
   Situation(
     id: 95,
     description: "Je verslaat hem, hij had eten bij zich.",
@@ -524,10 +523,11 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/9.gevecht_gewonnen.png",
     explanationImagePath: "",
   ),
 
+  // ─── VERLIEST GEVECHT ───
   Situation(
     id: 96,
     description: "Hij overmeestert je.",
@@ -536,11 +536,11 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/96.verliest_gevecht.png",
     explanationImagePath: "",
   ),
 
-  // ─── JE VERZAMELT ETEN ───
+  // ─── KRIJGT ETEN ───
   Situation(
     id: 97,
     description: "Hij praat terug en geeft je wat eten.",
@@ -550,7 +550,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/97.krijgt_eten.png",
     explanationImagePath: "",
   ),
 
@@ -563,7 +563,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/99.game_over.png",
     explanationImagePath: "",
   ),
 
@@ -576,11 +576,10 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/scenarioImages/100.einde.png",
     explanationImagePath: "",
   ),
 ];
-
 List<Situation> modern_situations = [
   Situation(
     id: 1,
