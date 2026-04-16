@@ -130,7 +130,7 @@ class _SituationScreenState extends State<SituationScreen> {
             top: 16,
             left: 16,
             child: CountdownTimer(
-              timer: 10,
+              timer: 12,
               stopped: _choiceMade,
               onFinished: () {
                 if (!_choiceMade) {

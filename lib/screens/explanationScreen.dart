@@ -42,6 +42,16 @@ class _ExplanationScreenState extends State<ExplanationScreen>
     _fadeAnimation = Tween<double>(begin: 0, end: 1).animate(
         CurvedAnimation(parent: _controller, curve: Curves.easeIn)
     );
+
+
+    Future.delayed(const Duration(seconds: 3), () {
+      if (mounted) {
+        _showCharacter();
+      }
+    });
+
+    Future.delayed(const Duration(milliseconds: 600), () {
+    });
   }
 
   void _showCharacter() {
@@ -68,30 +78,6 @@ class _ExplanationScreenState extends State<ExplanationScreen>
               height: double.infinity
           ),
 
-          if (!_characterVisible)
-            Positioned.fill(
-                child: GestureDetector(
-                    onTap: _showCharacter,
-                    child: const Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                              Icons.touch_app, color: Colors.white70, size: 48),
-                          SizedBox(height: 8),
-                          Text(
-                              "Tik om uitleg te zien",
-                              style: TextStyle(
-                                color: Colors.white70,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              )
-                          )
-                        ],
-                      ),
-                    )
-                )
-            ),
           if (_characterVisible)
             Container(
               color: Colors.black.withValues(alpha: 0.8),
@@ -110,7 +96,7 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Container(
-                            margin: const EdgeInsets.only(right: 80),
+                            margin: const EdgeInsets.only(left: 80),
                             padding: const EdgeInsets.all(16),
                             decoration: BoxDecoration(
                               color: Colors.white,
@@ -132,11 +118,12 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                             ),
                           ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Image.asset(
                                 "assets/images/modern_guide.png",
-                                height: 200,
+                                height: 250,
+                                width: 250,
                                 fit: BoxFit.contain,
                               ),
                             ],
@@ -151,14 +138,15 @@ class _ExplanationScreenState extends State<ExplanationScreen>
           if (_characterVisible)
             Positioned(
               bottom: 24,
-              left: 24,
+              right: 30,
               child: FadeTransition(
                 opacity: _fadeAnimation,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black.withValues(alpha: 0.6),
+                    backgroundColor: Colors.black.withValues(alpha: 0.4),
                     foregroundColor: Colors.white,
                     side: const BorderSide(color: Colors.white, width: 1.5),
+                    padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 28),
                   ),
                   onPressed: () {
                     Navigator.pushReplacement(
@@ -177,11 +165,12 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                       ),
                     );
                   },
-                  child: const Text("Volgende"),
+                  child: const Text("Volgende",
+                    style: TextStyle(fontSize: 20),
+                  ),
                 ),
               ),
             ),
-
         ],
       ),
     );
