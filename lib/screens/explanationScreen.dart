@@ -96,7 +96,7 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Container(
-                            margin: const EdgeInsets.only(right: 80),
+                            margin: const EdgeInsets.only(left: 80),
                             padding: const EdgeInsets.all(16),
                             decoration: BoxDecoration(
                               color: Colors.white,
@@ -118,7 +118,7 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                             ),
                           ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Image.asset(
                                 "assets/images/modern_guide.png",
