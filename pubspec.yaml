@@ -58,6 +58,8 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/
+    - assets/images/storyImages/
+    - assets/images/explanationImages/
     - assets/sound/
     - assets/videos/video_tijdlijn_oertijd.mp4
   # The following line ensures that the Material Icons font is
