@@ -43,8 +43,8 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "In de oertijd moest energie worden gespaard voor jagen of vluchten. Het brein stimuleert daarom rust. Vandaag zorgt dat ervoor dat je sneller kiest voor gemak en dingen uitstelt.",
-    situationImagePath: "assets/images/scenarioImages/01.wakker_worden.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages/01.wakker_worden.png",
+    explanationImagePath: "assets/images/explanationImages/1.Energie_besparen_split.png",
   ),
 
   // ─── VERKEN KAMP ───
@@ -57,7 +57,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/02.stam_praten.png",
+    situationImagePath: "assets/images/storyImages/02.stam_praten.png",
     explanationImagePath: "",
   ),
 
@@ -71,7 +71,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/03.weglopen.png",
+    situationImagePath: "assets/images/storyImages/03.weglopen.png",
     explanationImagePath: "",
   ),
 
@@ -86,8 +86,8 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Je positie in de groep bepaalde je overleving, dus het brein vergelijkt je met anderen. Vandaag gebeurt dat via social media, wat kan zorgen voor onzekerheid en druk.",
-    situationImagePath: "assets/images/scenarioImages/05.stamlid_spreekt.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages/05.stamlid_spreekt.png",
+    explanationImagePath: "assets/images/explanationImages/8.sociale_vergelijking_split.png",
   ),
 
   // ─── GESPREK KAMP (links) → STAMLID ───
@@ -100,7 +100,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/98.speer.png",
+    situationImagePath: "assets/images/storyImages/98.speer.png",
     explanationImagePath: "",
   ),
 
@@ -115,8 +115,8 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Je positie in de groep bepaalde je overleving, dus het brein vergelijkt je met anderen. Vandaag gebeurt dat via social media, wat kan zorgen voor onzekerheid en druk.",
-    situationImagePath: "assets/images/scenarioImages/05.stamlid_spreekt.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages/05.stamlid_spreekt.png",
+    explanationImagePath: "assets/images/explanationImages/8.sociale_vergelijking_split.png",
   ),
 
   // ─── STAMLID VRAAGT JE MEE ───
@@ -129,7 +129,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/07.meegevraagd.png",
+    situationImagePath: "assets/images/storyImages/07.meegevraagd.png",
     explanationImagePath: "",
   ),
 
@@ -142,7 +142,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/08.bespreking.png",
+    situationImagePath: "assets/images/storyImages/08.bespreking.png",
     explanationImagePath: "",
   ),
 
@@ -156,7 +156,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/09.kruispunt.png",
+    situationImagePath: "assets/images/storyImages/09.kruispunt.png",
     explanationImagePath: "",
   ),
 
@@ -170,8 +170,8 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Nieuwsgierigheid hielp om voedsel en veiligheid te vinden. Vandaag zorgt dat voor constante afleiding door nieuwe prikkels zoals je telefoon.",
-    situationImagePath: "assets/images/scenarioImages/10.verlaten_tent.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages/10.verlaten_tent.png",
+    explanationImagePath: "assets/images/explanationImages/2.ondekken_vs_scrollen_split.png",
   ),
 
   // ─── GROT ───
@@ -184,8 +184,8 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Nieuwsgierigheid hielp om voedsel en veiligheid te vinden. Vandaag zorgt dat voor constante afleiding door nieuwe prikkels zoals je telefoon.",
-    situationImagePath: "assets/images/scenarioImages/11.grot.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages/11.grot.png",
+    explanationImagePath: "assets/images/explanationImages/2.ondekken_vs_scrollen_split.png",
   ),
 
   // ─── PERSOON NEGEERT JE (via tent) ───
@@ -199,7 +199,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/12.persoon_negeert.png",
+    situationImagePath: "assets/images/storyImages/12.persoon_negeert.png",
     explanationImagePath: "",
   ),
 
@@ -213,7 +213,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/98.speer.png",
+    situationImagePath: "assets/images/storyImages/98.speer.png",
     explanationImagePath: "",
   ),
 
@@ -227,7 +227,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/14_honger_groeit.png",
+    situationImagePath: "assets/images/storyImages/14_honger_groeit.png",
     explanationImagePath: "",
   ),
 
@@ -241,7 +241,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/15.grot_eindigdt.png",
+    situationImagePath: "assets/images/storyImages/15.grot_eindigdt.png",
     explanationImagePath: "",
   ),
 
@@ -255,7 +255,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/16.geen_voedsel.png",
+    situationImagePath: "assets/images/storyImages/16.geen_voedsel.png",
     explanationImagePath: "",
   ),
 
@@ -269,7 +269,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/17.boom_met_fruit .png",
+    situationImagePath: "assets/images/storyImages/17.boom_met_fruit .png",
     explanationImagePath: "",
   ),
 
@@ -285,8 +285,8 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Alleen zijn was gevaarlijk, dus het brein let sterk op sociale signalen. Vandaag kan geen reactie krijgen voelen als afwijzing, ook al is dat niet echt zo.",
-    situationImagePath: "assets/images/scenarioImages/18_blijft_negeren.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages/18_blijft_negeren.png",
+    explanationImagePath: "assets/images/explanationImages/3.afwijzing_split.png",
   ),
 
   // ─── JE VERZAMELT ETEN ───
@@ -298,8 +298,8 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Voedsel was schaars, dus je moest eten zodra je het vond. Vandaag is eten overal, maar je brein werkt nog hetzelfde, wat leidt tot overeten.",
-    situationImagePath: "assets/images/scenarioImages/19.eten_verzamelen.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages/19.eten_verzamelen.png",
+    explanationImagePath: "assets/images/explanationImages/4.eten_split.png",
   ),
 
   // ─── MEER ETEN DAN VERWACHT ───
@@ -312,8 +312,8 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Het brein leerde vooruitdenken om risico's te vermijden. Vandaag leidt dat tot piekeren over dingen zoals werk of geld.",
-    situationImagePath: "assets/images/scenarioImages/20.meer_eten.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages/20.meer_eten.png",
+    explanationImagePath: "assets/images/explanationImages/5.problemen_split.png",
   ),
 
   // ─── KRUISPUNT 2 ───
@@ -326,7 +326,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/21.kruispunt_2.png",
+    situationImagePath: "assets/images/storyImages/21.kruispunt_2.png",
     explanationImagePath: "",
   ),
 
@@ -340,8 +340,8 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Informatie was schaars, dus het brein bleef zoeken naar nieuwe info. Vandaag zorgt dat voor eindeloos scrollen en minder focus.",
-    situationImagePath: "assets/images/scenarioImages/22.muurtekening.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages/22.muurtekening.png",
+    explanationImagePath: "assets/images/explanationImages/6.focus_split.png",
   ),
 
   // ─── MUURTEKENING RECHTS ───
@@ -354,8 +354,8 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Informatie was schaars, dus het brein bleef zoeken naar nieuwe info. Vandaag zorgt dat voor eindeloos scrollen en minder focus.",
-    situationImagePath: "assets/images/scenarioImages/23.muurtekening_alternatief.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages/23.muurtekening_alternatief.png",
+    explanationImagePath: "assets/images/explanationImages/6.focus_split.png",
   ),
 
   // ─── BEERGEVAAR ───
@@ -368,7 +368,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/24.beef_tekening.png",
+    situationImagePath: "assets/images/storyImages/24.beef_tekening.png",
     explanationImagePath: "",
   ),
 
@@ -382,7 +382,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/25.wolf_tekening.png",
+    situationImagePath: "assets/images/storyImages/25.wolf_tekening.png",
     explanationImagePath: "",
   ),
 
@@ -400,8 +400,8 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Bij gevaar schakelde het lichaam direct over op actie (fight-or-flight). Vandaag gebeurt dat bij stress, wat kan leiden tot langdurige spanning.",
-    situationImagePath: "assets/images/scenarioImages/26.beer_encounter.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages/26.beer_encounter.png",
+    explanationImagePath: "assets/images/explanationImages/7.dreiging_vs_stress_split.png",
   ),
 
   // ─── WOLF ───
@@ -418,8 +418,8 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: true,
     explanation: "Bij gevaar schakelde het lichaam direct over op actie en instinct (fight-or-flight). Vandaag gebeurt dat bij stress, wat kan leiden tot langdurige spanning.",
-    situationImagePath: "assets/images/scenarioImages/27.wolf_encounter.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages/27.wolf_encounter.png",
+    explanationImagePath: "assets/images/explanationImages/7.dreiging_vs_stress_split.png",
   ),
 
   // ─── GAME OVER ───
@@ -431,7 +431,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/88.wegvluchten_wolf.png",
+    situationImagePath: "assets/images/storyImages/88.wegvluchten_wolf.png",
     explanationImagePath: "",
   ),
 
@@ -444,7 +444,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/89.stam_helpt.png",
+    situationImagePath: "assets/images/storyImages/89.stam_helpt.png",
     explanationImagePath: "",
   ),
 
@@ -457,7 +457,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/90.wolf_verslaan.png",
+    situationImagePath: "assets/images/storyImages/90.wolf_verslaan.png",
     explanationImagePath: "",
   ),
 
@@ -470,7 +470,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/91.wegvluchten_beer.png",
+    situationImagePath: "assets/images/storyImages/91.wegvluchten_beer.png",
     explanationImagePath: "",
   ),
 
@@ -483,7 +483,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/92.stam_helpt_bij_beer.png",
+    situationImagePath: "assets/images/storyImages/92.stam_helpt_bij_beer.png",
     explanationImagePath: "",
   ),
 
@@ -496,7 +496,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/93.beer_verslaan.png",
+    situationImagePath: "assets/images/storyImages/93.beer_verslaan.png",
     explanationImagePath: "",
   ),
 
@@ -509,7 +509,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/94.sterven_honger.png",
+    situationImagePath: "assets/images/storyImages/94.sterven_honger.png",
     explanationImagePath: "",
   ),
 
@@ -523,7 +523,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/9.gevecht_gewonnen.png",
+    situationImagePath: "assets/images/storyImages/9.gevecht_gewonnen.png",
     explanationImagePath: "",
   ),
 
@@ -536,7 +536,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/96.verliest_gevecht.png",
+    situationImagePath: "assets/images/storyImages/96.verliest_gevecht.png",
     explanationImagePath: "",
   ),
 
@@ -550,7 +550,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/97.krijgt_eten.png",
+    situationImagePath: "assets/images/storyImages/97.krijgt_eten.png",
     explanationImagePath: "",
   ),
 
@@ -563,7 +563,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/99.game_over.png",
+    situationImagePath: "assets/images/storyImages/99.game_over.png",
     explanationImagePath: "",
   ),
 
@@ -576,7 +576,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/scenarioImages/100.einde.png",
+    situationImagePath: "assets/images/storyImages/100.einde.png",
     explanationImagePath: "",
   ),
 ];
