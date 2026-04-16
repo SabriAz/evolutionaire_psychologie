@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'situationScreen.dart';
 import 'IntroVideoScreen.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class ModeSelectScreen extends StatelessWidget {
+  const ModeSelectScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'homeScreen.dart';
+import 'mainMenuScreen.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key});
@@ -83,7 +83,7 @@ class ResultScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushAndRemoveUntil(
                         context,
-                        MaterialPageRoute(builder: (_) => HomeScreen()),
+                        MaterialPageRoute(builder: (_) => MainMenuScreen()),
                             (route) => false,
                       );
                     },

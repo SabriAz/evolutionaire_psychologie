@@ -1,11 +1,10 @@
 import 'package:firebase_demo_test/models/situation.dart';
-import 'package:firebase_demo_test/screens/explanationScreen.dart';
-import 'package:firebase_demo_test/screens/homeScreen.dart';
 import 'package:firebase_demo_test/widgets/choice_button.dart';
 import 'package:firebase_demo_test/widgets/timer.dart';
 import 'package:flutter/material.dart';
-
+import 'explanationScreen.dart';
 import 'endScreen.dart';
+import 'mainMenuScreen.dart';
 
 class SituationScreen extends StatefulWidget {
   final Situation situation;
@@ -115,7 +114,7 @@ class _SituationScreenState extends State<SituationScreen> {
                         onPressed: () {
                           Navigator.pushAndRemoveUntil(
                             context,
-                            MaterialPageRoute(builder: (_) => HomeScreen()),
+                            MaterialPageRoute(builder: (_) => MainMenuScreen()),
                                 (route) => false,
                           );
                         },

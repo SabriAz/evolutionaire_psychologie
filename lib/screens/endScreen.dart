@@ -1,6 +1,6 @@
+import 'package:firebase_demo_test/screens/mainMenuScreen.dart';
 import 'package:flutter/material.dart';
 import '../widgets/menu_button.dart';
-import 'homeScreen.dart';
 import 'resultScreen.dart';
 import 'IntroVideoScreen.dart';
 import '../models/situations.dart';
@@ -40,7 +40,7 @@ class EndScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (_) => HomeScreen()),
+                      MaterialPageRoute(builder: (_) => MainMenuScreen()),
                           (route) => false,
                     );
                   },
