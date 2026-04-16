@@ -42,6 +42,16 @@ class _ExplanationScreenState extends State<ExplanationScreen>
     _fadeAnimation = Tween<double>(begin: 0, end: 1).animate(
         CurvedAnimation(parent: _controller, curve: Curves.easeIn)
     );
+
+
+    Future.delayed(const Duration(seconds: 3), () {
+      if (mounted) {
+        _showCharacter();
+      }
+    });
+
+    Future.delayed(const Duration(milliseconds: 600), () {
+    });
   }
 
   void _showCharacter() {
@@ -68,30 +78,6 @@ class _ExplanationScreenState extends State<ExplanationScreen>
               height: double.infinity
           ),
 
-          if (!_characterVisible)
-            Positioned.fill(
-                child: GestureDetector(
-                    onTap: _showCharacter,
-                    child: const Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                              Icons.touch_app, color: Colors.white70, size: 48),
-                          SizedBox(height: 8),
-                          Text(
-                              "Tik om uitleg te zien",
-                              style: TextStyle(
-                                color: Colors.white70,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              )
-                          )
-                        ],
-                      ),
-                    )
-                )
-            ),
           if (_characterVisible)
             Container(
               color: Colors.black.withValues(alpha: 0.8),
