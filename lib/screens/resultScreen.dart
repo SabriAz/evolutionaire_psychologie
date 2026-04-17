@@ -11,8 +11,8 @@ class ResultScreen extends StatelessWidget {
       "url": "https://www.psychologytoday.com/us/basics/evolutionary-psychology"
     },
     {
-      "title": "Overlevingsinstincten en besluitvorming",
-      "url": "https://www.scientificamerican.com/article/evolutionary-psychology"
+      "title": "Waarom worden mensen verliefd",
+      "url": "https://npokennis.nl/longread/7538/waarom-worden-we-verliefd"
     },
     {
       "title": "Hoe oermensen samenwerkten",
