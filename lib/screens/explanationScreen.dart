@@ -1,6 +1,7 @@
 import 'package:firebase_demo_test/screens/situationScreen.dart';
 import 'package:flutter/material.dart';
 import '../models/situation.dart';
+import '../widgets/speechBubble.dart';
 
 class ExplanationScreen extends StatefulWidget {
   final int outcome;
@@ -23,7 +24,6 @@ class _ExplanationScreenState extends State<ExplanationScreen>
   late AnimationController _controller;
   late Animation<Offset> _slideAnimation;
   late Animation<double> _fadeAnimation;
-  late Animation<double> _gadoorFadeAnimation;
 
   bool _characterVisible = false;
   bool _canNavigate = false;
@@ -45,11 +45,6 @@ class _ExplanationScreenState extends State<ExplanationScreen>
       CurvedAnimation(parent: _controller, curve: Curves.easeIn),
     );
 
-    // Aparte fade voor "Ga door.." tekst
-    _gadoorFadeAnimation = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeIn),
-    );
-
     Future.delayed(const Duration(seconds: 3), () {
       if (mounted) _showCharacter();
     });
@@ -59,11 +54,8 @@ class _ExplanationScreenState extends State<ExplanationScreen>
     setState(() => _characterVisible = true);
     _controller.forward();
 
-    // Na 4 seconden mag de gebruiker doorgaan
     Future.delayed(const Duration(seconds: 4), () {
-      if (mounted) {
-        setState(() => _canNavigate = true);
-      }
+      if (mounted) setState(() => _canNavigate = true);
     });
   }
 
@@ -94,7 +86,7 @@ class _ExplanationScreenState extends State<ExplanationScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       body: GestureDetector(
-        onTap: _navigateNext, // tik overal om door te gaan
+        onTap: _navigateNext,
         child: Stack(
           children: [
             Image.asset(
@@ -120,26 +112,10 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Container(
-                              margin: const EdgeInsets.only(left: 80),
-                              padding: const EdgeInsets.all(16),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(16),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black26,
-                                    blurRadius: 8,
-                                    offset: Offset(2, 4),
-                                  ),
-                                ],
-                              ),
-                              child: Text(
-                                widget.situation.explanation,
-                                style: const TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.black87,
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 80),
+                              child: SpeechBubble(
+                                text: widget.situation.explanation,
                               ),
                             ),
                             Row(
@@ -161,7 +137,6 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                 ),
               ),
 
-            // "Ga door.." tekst rechtsonder, fade-in als _canNavigate true is
             if (_canNavigate)
               Positioned(
                 bottom: 32,
@@ -170,10 +145,7 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                   tween: Tween(begin: 0, end: 1),
                   duration: const Duration(milliseconds: 600),
                   builder: (context, value, child) {
-                    return Opacity(
-                      opacity: value,
-                      child: child,
-                    );
+                    return Opacity(opacity: value, child: child);
                   },
                   child: const Text(
                     "Ga door..",

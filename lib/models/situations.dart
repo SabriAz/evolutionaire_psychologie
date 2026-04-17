@@ -551,7 +551,7 @@ List<Situation> prehistoric_situations = [
     id: 99,
     description: "Je valt een stamgenoot aan. De stam verstoot je. Alleen overleven is onmogelijk. Game over.",
     choices: [
-      Choice(id: 1, description: "Eindscherm", outcome: 101),
+      Choice(id: 1, description: "Ga door", outcome: 101),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -564,7 +564,7 @@ List<Situation> prehistoric_situations = [
     id: 100,
     description: "Je hebt het overleefd. Goed gedaan.",
     choices: [
-      Choice(id: 1, description: "Eindscherm", outcome: 101),
+      Choice(id: 1, description: "Ga door", outcome: 101),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -591,7 +591,7 @@ List<Situation> prehistoric_situations = [
     id: 1001,
     description: "Je valt de beer aan, maar de beer is sterker. Je overleeft het niet. Game over",
     choices: [
-      Choice(id: 1, description: "Eindscherm", outcome: 101),
+      Choice(id: 1, description: "Ga door", outcome: 101),
     ],
     explanationNeeded: true,
     explanation: "",
@@ -604,7 +604,7 @@ List<Situation> prehistoric_situations = [
     id: 102,
     description: "Je rent, maar de beer is sneller. Hij haalt je in. Game over",
     choices: [
-      Choice(id: 1, description: "Eindscherm", outcome: 101),
+      Choice(id: 1, description: "Ga door", outcome: 101),
     ],
     explanationNeeded: false,
     explanation: "",
