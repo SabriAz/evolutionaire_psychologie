@@ -269,7 +269,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/storyImages/17.boom_met_fruit .png",
+    situationImagePath: "assets/images/storyImages/17.boom_met_fruit.png",
     explanationImagePath: "",
   ),
 
