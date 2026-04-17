@@ -214,9 +214,7 @@ class _IntroScreenState extends State<IntroScreen> with TickerProviderStateMixin
     final data = _brainSlides[_brainSlideIndex];
 
     return FadeTransition(
-      opacity: _slideFadeAnimation.drive(
-        Tween<double>(begin: 1.0, end: 0.0),
-      ),
+      opacity: _slideFadeAnimation,
       child: AnimatedBuilder(
         animation: _brainAlignAnimation,
         builder: (_, __) {
