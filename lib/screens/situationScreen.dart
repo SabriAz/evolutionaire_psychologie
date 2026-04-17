@@ -2,6 +2,7 @@ import 'package:firebase_demo_test/models/situation.dart';
 import 'package:firebase_demo_test/widgets/choice_button.dart';
 import 'package:firebase_demo_test/widgets/timer.dart';
 import 'package:flutter/material.dart';
+import '../models/gameState.dart';
 import 'explanationScreen.dart';
 import 'endScreen.dart';
 import 'mainMenuScreen.dart';
@@ -20,39 +21,47 @@ class _SituationScreenState extends State<SituationScreen> {
   int? selectedChoiceId;
   bool _choiceMade = false;
 
+  // Situaties waar het wapen wordt opgepakt zodra je ze verlaat
+  static const _weaponPickupIds = {13, 98};
+
+  // Situaties waar isAttack=true naar game-over zonder wapen leidt
+  static const _bearSituationId = 26;
+  static const _wolfSituationId = 27;
+
   void _navigateNext(Choice choice) {
-    if (choice.outcome == 101) {
+    // Wapen oppakken: als je deze situatie verlaat, heeft de speler een wapen
+    if (_weaponPickupIds.contains(widget.situation.id)) {
+      GameState().hasWeapon = true;
+    }
+
+    // Bepaal de werkelijke outcome
+    int outcome = _resolveOutcome(choice);
+
+    if (outcome == 100 || outcome == 101) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (_) => EndScreen(isWin: false),
+          builder: (_) => EndScreen(
+            isWin: outcome == 100,
+          ),
         ),
       );
       return;
     }
 
-    if ([88,89,90,91,92,93].contains(choice.outcome)) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (_) => EndScreen(isWin: true),
-        ),
-      );
-      return;
-    }
     if (widget.situation.explanationNeeded) {
       Navigator.push(
         context,
         PageRouteBuilder(
           pageBuilder: (_, __, ___) => ExplanationScreen(
-            choice: choice,
+            outcome: outcome, // 👈 direct meegeven
             situation: widget.situation,
             situations: widget.situations,
           ),
           transitionsBuilder: (_, animation, __, child) {
             return FadeTransition(opacity: animation, child: child);
           },
-          transitionDuration: Duration(milliseconds: 600),
+          transitionDuration: const Duration(milliseconds: 600),
         ),
       );
     } else {
@@ -60,18 +69,29 @@ class _SituationScreenState extends State<SituationScreen> {
         context,
         PageRouteBuilder(
           pageBuilder: (_, __, ___) => SituationScreen(
-            situation: widget.situations.firstWhere(
-                  (s) => s.id == choice.outcome,
-            ),
+            situation: widget.situations.firstWhere((s) => s.id == outcome),
             situations: widget.situations,
           ),
           transitionsBuilder: (_, animation, __, child) {
             return FadeTransition(opacity: animation, child: child);
           },
-          transitionDuration: Duration(milliseconds: 600),
+          transitionDuration: const Duration(milliseconds: 600),
         ),
       );
     }
+  }
+
+  /// Pas de outcome aan op basis van wapenstatus bij aanvalskeuzes
+  int _resolveOutcome(Choice choice) {
+    if (!choice.isAttack) return choice.outcome;
+    if (GameState().hasWeapon) return choice.outcome;
+
+    // Aanvallen zonder wapen → vaste game-over per tegenstander
+    if (widget.situation.id == _bearSituationId) return 1001;
+    if (widget.situation.id == _wolfSituationId) return 1004;
+
+    // Andere situaties met isAttack (stam): outcome blijft zoals gedefinieerd
+    return choice.outcome;
   }
 
   @override
@@ -92,26 +112,25 @@ class _SituationScreenState extends State<SituationScreen> {
             child: IconButton(
               style: IconButton.styleFrom(
                 backgroundColor: Colors.brown,
-                shape: CircleBorder(),
-                padding: EdgeInsets.all(10),
+                shape: const CircleBorder(),
+                padding: const EdgeInsets.all(10),
               ),
-              icon: Icon(Icons.home, color: Colors.white, size: 32),
+              icon: const Icon(Icons.home, color: Colors.white, size: 32),
               onPressed: () {
                 showDialog(
                   context: context,
                   builder: (context) => AlertDialog(
-                    title: Text("Terug naar hoofdscherm"),
-                    content: Text("Weet je zeker dat je terug wil naar het hoofdscherm"),
+                    title: const Text("Terug naar hoofdscherm"),
+                    content: const Text("Weet je zeker dat je terug wil naar het hoofdscherm"),
                     actions: [
                       TextButton(
-                        child: Text("Annuleren"),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
+                        child: const Text("Annuleren"),
+                        onPressed: () => Navigator.pop(context),
                       ),
                       TextButton(
-                        child: Text("Ja"),
+                        child: const Text("Ja"),
                         onPressed: () {
+                          GameState().reset(); // reset wapen bij thuisgaan
                           Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(builder: (_) => MainMenuScreen()),
@@ -162,14 +181,14 @@ class _SituationScreenState extends State<SituationScreen> {
                       Text(
                         widget.situation.description,
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 24, color: Colors.white),
+                        style: const TextStyle(fontSize: 24, color: Colors.white),
                       ),
                     ],
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(bottom: 20),
+                padding: const EdgeInsets.only(bottom: 20),
                 child: Wrap(
                   alignment: WrapAlignment.center,
                   spacing: 8,
@@ -184,7 +203,7 @@ class _SituationScreenState extends State<SituationScreen> {
                             selectedChoiceId = choice.id;
                             _choiceMade = true;
                           });
-                          Future.delayed(Duration(milliseconds: 600), () {
+                          Future.delayed(const Duration(milliseconds: 600), () {
                             _navigateNext(choice);
                           });
                         },

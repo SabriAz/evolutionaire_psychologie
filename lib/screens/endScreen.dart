@@ -32,6 +32,11 @@ class EndScreen extends StatelessWidget {
                   isWin ? "Je hebt het overleefd" : "Game Over",
                   style: const TextStyle(fontSize: 28, color: Colors.white),
                 ),
+                Image.asset(
+                  isWin
+                      ? "assets/images/win.png"
+                      : "assets/images/gameover.png",
+                ),
 
                 const SizedBox(height: 30),
 

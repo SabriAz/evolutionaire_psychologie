@@ -67,7 +67,7 @@ List<Situation> prehistoric_situations = [
     description: "Je loopt weg, maar ziet de stam overleggen.",
     choices: [
       Choice(id: 1, description: "Loop naar de stam toe", outcome: 5),
-      Choice(id: 2, description: "Ga door", outcome: 5),
+      Choice(id: 2, description: "Ga de andere kant op", outcome: 98),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -80,7 +80,7 @@ List<Situation> prehistoric_situations = [
     id: 4,
     description: "Terwijl je het kamp verkent spreekt een stamlid je aan.",
     choices: [
-      Choice(id: 1, description: "Val aan", outcome: 99),
+      Choice(id: 1, description: "Val aan", outcome: 99, isAttack: true),
       Choice(id: 2, description: "Negeer hem", outcome: 7),
       Choice(id: 3, description: "Praat met hem", outcome: 7),
     ],
@@ -109,7 +109,7 @@ List<Situation> prehistoric_situations = [
     id: 5,
     description: "Een stamlid spreekt je aan.",
     choices: [
-      Choice(id: 1, description: "Val aan", outcome: 99),
+      Choice(id: 1, description: "Val aan", outcome: 99, isAttack: true),
       Choice(id: 2, description: "Negeer hem", outcome: 9),
       Choice(id: 3, description: "Praat met hem", outcome: 7),
     ],
@@ -206,7 +206,7 @@ List<Situation> prehistoric_situations = [
   // ─── WAPEN IN GROT ───
   Situation(
     id: 13,
-    description: "Je vindt een wapen.",
+    description: "Je vindt een speer.",
     choices: [
       Choice(id: 1, description: "Ga terug", outcome: 14),
       Choice(id: 2, description: "Verken verder", outcome: 15),
@@ -227,7 +227,7 @@ List<Situation> prehistoric_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/storyImages/14_honger_groeit.png",
+    situationImagePath: "assets/images/storyImages/01.wakker_worden.png",
     explanationImagePath: "",
   ),
 
@@ -279,9 +279,7 @@ List<Situation> prehistoric_situations = [
     description: "Hij blijft je negeren.",
     choices: [
       Choice(id: 1, description: "Praat", outcome: 97),
-      Choice(id: 2, description: "Praat", outcome: 96),
-      Choice(id: 3, description: "Val aan", outcome: 95),
-      Choice(id: 4, description: "Val aan", outcome: 96),
+      Choice(id: 3, description: "Val aan", outcome: 95, isAttack: true),
     ],
     explanationNeeded: true,
     explanation: "Alleen zijn was gevaarlijk, dus het brein let sterk op sociale signalen. Vandaag kan geen reactie krijgen voelen als afwijzing, ook al is dat niet echt zo.",
@@ -296,10 +294,10 @@ List<Situation> prehistoric_situations = [
     choices: [
       Choice(id: 1, description: "Ga door", outcome: 20),
     ],
-    explanationNeeded: true,
-    explanation: "Voedsel was schaars, dus je moest eten zodra je het vond. Vandaag is eten overal, maar je brein werkt nog hetzelfde, wat leidt tot overeten.",
+    explanationNeeded: false,
+    explanation: "",
     situationImagePath: "assets/images/storyImages/19.eten_verzamelen.png",
-    explanationImagePath: "assets/images/explanationImages/4.eten_split.png",
+    explanationImagePath: "",
   ),
 
   // ─── MEER ETEN DAN VERWACHT ───
@@ -307,8 +305,8 @@ List<Situation> prehistoric_situations = [
     id: 20,
     description: "Er is meer voedsel dan verwacht.",
     choices: [
-      Choice(id: 1, description: "Bewaar (Social +1)", outcome: 21),
-      Choice(id: 2, description: "Eet alles (Food +1)", outcome: 21),
+      Choice(id: 1, description: "Bewaar", outcome: 21),
+      Choice(id: 2, description: "Eet alles", outcome: 21),
     ],
     explanationNeeded: true,
     explanation: "Het brein leerde vooruitdenken om risico's te vermijden. Vandaag leidt dat tot piekeren over dingen zoals werk of geld.",
@@ -391,10 +389,7 @@ List<Situation> prehistoric_situations = [
     id: 26,
     description: "Een enorme beer staat voor je.",
     choices: [
-      Choice(id: 1, description: "Val aan", outcome: 93),
-      Choice(id: 2, description: "Val aan", outcome: 1001),
-      Choice(id: 3, description: "Val aan", outcome: 1001),
-      Choice(id: 4, description: "Ren weg", outcome: 91),
+      Choice(id: 1, description: "Val aan", outcome: 93, isAttack: true),
       Choice(id: 5, description: "Ren weg", outcome: 102),
       Choice(id: 6, description: "Twijfel", outcome: 103),
     ],
@@ -409,11 +404,8 @@ List<Situation> prehistoric_situations = [
     id: 27,
     description: "Je komt een wolf tegen.",
     choices: [
-      Choice(id: 1, description: "Val aan", outcome: 90),
-      Choice(id: 2, description: "Val aan", outcome: 89),
-      Choice(id: 3, description: "Val aan", outcome: 99),
+      Choice(id: 1, description: "Val aan", outcome: 90, isAttack: true),
       Choice(id: 4, description: "Ren weg", outcome: 88),
-      Choice(id: 5, description: "Ren weg", outcome: 99),
       Choice(id: 6, description: "Twijfel", outcome: 105),
     ],
     explanationNeeded: true,
@@ -518,7 +510,7 @@ List<Situation> prehistoric_situations = [
     id: 95,
     description: "Je verslaat hem, hij had eten bij zich.",
     choices: [
-      Choice(id: 1, description: "Verzamel het eten", outcome: 19),
+      Choice(id: 1, description: "Verzamel het eten", outcome: 20),
       Choice(id: 2, description: "Laat het eten liggen", outcome: 106),
     ],
     explanationNeeded: false,
@@ -545,13 +537,13 @@ List<Situation> prehistoric_situations = [
     id: 97,
     description: "Hij praat terug en geeft je wat eten.",
     choices: [
-      Choice(id: 1, description: "Accepteer het eten", outcome: 19),
+      Choice(id: 1, description: "Accepteer het eten", outcome: 20),
       Choice(id: 2, description: "Ga door", outcome: 106),
     ],
-    explanationNeeded: false,
-    explanation: "",
+    explanationNeeded: true,
+    explanation: "Voedsel was schaars, dus je moest eten zodra je het vond. Vandaag is eten overal, maar je brein werkt nog hetzelfde, wat leidt tot overeten.",
     situationImagePath: "assets/images/storyImages/97.krijgt_eten.png",
-    explanationImagePath: "",
+    explanationImagePath: "assets/images/explanationImages/4.eten_split.png",
   ),
 
   // ─── GAME OVER ───
