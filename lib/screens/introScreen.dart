@@ -32,6 +32,10 @@ class _IntroScreenState extends State<IntroScreen> with TickerProviderStateMixin
   late AnimationController _slideFadeController;
   late Animation<double> _slideFadeAnimation;
 
+  //end text
+  late AnimationController _endTextController;
+  late Animation<double> _endTextFade;
+
   final List<_BrainSlideData> _brainSlides = [
     _BrainSlideData(
       imagePath: "assets/images/introScreenImages/brain_60.png",
@@ -58,7 +62,7 @@ class _IntroScreenState extends State<IntroScreen> with TickerProviderStateMixin
 
     _overlayController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1200),
+      duration: const Duration(milliseconds: 1800),
     );
     _overlayAnimation = Tween<double>(begin: 0.0, end: 0.6).animate(
       CurvedAnimation(parent: _overlayController, curve: Curves.easeIn),
@@ -74,7 +78,7 @@ class _IntroScreenState extends State<IntroScreen> with TickerProviderStateMixin
 
     _brainFadeController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 900),
+      duration: const Duration(milliseconds: 1400),
     );
     _brainFadeAnimation = Tween<double>(begin: 0, end: 1).animate(
       CurvedAnimation(parent: _brainFadeController, curve: Curves.easeIn),
@@ -85,7 +89,7 @@ class _IntroScreenState extends State<IntroScreen> with TickerProviderStateMixin
       duration: const Duration(milliseconds: 700),
     );
     _brainAlignAnimation = AlignmentTween(
-      begin: const Alignment(0, 0.36), // ~68% hoogte
+      begin: const Alignment(0, -0.8), //Height of head of boy in image
       end: Alignment.centerRight,
     ).animate(
       CurvedAnimation(parent: _brainMoveController, curve: Curves.easeOut),
@@ -103,12 +107,20 @@ class _IntroScreenState extends State<IntroScreen> with TickerProviderStateMixin
       CurvedAnimation(parent: _slideFadeController, curve: Curves.easeOut),
     );
 
-    // --- FLOW ---
-    Future.delayed(const Duration(milliseconds: 1000), () {
+    _endTextController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1200),
+    );
+
+    _endTextFade = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _endTextController, curve: Curves.easeIn),
+    );
+
+    Future.delayed(const Duration(milliseconds: 1200), () {
       _textFadeController.forward();
     });
 
-    Future.delayed(const Duration(milliseconds: 2500), () async {
+    Future.delayed(const Duration(milliseconds: 4000), () async {
       await _overlayController.forward();
       setState(() => _slide = 1);
       await _brainFadeController.forward();
@@ -144,6 +156,7 @@ class _IntroScreenState extends State<IntroScreen> with TickerProviderStateMixin
         await _slideFadeController.forward();
         setState(() => _slide = 3);
         _slideFadeController.reverse();
+        _endTextController.forward();
       }
       return;
     }
@@ -250,7 +263,7 @@ class _IntroScreenState extends State<IntroScreen> with TickerProviderStateMixin
     return FadeTransition(
       opacity: _brainFadeAnimation,
       child: Align(
-        alignment: const Alignment(0, 0.36),
+        alignment: const Alignment(0, -0.8), //Head height of boy in image
         child: Image.asset(
           "assets/images/introScreenImages/brain_base.png",
           width: 220,
@@ -327,12 +340,15 @@ class _IntroScreenState extends State<IntroScreen> with TickerProviderStateMixin
   }
 
   Widget _buildEndText() {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40),
-        child: _outlinedText(
-          "De meeste keuzes maak je al...\nvoordat je denkt.",
-          28,
+    return FadeTransition(
+      opacity: _endTextFade,
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 40),
+          child: _outlinedText(
+            "De meeste keuzes maak je al...\nvoordat je denkt.",
+            28,
+          ),
         ),
       ),
     );
