@@ -557,7 +557,7 @@ List<Situation> prehistoric_situations = [
   // ─── GAME OVER ───
   Situation(
     id: 99,
-    description: "Je overleeft het niet. Game over.",
+    description: "Je valt een stamgenoot aan. De stam verstoot je. Alleen overleven is onmogelijk. Game over.",
     choices: [
       Choice(id: 1, description: "Opnieuw proberen", outcome: 1),
     ],
