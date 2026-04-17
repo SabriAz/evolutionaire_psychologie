@@ -392,11 +392,11 @@ List<Situation> prehistoric_situations = [
     description: "Een enorme beer staat voor je.",
     choices: [
       Choice(id: 1, description: "Val aan", outcome: 93),
-      Choice(id: 2, description: "Val aan", outcome: 92),
-      Choice(id: 3, description: "Val aan", outcome: 99),
+      Choice(id: 2, description: "Val aan", outcome: 1001),
+      Choice(id: 3, description: "Val aan", outcome: 1001),
       Choice(id: 4, description: "Ren weg", outcome: 91),
-      Choice(id: 5, description: "Ren weg", outcome: 99),
-      Choice(id: 6, description: "Twijfel", outcome: 99),
+      Choice(id: 5, description: "Ren weg", outcome: 102),
+      Choice(id: 6, description: "Twijfel", outcome: 103),
     ],
     explanationNeeded: true,
     explanation: "Bij gevaar schakelde het lichaam direct over op actie (fight-or-flight). Vandaag gebeurt dat bij stress, wat kan leiden tot langdurige spanning.",
@@ -505,7 +505,7 @@ List<Situation> prehistoric_situations = [
     id: 94,
     description: "Het tekort aan voeding wordt je teveel..",
     choices: [
-      Choice(id: 1, description: "Ga door", outcome: 99),
+      Choice(id: 1, description: "Ga door", outcome: 106),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -532,7 +532,7 @@ List<Situation> prehistoric_situations = [
     id: 96,
     description: "Hij overmeestert je.",
     choices: [
-      Choice(id: 1, description: "Ga door", outcome: 99),
+      Choice(id: 1, description: "Ga door", outcome: 107),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -559,7 +559,7 @@ List<Situation> prehistoric_situations = [
     id: 99,
     description: "Je valt een stamgenoot aan. De stam verstoot je. Alleen overleven is onmogelijk. Game over.",
     choices: [
-      Choice(id: 1, description: "Opnieuw proberen", outcome: 1),
+      Choice(id: 1, description: "Eindscherm", outcome: 101),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -572,6 +572,20 @@ List<Situation> prehistoric_situations = [
     id: 100,
     description: "Je hebt het overleefd. Goed gedaan.",
     choices: [
+      Choice(id: 1, description: "Eindscherm", outcome: 101),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/storyImages/100.einde.png",
+    explanationImagePath: "",
+  ),
+
+
+  // ─── EINDSCHERM ───
+  Situation(
+    id: 101,
+    description: "Je hebt het overleefd. Goed gedaan.",
+    choices: [
       Choice(id: 1, description: "Opnieuw spelen", outcome: 1),
     ],
     explanationNeeded: false,
@@ -579,7 +593,101 @@ List<Situation> prehistoric_situations = [
     situationImagePath: "assets/images/storyImages/100.einde.png",
     explanationImagePath: "",
   ),
+
+  // ─── GAME OVER: BEER (te langzaam gevlucht) ───
+  Situation(
+    id: 1001,
+    description: "Je valt de beer aan, maar de beer is sterker. Je overleeft het niet.",
+    choices: [
+      Choice(id: 1, description: "Opnieuw proberen", outcome: 101),
+    ],
+    explanationNeeded: true,
+    explanation: "",
+    situationImagePath: "assets/images/storyImages/99.game_over.png",
+    explanationImagePath: "",
+  ),
+
+  // ─── GAME OVER: BEER (te langzaam gevlucht) ───
+  Situation(
+    id: 102,
+    description: "Je rent, maar de beer is sneller. Hij haalt je in.",
+    choices: [
+      Choice(id: 1, description: "Opnieuw proberen", outcome: 1),
+    ],
+    explanationNeeded: true,
+    explanation: "Aarzelen bij gevaar was fataal. Het fight-or-flight systeem moest razendsnel reageren. Vandaag activeert datzelfde systeem bij stress op het werk of sociale druk.",
+    situationImagePath: "assets/images/storyImages/99.game_over.png",
+    explanationImagePath: "",
+  ),
+
+  // ─── GAME OVER: BEER (twijfel) ───
+  Situation(
+    id: 103,
+    description: "Je twijfelt te lang. De beer grijpt zijn kans.",
+    choices: [
+      Choice(id: 1, description: "Opnieuw proberen", outcome: 1),
+    ],
+    explanationNeeded: true,
+    explanation: "Twijfel bij acuut gevaar kon je het leven kosten. Je brein leerde daarom snel en instinctief te handelen. Vandaag kan dat leiden tot overhaaste beslissingen bij stress.",
+    situationImagePath: "assets/images/storyImages/99.game_over.png",
+    explanationImagePath: "",
+  ),
+
+  // ─── GAME OVER: WOLF (te langzaam gevlucht) ───
+  Situation(
+    id: 104,
+    description: "Je rent, maar de wolf is sneller. Hij haalt je in.",
+    choices: [
+      Choice(id: 1, description: "Opnieuw proberen", outcome: 1),
+    ],
+    explanationNeeded: true,
+    explanation: "Aarzelen bij gevaar was fataal. Het fight-or-flight systeem moest razendsnel reageren. Vandaag activeert datzelfde systeem bij stress op het werk of sociale druk.",
+    situationImagePath: "assets/images/storyImages/99.game_over.png",
+    explanationImagePath: "",
+  ),
+
+  // ─── GAME OVER: WOLF (twijfel) ───
+  Situation(
+    id: 105,
+    description: "Je twijfelt te lang. De wolf grijpt zijn kans.",
+    choices: [
+      Choice(id: 1, description: "Opnieuw proberen", outcome: 1),
+    ],
+    explanationNeeded: true,
+    explanation: "Twijfel bij acuut gevaar kon je het leven kosten. Je brein leerde daarom snel en instinctief te handelen. Vandaag kan dat leiden tot overhaaste beslissingen bij stress.",
+    situationImagePath: "assets/images/storyImages/99.game_over.png",
+    explanationImagePath: "",
+  ),
+
+  // ─── GAME OVER: HONGER ───
+  Situation(
+    id: 106,
+    description: "Je hebt te lang zonder eten gelopen. Je lichaam geeft het op.",
+    choices: [
+      Choice(id: 1, description: "Opnieuw proberen", outcome: 1),
+    ],
+    explanationNeeded: true,
+    explanation: "Voedsel vinden was een dagelijkse strijd. Je brein ontwikkelde een sterke drang om te eten zodra er kans was. Vandaag zorgt dat instinct voor overeten en ongezonde keuzes.",
+    situationImagePath: "assets/images/storyImages/99.game_over.png",
+    explanationImagePath: "",
+  ),
+
+  // ─── GAME OVER: VERLIEST GEVECHT ───
+  Situation(
+    id: 107,
+    description: "Hij overmeestert je. Je overleeft het gevecht niet.",
+    choices: [
+      Choice(id: 1, description: "Opnieuw proberen", outcome: 1),
+    ],
+    explanationNeeded: true,
+    explanation: "Niet elk gevecht was te winnen. Samenwerking en sociale banden waren vaak veiliger dan geweld. Vandaag werkt ons brein nog steeds beter in groepsverband dan alleen.",
+    situationImagePath: "assets/images/storyImages/99.game_over.png",
+    explanationImagePath: "",
+  ),
+
 ];
+
+
 
 /// Jason-style flow based on the uploaded story map.
 ///

@@ -21,7 +21,7 @@ class _SituationScreenState extends State<SituationScreen> {
   bool _choiceMade = false;
 
   void _navigateNext(Choice choice) {
-    if (choice.outcome == 99) {
+    if (choice.outcome == 101) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
