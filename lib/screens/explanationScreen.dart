@@ -60,7 +60,7 @@ class _ExplanationScreenState extends State<ExplanationScreen>
     setState(() => _characterVisible = true);
     _controller.forward();
 
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 4), () {
       if (mounted) {
         setState(() => _showNextButton = true);
       }
