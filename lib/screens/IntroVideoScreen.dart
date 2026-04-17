@@ -1,7 +1,7 @@
 import 'package:firebase_demo_test/screens/situationScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import '../widgets/menu_button.dart';
+import '../widgets/menuButton.dart';
 import 'tutorialScreen.dart';
 import '../models/situation.dart';
 

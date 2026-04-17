@@ -1,6 +1,6 @@
 import 'package:firebase_demo_test/screens/mainMenuScreen.dart';
 import 'package:flutter/material.dart';
-import '../widgets/menu_button.dart';
+import '../widgets/menuButton.dart';
 import 'resultScreen.dart';
 import 'IntroVideoScreen.dart';
 import '../models/situations.dart';
