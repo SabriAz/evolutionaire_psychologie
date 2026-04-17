@@ -597,9 +597,9 @@ List<Situation> prehistoric_situations = [
   // ─── GAME OVER: BEER (te langzaam gevlucht) ───
   Situation(
     id: 1001,
-    description: "Je valt de beer aan, maar de beer is sterker. Je overleeft het niet.",
+    description: "Je valt de beer aan, maar de beer is sterker. Je overleeft het niet. Game over",
     choices: [
-      Choice(id: 1, description: "Opnieuw proberen", outcome: 101),
+      Choice(id: 1, description: "Eindscherm", outcome: 101),
     ],
     explanationNeeded: true,
     explanation: "",
@@ -610,12 +610,12 @@ List<Situation> prehistoric_situations = [
   // ─── GAME OVER: BEER (te langzaam gevlucht) ───
   Situation(
     id: 102,
-    description: "Je rent, maar de beer is sneller. Hij haalt je in.",
+    description: "Je rent, maar de beer is sneller. Hij haalt je in. Game over",
     choices: [
-      Choice(id: 1, description: "Opnieuw proberen", outcome: 1),
+      Choice(id: 1, description: "Eindscherm", outcome: 101),
     ],
-    explanationNeeded: true,
-    explanation: "Aarzelen bij gevaar was fataal. Het fight-or-flight systeem moest razendsnel reageren. Vandaag activeert datzelfde systeem bij stress op het werk of sociale druk.",
+    explanationNeeded: false,
+    explanation: "",
     situationImagePath: "assets/images/storyImages/99.game_over.png",
     explanationImagePath: "",
   ),
