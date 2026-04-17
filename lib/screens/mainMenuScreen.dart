@@ -1,3 +1,4 @@
+import 'package:firebase_demo_test/screens/introScreen.dart';
 import 'package:flutter/material.dart';
 import 'modeSelectScreen.dart';
 import '../widgets/menu_button.dart';
@@ -59,7 +60,7 @@ class MainMenuScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => const ModeSelectScreen()),
+                        MaterialPageRoute(builder: (context) => const IntroScreen()),
                       );
                     },
                   ),
