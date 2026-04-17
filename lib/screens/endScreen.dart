@@ -1,3 +1,4 @@
+import 'package:firebase_demo_test/models/gameState.dart';
 import 'package:firebase_demo_test/screens/mainMenuScreen.dart';
 import 'package:flutter/material.dart';
 import '../widgets/menu_button.dart';
@@ -43,6 +44,7 @@ class EndScreen extends StatelessWidget {
                 MenuButton(
                   text: "Home",
                   onPressed: () {
+                    GameState().reset();
                     Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(builder: (_) => MainMenuScreen()),
@@ -56,6 +58,7 @@ class EndScreen extends StatelessWidget {
                 MenuButton(
                   text: "Opnieuw spelen",
                   onPressed: () {
+                    GameState().reset();
                     Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
@@ -73,6 +76,7 @@ class EndScreen extends StatelessWidget {
                 MenuButton(
                   text: "Resultaten",
                   onPressed: () {
+                    GameState().reset();
                     Navigator.push(
                       context,
                       MaterialPageRoute(

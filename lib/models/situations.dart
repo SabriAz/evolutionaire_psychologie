@@ -617,7 +617,7 @@ List<Situation> prehistoric_situations = [
     id: 103,
     description: "Je twijfelt te lang. De beer grijpt zijn kans.",
     choices: [
-      Choice(id: 1, description: "Opnieuw proberen", outcome: 101),
+      Choice(id: 1, description: "Ga door", outcome: 101),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -630,7 +630,7 @@ List<Situation> prehistoric_situations = [
     id: 1004,
     description: "Je rent, maar de wolf is sneller. Hij haalt je in.",
     choices: [
-      Choice(id: 1, description: "Opnieuw proberen", outcome: 101),
+      Choice(id: 1, description: "Ga door", outcome: 101),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -643,7 +643,7 @@ List<Situation> prehistoric_situations = [
     id: 104,
     description: "Je rent, maar de wolf is sneller. Hij haalt je in.",
     choices: [
-      Choice(id: 1, description: "Opnieuw proberen", outcome: 101),
+      Choice(id: 1, description: "Ga door", outcome: 101),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -656,7 +656,7 @@ List<Situation> prehistoric_situations = [
     id: 105,
     description: "Je twijfelt te lang. De wolf grijpt zijn kans.",
     choices: [
-      Choice(id: 1, description: "Opnieuw proberen", outcome: 101),
+      Choice(id: 1, description: "Ga door", outcome: 101),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -669,7 +669,7 @@ List<Situation> prehistoric_situations = [
     id: 106,
     description: "Je hebt te lang zonder eten gelopen. Je lichaam geeft het op.",
     choices: [
-      Choice(id: 1, description: "Opnieuw proberen", outcome: 101),
+      Choice(id: 1, description: "Ga door", outcome: 101),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -682,7 +682,7 @@ List<Situation> prehistoric_situations = [
     id: 107,
     description: "Hij overmeestert je. Je overleeft het gevecht niet.",
     choices: [
-      Choice(id: 1, description: "Opnieuw proberen", outcome: 101),
+      Choice(id: 1, description: "Ga door", outcome: 101),
     ],
     explanationNeeded: true,
     explanation: "Niet elk gevecht was te winnen. Samenwerking en sociale banden waren vaak veiliger dan geweld. Vandaag werkt ons brein nog steeds beter in groepsverband dan alleen.",
