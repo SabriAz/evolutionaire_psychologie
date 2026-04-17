@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import '../models/situation.dart';
 
 class ExplanationScreen extends StatefulWidget {
-  final Choice choice;
+  final int outcome;
   final Situation situation;
   final List<Situation> situations;
 
   const ExplanationScreen({
     super.key,
-    required this.choice,
+    required this.outcome,
     required this.situation,
     required this.situations
   });
@@ -162,7 +162,7 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                       PageRouteBuilder(
                         pageBuilder: (_, __, ___) => SituationScreen(
                           situation: widget.situations.firstWhere(
-                                (s) => s.id == widget.choice.outcome,
+                                (s) => s.id == widget.outcome,
                           ),
                           situations: widget.situations,
                         ),
