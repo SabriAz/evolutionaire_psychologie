@@ -21,29 +21,22 @@ class _SituationScreenState extends State<SituationScreen> {
   int? selectedChoiceId;
   bool _choiceMade = false;
 
-  // Situaties waar het wapen wordt opgepakt zodra je ze verlaat
   static const _weaponPickupIds = {13, 98};
-
-  // Situaties waar isAttack=true naar game-over zonder wapen leidt
   static const _bearSituationId = 26;
   static const _wolfSituationId = 27;
 
   void _navigateNext(Choice choice) {
-    // Wapen oppakken: als je deze situatie verlaat, heeft de speler een wapen
     if (_weaponPickupIds.contains(widget.situation.id)) {
       GameState().hasWeapon = true;
     }
 
-    // Bepaal de werkelijke outcome
     int outcome = _resolveOutcome(choice);
 
     if (outcome == 100 || outcome == 101) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (_) => EndScreen(
-            isWin: outcome == 100,
-          ),
+          builder: (_) => EndScreen(isWin: outcome == 100),
         ),
       );
       return;
@@ -54,7 +47,7 @@ class _SituationScreenState extends State<SituationScreen> {
         context,
         PageRouteBuilder(
           pageBuilder: (_, __, ___) => ExplanationScreen(
-            outcome: outcome, // 👈 direct meegeven
+            outcome: outcome,
             situation: widget.situation,
             situations: widget.situations,
           ),
@@ -81,16 +74,13 @@ class _SituationScreenState extends State<SituationScreen> {
     }
   }
 
-  /// Pas de outcome aan op basis van wapenstatus bij aanvalskeuzes
   int _resolveOutcome(Choice choice) {
     if (!choice.isAttack) return choice.outcome;
     if (GameState().hasWeapon) return choice.outcome;
 
-    // Aanvallen zonder wapen → vaste game-over per tegenstander
     if (widget.situation.id == _bearSituationId) return 1001;
     if (widget.situation.id == _wolfSituationId) return 1004;
 
-    // Andere situaties met isAttack (stam): outcome blijft zoals gedefinieerd
     return choice.outcome;
   }
 
@@ -119,26 +109,106 @@ class _SituationScreenState extends State<SituationScreen> {
               onPressed: () {
                 showDialog(
                   context: context,
-                  builder: (context) => AlertDialog(
-                    title: const Text("Terug naar hoofdscherm"),
-                    content: const Text("Weet je zeker dat je terug wil naar het hoofdscherm"),
-                    actions: [
-                      TextButton(
-                        child: const Text("Annuleren"),
-                        onPressed: () => Navigator.pop(context),
+                  builder: (context) => Dialog(
+                    backgroundColor: Colors.transparent,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF5C3A1E),
+                        borderRadius: BorderRadius.circular(4),
+                        border: Border.all(color: Colors.white, width: 3),
+                        boxShadow: [
+                          BoxShadow(color: Colors.black, blurRadius: 10, offset: Offset(4, 4)),
+                        ],
                       ),
-                      TextButton(
-                        child: const Text("Ja"),
-                        onPressed: () {
-                          GameState().reset(); // reset wapen bij thuisgaan
-                          Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(builder: (_) => MainMenuScreen()),
-                                (route) => false,
-                          );
-                        },
+                      padding: const EdgeInsets.all(24),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            "Terug naar kamp?",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: const Color(0xFFE8C97A),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.5,
+                              shadows: [
+                                Shadow(color: Colors.black, blurRadius: 4, offset: Offset(2, 2)),
+                              ],
+                            ),
+                          ),
+
+                          const SizedBox(height: 12),
+
+                          Container(height: 2, color: const Color(0xFF99783C)),
+
+                          const SizedBox(height: 16),
+
+                          Text(
+                            "Weet je zeker dat je wil stoppen met overleven?",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontSize: 15,
+                              height: 1.4,
+                            ),
+                          ),
+
+                          const SizedBox(height: 24),
+
+                          Row(
+                            children: [
+                              Expanded(
+                                child: OutlinedButton(
+                                  style: OutlinedButton.styleFrom(
+                                    side: BorderSide(color: const Color(0xFF99783C), width: 2),
+                                    padding: const EdgeInsets.symmetric(vertical: 12),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                  ),
+                                  onPressed: () => Navigator.pop(context),
+                                  child: Text(
+                                    "Blijf hier",
+                                    style: TextStyle(color: const Color(0xFFE8C97A), fontSize: 15),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 12),
+                              Expanded(
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: const Color(0xFF99783C),
+                                    padding: const EdgeInsets.symmetric(vertical: 12),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    shadowColor: Colors.black,
+                                    elevation: 4,
+                                  ),
+                                  onPressed: () {
+                                    GameState().reset();
+                                    Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(builder: (_) => MainMenuScreen()),
+                                          (route) => false,
+                                    );
+                                  },
+                                  child: Text(
+                                    "Verlaat",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 );
               },
