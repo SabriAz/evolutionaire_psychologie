@@ -1,3 +1,4 @@
+import 'package:firebase_demo_test/models/gameState.dart';
 import 'package:firebase_demo_test/screens/mainMenuScreen.dart';
 import 'package:flutter/material.dart';
 import '../widgets/menuButton.dart';
@@ -32,12 +33,18 @@ class EndScreen extends StatelessWidget {
                   isWin ? "Je hebt het overleefd" : "Game Over",
                   style: const TextStyle(fontSize: 28, color: Colors.white),
                 ),
+                Image.asset(
+                  isWin
+                      ? "assets/images/win.png"
+                      : "assets/images/gameover.png",
+                ),
 
                 const SizedBox(height: 30),
 
                 MenuButton(
                   text: "Home",
                   onPressed: () {
+                    GameState().reset();
                     Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(builder: (_) => MainMenuScreen()),
@@ -51,6 +58,7 @@ class EndScreen extends StatelessWidget {
                 MenuButton(
                   text: "Opnieuw spelen",
                   onPressed: () {
+                    GameState().reset();
                     Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
@@ -68,6 +76,7 @@ class EndScreen extends StatelessWidget {
                 MenuButton(
                   text: "Resultaten",
                   onPressed: () {
+                    GameState().reset();
                     Navigator.push(
                       context,
                       MaterialPageRoute(

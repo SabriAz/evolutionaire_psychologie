@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import '../models/situation.dart';
 
 class ExplanationScreen extends StatefulWidget {
-  final Choice choice;
+  final int outcome;
   final Situation situation;
   final List<Situation> situations;
 
   const ExplanationScreen({
     super.key,
-    required this.choice,
+    required this.outcome,
     required this.situation,
     required this.situations
   });
@@ -25,6 +25,8 @@ class _ExplanationScreenState extends State<ExplanationScreen>
   late Animation<double> _fadeAnimation;
 
   bool _characterVisible = false;
+
+  bool _showNextButton = false;
 
   @override
   void initState() {
@@ -57,6 +59,12 @@ class _ExplanationScreenState extends State<ExplanationScreen>
   void _showCharacter() {
     setState(() => _characterVisible = true);
     _controller.forward();
+
+    Future.delayed(const Duration(seconds: 4), () {
+      if (mounted) {
+        setState(() => _showNextButton = true);
+      }
+    });
   }
 
   @override
@@ -80,7 +88,7 @@ class _ExplanationScreenState extends State<ExplanationScreen>
 
           if (_characterVisible)
             Container(
-              color: Colors.black.withValues(alpha: 0.8),
+              color: Colors.black.withValues(alpha: 0.4),
               child: Positioned(
                 bottom: 0,
                 right: 0,
@@ -135,7 +143,7 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                 ),
               ),
             ),
-          if (_characterVisible)
+          if (_showNextButton)
             Positioned(
               bottom: 24,
               right: 30,
@@ -154,7 +162,7 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                       PageRouteBuilder(
                         pageBuilder: (_, __, ___) => SituationScreen(
                           situation: widget.situations.firstWhere(
-                                (s) => s.id == widget.choice.outcome,
+                                (s) => s.id == widget.outcome,
                           ),
                           situations: widget.situations,
                         ),
