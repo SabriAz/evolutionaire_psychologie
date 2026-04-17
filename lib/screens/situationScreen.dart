@@ -115,7 +115,7 @@ class _SituationScreenState extends State<SituationScreen> {
                       decoration: BoxDecoration(
                         color: const Color(0xFF5C3A1E),
                         borderRadius: BorderRadius.circular(4),
-                        border: Border.all(color: Colors.white, width: 3),
+                        border: Border.all(color: const Color(0xFF99783C), width: 3),
                         boxShadow: [
                           BoxShadow(color: Colors.black, blurRadius: 10, offset: Offset(4, 4)),
                         ],
@@ -125,7 +125,7 @@ class _SituationScreenState extends State<SituationScreen> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            "Terug naar kamp?",
+                            "Terug naar hoofdmenu?",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: const Color(0xFFE8C97A),
