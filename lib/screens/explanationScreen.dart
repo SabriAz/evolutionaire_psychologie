@@ -26,6 +26,8 @@ class _ExplanationScreenState extends State<ExplanationScreen>
 
   bool _characterVisible = false;
 
+  bool _showNextButton = false;
+
   @override
   void initState() {
     super.initState();
@@ -57,6 +59,12 @@ class _ExplanationScreenState extends State<ExplanationScreen>
   void _showCharacter() {
     setState(() => _characterVisible = true);
     _controller.forward();
+
+    Future.delayed(const Duration(seconds: 3), () {
+      if (mounted) {
+        setState(() => _showNextButton = true);
+      }
+    });
   }
 
   @override
@@ -80,7 +88,7 @@ class _ExplanationScreenState extends State<ExplanationScreen>
 
           if (_characterVisible)
             Container(
-              color: Colors.black.withValues(alpha: 0.8),
+              color: Colors.black.withValues(alpha: 0.4),
               child: Positioned(
                 bottom: 0,
                 right: 0,
@@ -135,7 +143,7 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                 ),
               ),
             ),
-          if (_characterVisible)
+          if (_showNextButton)
             Positioned(
               bottom: 24,
               right: 30,
