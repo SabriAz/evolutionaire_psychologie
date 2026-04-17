@@ -81,7 +81,7 @@ List<Situation> prehistoric_situations = [
     description: "Terwijl je het kamp verkent spreekt een stamlid je aan.",
     choices: [
       Choice(id: 1, description: "Val aan", outcome: 99),
-      Choice(id: 2, description: "Negeer hem", outcome: 98),
+      Choice(id: 2, description: "Negeer hem", outcome: 7),
       Choice(id: 3, description: "Praat met hem", outcome: 7),
     ],
     explanationNeeded: true,
