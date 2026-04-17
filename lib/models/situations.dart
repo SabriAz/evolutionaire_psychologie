@@ -265,7 +265,7 @@ List<Situation> prehistoric_situations = [
     description: "Je komt een boom met fruit tegen.",
     choices: [
       Choice(id: 1, description: "Verzamel het fruit", outcome: 19),
-      Choice(id: 2, description: "Ga door", outcome: 94),
+      Choice(id: 2, description: "Loop door", outcome: 106),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -501,17 +501,17 @@ List<Situation> prehistoric_situations = [
   ),
 
   // ─── STERVEN HONGER ───
-  Situation(
-    id: 94,
-    description: "Het tekort aan voeding wordt je teveel..",
-    choices: [
-      Choice(id: 1, description: "Ga door", outcome: 106),
-    ],
-    explanationNeeded: false,
-    explanation: "",
-    situationImagePath: "assets/images/storyImages/94.sterven_honger.png",
-    explanationImagePath: "",
-  ),
+  // Situation(
+  //   id: 94,
+  //   description: "Het tekort aan voeding wordt je teveel..",
+  //   choices: [
+  //     Choice(id: 1, description: "Ga door", outcome: 106),
+  //   ],
+  //   explanationNeeded: false,
+  //   explanation: "",
+  //   situationImagePath: "assets/images/storyImages/94.sterven_honger.png",
+  //   explanationImagePath: "",
+  // ),
 
   // ─── VERSLAAT HEM ───
   Situation(
@@ -519,7 +519,7 @@ List<Situation> prehistoric_situations = [
     description: "Je verslaat hem, hij had eten bij zich.",
     choices: [
       Choice(id: 1, description: "Verzamel het eten", outcome: 19),
-      Choice(id: 2, description: "Ga door", outcome: 94),
+      Choice(id: 2, description: "Laat het eten liggen", outcome: 106),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -625,10 +625,23 @@ List<Situation> prehistoric_situations = [
     id: 103,
     description: "Je twijfelt te lang. De beer grijpt zijn kans.",
     choices: [
-      Choice(id: 1, description: "Opnieuw proberen", outcome: 1),
+      Choice(id: 1, description: "Opnieuw proberen", outcome: 101),
     ],
-    explanationNeeded: true,
-    explanation: "Twijfel bij acuut gevaar kon je het leven kosten. Je brein leerde daarom snel en instinctief te handelen. Vandaag kan dat leiden tot overhaaste beslissingen bij stress.",
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/storyImages/99.game_over.png",
+    explanationImagePath: "",
+  ),
+
+  // ─── GAME OVER: WOLF aanvallen zonder wapen ───
+  Situation(
+    id: 1004,
+    description: "Je rent, maar de wolf is sneller. Hij haalt je in.",
+    choices: [
+      Choice(id: 1, description: "Opnieuw proberen", outcome: 101),
+    ],
+    explanationNeeded: false,
+    explanation: "",
     situationImagePath: "assets/images/storyImages/99.game_over.png",
     explanationImagePath: "",
   ),
@@ -638,10 +651,10 @@ List<Situation> prehistoric_situations = [
     id: 104,
     description: "Je rent, maar de wolf is sneller. Hij haalt je in.",
     choices: [
-      Choice(id: 1, description: "Opnieuw proberen", outcome: 1),
+      Choice(id: 1, description: "Opnieuw proberen", outcome: 101),
     ],
-    explanationNeeded: true,
-    explanation: "Aarzelen bij gevaar was fataal. Het fight-or-flight systeem moest razendsnel reageren. Vandaag activeert datzelfde systeem bij stress op het werk of sociale druk.",
+    explanationNeeded: false,
+    explanation: "",
     situationImagePath: "assets/images/storyImages/99.game_over.png",
     explanationImagePath: "",
   ),
@@ -651,10 +664,10 @@ List<Situation> prehistoric_situations = [
     id: 105,
     description: "Je twijfelt te lang. De wolf grijpt zijn kans.",
     choices: [
-      Choice(id: 1, description: "Opnieuw proberen", outcome: 1),
+      Choice(id: 1, description: "Opnieuw proberen", outcome: 101),
     ],
-    explanationNeeded: true,
-    explanation: "Twijfel bij acuut gevaar kon je het leven kosten. Je brein leerde daarom snel en instinctief te handelen. Vandaag kan dat leiden tot overhaaste beslissingen bij stress.",
+    explanationNeeded: false,
+    explanation: "",
     situationImagePath: "assets/images/storyImages/99.game_over.png",
     explanationImagePath: "",
   ),
@@ -664,10 +677,10 @@ List<Situation> prehistoric_situations = [
     id: 106,
     description: "Je hebt te lang zonder eten gelopen. Je lichaam geeft het op.",
     choices: [
-      Choice(id: 1, description: "Opnieuw proberen", outcome: 1),
+      Choice(id: 1, description: "Opnieuw proberen", outcome: 101),
     ],
-    explanationNeeded: true,
-    explanation: "Voedsel vinden was een dagelijkse strijd. Je brein ontwikkelde een sterke drang om te eten zodra er kans was. Vandaag zorgt dat instinct voor overeten en ongezonde keuzes.",
+    explanationNeeded: false,
+    explanation: "",
     situationImagePath: "assets/images/storyImages/99.game_over.png",
     explanationImagePath: "",
   ),
@@ -677,7 +690,7 @@ List<Situation> prehistoric_situations = [
     id: 107,
     description: "Hij overmeestert je. Je overleeft het gevecht niet.",
     choices: [
-      Choice(id: 1, description: "Opnieuw proberen", outcome: 1),
+      Choice(id: 1, description: "Opnieuw proberen", outcome: 101),
     ],
     explanationNeeded: true,
     explanation: "Niet elk gevecht was te winnen. Samenwerking en sociale banden waren vaak veiliger dan geweld. Vandaag werkt ons brein nog steeds beter in groepsverband dan alleen.",
