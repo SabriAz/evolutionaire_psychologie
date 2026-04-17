@@ -414,7 +414,7 @@ List<Situation> prehistoric_situations = [
       Choice(id: 3, description: "Val aan", outcome: 99),
       Choice(id: 4, description: "Ren weg", outcome: 88),
       Choice(id: 5, description: "Ren weg", outcome: 99),
-      Choice(id: 6, description: "Twijfel", outcome: 99),
+      Choice(id: 6, description: "Twijfel", outcome: 105),
     ],
     explanationNeeded: true,
     explanation: "Bij gevaar schakelde het lichaam direct over op actie en instinct (fight-or-flight). Vandaag gebeurt dat bij stress, wat kan leiden tot langdurige spanning.",
