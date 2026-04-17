@@ -33,10 +33,13 @@ class SpeechBubble extends StatelessWidget {
           ),
         ),
 
-        // Staartje linksonder
-        CustomPaint(
-          painter: _BubbleTailPainter(),
-          size: const Size(24, 16),
+        // Staartje wijst naar linksonder waar karakter staat
+        Padding(
+          padding: const EdgeInsets.only(left: 32), // inspringen zodat ie onder bubble begint
+          child: CustomPaint(
+            painter: _BubbleTailPainter(),
+            size: const Size(32, 22),
+          ),
         ),
       ],
     );
@@ -51,9 +54,9 @@ class _BubbleTailPainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     final path = Path()
-      ..moveTo(0, 0)
-      ..lineTo(size.width, 0)
-      ..lineTo(size.width * 0.3, size.height)
+      ..moveTo(0, 0)           // linksboven
+      ..lineTo(size.width, 0)  // rechtsboven
+      ..lineTo(0, size.height) // puntje linksonder richting karakter
       ..close();
 
     canvas.drawPath(path, paint);

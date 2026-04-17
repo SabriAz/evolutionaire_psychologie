@@ -36,11 +36,14 @@ class TutorialScreen extends StatelessWidget {
                       right: 24,
                       child: Transform.translate(
                         offset: const Offset(0, -40),
-                        child: const SpeechBubble(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 70),
+                          child: const SpeechBubble(
                           text: "Oh nee! Je bent wakker geworden 300.000 jaar geleden... "
                               "Je bevindt je in een kamp.\n\n"
                               "Maak keuzes op basis van de situatie "
                               "maar let op: jouw keuzes bepalen je overleving.",
+                          ),
                         ),
                       ),
                     ),

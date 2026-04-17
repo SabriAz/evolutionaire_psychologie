@@ -121,11 +121,14 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Image.asset(
-                                  "assets/images/modern_guide.png",
-                                  height: 250,
-                                  width: 250,
-                                  fit: BoxFit.contain,
+                                Transform.translate(
+                                  offset: const Offset(-30, 0),
+                                  child: Image.asset(
+                                    "assets/images/modern_guide.png",
+                                    height: 250,
+                                    width: 250,
+                                    fit: BoxFit.contain,
+                                  ),
                                 ),
                               ],
                             ),
