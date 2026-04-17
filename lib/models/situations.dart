@@ -580,31 +580,533 @@ List<Situation> prehistoric_situations = [
     explanationImagePath: "",
   ),
 ];
+
+/// Jason-style flow based on the uploaded story map.
+///
+/// Notes:
+/// - Only stress is meant to be tracked by the engine.
+/// - Other labels like Energy +1 / Fat +1 are narrative cues in the choice text.
+/// - The flow keeps the same overall sequence as the drawing, with route variants that converge again.
+
 List<Situation> modern_situations = [
+  // ─────────────────────────────────────────────────────────────
+  // ENERGIE BESPAREN
+  // ─────────────────────────────────────────────────────────────
   Situation(
     id: 1,
-    description: "Moderne situatie 1",
+    description: "Het is 2026 en je wordt wakker gemaakt door een melding op je telefoon.",
     choices: [
-      Choice(id: 1, description: "Val aan!", outcome: 2),
-      Choice(id: 2, description: "Blijf staan", outcome: 2),
-      Choice(id: 3, description: "Ren weg!", outcome: 2),
+      Choice(id: 1, description: "Blijf liggen", outcome: 2),
+      Choice(id: 2, description: "Sta op", outcome: 3),
+    ],
+    explanationNeeded: true,
+    explanation: "Energie besparen",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "assets/images/bear_situation.png",
+  ),
+
+  Situation(
+    id: 2,
+    description: "Je scrollt social media.",
+    choices: [
+      Choice(id: 1, description: "Blijf scrollen (Stress +1)", outcome: 4),
+      Choice(id: 2, description: "Leg je telefoon weg", outcome: 5),
     ],
     explanationNeeded: false,
-    explanation: "Zoet voedsel was zeldzaam in de oertijd. Je brein ontwikkelde een sterke voorkeur voor zoet omdat het veel energie bevatte. Daarom is taart of snoep vandaag zo moeilijk te weerstaan — je brein reageert nog steeds alsof suiker zeldzaam is!",
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  Situation(
+    id: 3,
+    description: "Je krijgt nog een melding.",
+    choices: [
+      Choice(id: 1, description: "Check je telefoon (Stress +1)", outcome: 4),
+      Choice(id: 2, description: "Negeer de melding", outcome: 5),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  // ─────────────────────────────────────────────────────────────
+  // AFHANKELIJKHEID VAN DE GROEP
+  // ─────────────────────────────────────────────────────────────
+  Situation(
+    id: 4,
+    description: "Een vriend appt je en vraagt of je meegaat komende zondag.",
+    choices: [
+      Choice(id: 1, description: "Ga mee (Energy +1)", outcome: 6),
+      Choice(id: 2, description: "Ga niet mee", outcome: 6),
+    ],
+    explanationNeeded: true,
+    explanation: "Afhankelijkheid van de groep",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "assets/images/bear_situation.png",
+  ),
+
+  Situation(
+    id: 5,
+    description: "Je komt een vriend tegen en vraagt of je meegaat zondag.",
+    choices: [
+      Choice(id: 1, description: "Ga mee (Energy +1)", outcome: 6),
+      Choice(id: 2, description: "Ga niet mee", outcome: 6),
+    ],
+    explanationNeeded: true,
+    explanation: "Afhankelijkheid van de groep",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "assets/images/bear_situation.png",
+  ),
+
+  Situation(
+    id: 6,
+    description: "Je maag begint te knorren.",
+    choices: [
+      Choice(id: 1, description: "Bestel wat", outcome: 7),
+      Choice(id: 2, description: "Ga wat halen (Energy +1)", outcome: 8),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  // ─────────────────────────────────────────────────────────────
+  // SCHAARSTE AAN VOEDSEL
+  // ─────────────────────────────────────────────────────────────
+  Situation(
+    id: 7,
+    description: "Online kom je een snackbar tegen.",
+    choices: [
+      Choice(id: 1, description: "Bestel snack (Fat +1)", outcome: 9),
+      Choice(id: 2, description: "Scroll door", outcome: 9),
+    ],
+    explanationNeeded: true,
+    explanation: "Schaarste aan voedsel",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "assets/images/bear_situation.png",
+  ),
+
+  Situation(
+    id: 8,
+    description: "Onderweg kom je een snackbar tegen.",
+    choices: [
+      Choice(id: 1, description: "Haal een snack (Fat +1)", outcome: 9),
+      Choice(id: 2, description: "Loop door", outcome: 9),
+    ],
+    explanationNeeded: true,
+    explanation: "Schaarste aan voedsel",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "assets/images/bear_situation.png",
+  ),
+
+  Situation(
+    id: 9,
+    description: "Je komt nog een snackbar tegen.",
+    choices: [
+      Choice(id: 1, description: "Haal nog een snack (Fat +1)", outcome: 9),
+      Choice(id: 2, description: "Loop door", outcome: 10),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+  Situation(
+    id: 95,
+    description: "Je komt nog een snackbar tegen.",
+    choices: [
+      Choice(id: 1, description: "Bestel nog een snack (Fat +1)", outcome: 95),
+      Choice(id: 2, description: "Scroll door", outcome: 11),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+
+  // ─────────────────────────────────────────────────────────────
+  // NIEUWE KANSEN ONTDEKKEN
+  // ─────────────────────────────────────────────────────────────
+  Situation(
+    id: 10,
+    description: "Maar wat als er een nieuwe actie is?",
+    choices: [
+      Choice(id: 1, description: "Bestel wat gezonds (Energy +1)", outcome: 12),
+      Choice(id: 2, description: "Bestel niks", outcome: 12),
+      Choice(id: 3, description: "Bestel toch een snack (Fat +1)", outcome: 12),
+    ],
+    explanationNeeded: true,
+    explanation: "Nieuwe kansen ontdekken",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "assets/images/bear_situation.png",
+  ),
+
+  Situation(
+    id: 11,
+    description: "Maar wat als er een nieuwe actie is?",
+    choices: [
+      Choice(id: 1, description: "Haal wat gezonds (Energy +1)", outcome: 93),
+      Choice(id: 2, description: "Haal niks", outcome: 93),
+      Choice(id: 3, description: "Haal toch een snack (Fat +1)", outcome: 9),
+    ],
+    explanationNeeded: true,
+    explanation: "Nieuwe kansen ontdekken",
     situationImagePath: "assets/images/bear_situation.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
   Situation(
-    id: 2,
-    description: "Moderne situatie 2",
+    id: 94,
+    description: "Je besluit te gaan scrollen",
     choices: [
-      Choice(id: 5, description: "Ga rusten", outcome: 3),
-      Choice(id: 6, description: "Ga op jacht", outcome: 3),
-      Choice(id: 7, description: "Doe lichte beweging", outcome: 3),
+      Choice(id: 1, description: "Scroll Instagram", outcome: 12),
+      Choice(id: 2, description: "Scroll Tiktok", outcome: 12),
     ],
     explanationNeeded: false,
-    explanation: "In de oertijd was energie sparen levensbelangrijk. Je brein beloont rust omdat beweging vroeger energie kostte die je nodig had voor jagen of vluchten. Daarom voelt de bank zo aantrekkelijk — je oerbrein denkt nog steeds dat je energie moet sparen!",
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+  Situation(
+    id: 93,
+    description: "Je besluit terug naar huis te gaan",
+    choices: [
+      Choice(id: 1, description: "Ga linksom", outcome: 13),
+      Choice(id: 2, description: "Ga rechtsom", outcome: 13),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+  // ─────────────────────────────────────────────────────────────
+  // HIËRARCHIE BINNEN DE GROEP
+  // ─────────────────────────────────────────────────────────────
+  Situation(
+    id: 12,
+    description: "Online zie je de perfecte levens van iedereen.",
+    choices: [
+      Choice(id: 1, description: "Vergelijk jezelf (Stress +1)", outcome: 14),
+      Choice(id: 2, description: "Negeer het", outcome: 14),
+    ],
+    explanationNeeded: true,
+    explanation: "Hiërarchie binnen de groep",
+    situationImagePath: "assets/images/modern_12_hierarchy_online.png",
+    explanationImagePath: "assets/images/expl_hierarchy.png",
+  ),
+
+  Situation(
+    id: 13,
+    description: "Je ziet een groep succesvolle jongens voorbij komen.",
+    choices: [
+      Choice(id: 1, description: "Vergelijk jezelf (Stess +1)", outcome: 15),
+      Choice(id: 2, description: "Negeer het", outcome: 15),
+    ],
+    explanationNeeded: true,
+    explanation: "Hiërarchie binnen de groep",
     situationImagePath: "assets/images/bear_situation.png",
     explanationImagePath: "assets/images/bear_situation.png",
   ),
+
+  Situation(
+    id: 14,
+    description: "Je komt nog meer perfecte levens online tegen.",
+    choices: [
+      Choice(id: 1, description: "Vergelijk jezelf (Stress +1)", outcome: 16),
+      Choice(id: 2, description: "Leg je telefoon weg", outcome: 16),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  Situation(
+    id: 15,
+    description: "Je bent thuis aangekomen.",
+    choices: [
+      Choice(id: 1, description: "Pak je telefoon (Stress +1)", outcome: 16),
+      Choice(id: 2, description: "Ga relaxen", outcome: 16),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  // ─────────────────────────────────────────────────────────────
+  // DIRECT GEVAAR
+  // ─────────────────────────────────────────────────────────────
+  Situation(
+    id: 16,
+    description: "Je baas belt ineens en wilt dat je gaat werken.",
+    choices: [
+      Choice(id: 1, description: "Ga aan het werk", outcome: 17),
+      Choice(id: 2, description: "Ga niet aan het werk", outcome: 18),
+    ],
+    explanationNeeded: true,
+    explanation: "Direct gevaar",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "assets/images/bear_situation.png",
+  ),
+
+  Situation(
+    id: 17,
+    description: "Dit is wel een pittige opdracht.",
+    choices: [
+      Choice(id: 1, description: "Gebruik het internet", outcome: 20),
+      Choice(id: 2, description: "Gebruik een boek", outcome: 22),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  Situation(
+    id: 18,
+    description: "Je bent ontslagen.",
+    choices: [
+      Choice(id: 1, description: "Zoek online voor nieuwe vacatures", outcome: 19),
+      Choice(id: 2, description: "Pak een boek", outcome: 21),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  // ─────────────────────────────────────────────────────────────
+  // BEPERKTE INFORMATIE
+  // ─────────────────────────────────────────────────────────────
+  Situation(
+    id: 21,
+    description: "Je vindt geen enkel boek.",
+    choices: [
+      Choice(id: 1, description: "Gebruik het internet", outcome: 19),
+      Choice(id: 2, description: "Blijf zoeken", outcome: 21),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  Situation(
+    id: 22,
+    description: "Je vindt geen enkel boek.",
+    choices: [
+      Choice(id: 1, description: "Gebruik het internet", outcome: 20),
+      Choice(id: 2, description: "Blijf zoeken", outcome: 22),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+
+  Situation(
+    id: 19,
+    description: "Je wordt overrompeld door de hoeveelheid informatie.",
+    choices: [
+      Choice(id: 1, description: "Blijf zoeken (Stress +1)", outcome: 24),
+      Choice(id: 2, description: "Stop met zoeken", outcome: 24),
+    ],
+    explanationNeeded: true,
+    explanation: "Beperkte informatie",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "assets/images/bear_situation.png",
+  ),
+
+  Situation(
+    id: 20,
+    description: "Je wordt overrompeld door de hoeveelheid informatie.",
+    choices: [
+      Choice(id: 1, description: "assets/images/bear_situation.png", outcome: 23),
+      Choice(id: 2, description: "assets/images/bear_situation.png", outcome: 23),
+    ],
+    explanationNeeded: true,
+    explanation: "Beperkte informatie",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "assets/images/bear_situation.png",
+  ),
+
+
+
+  // ─────────────────────────────────────────────────────────────
+  // ONVOORSPELBARE OMGEVING
+  // ─────────────────────────────────────────────────────────────
+  Situation(
+    id: 23,
+    description: "Je moet wel echt de baan behouden, anders word je arm.",
+    choices: [
+      Choice(id: 1, description: "Blijf werken (If Energy 2)", outcome: 29),
+      Choice(id: 2, description: "Blijf werken", outcome: 30),
+      Choice(id: 3, description: "Blijf werken (If Fat 2)", outcome: 27),
+      Choice(id: 4, description: "Blijf werken (If Stress 3)", outcome: 28),
+      Choice(id: 5, description: "Stop met werken", outcome: 32),
+    ],
+    explanationNeeded: true,
+    explanation: "Onvoorspelbare omgeving",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "assets/images/bear_situation.png",
+  ),
+
+  Situation(
+    id: 24,
+    description: "Je hebt wel echt een baan nodig, anders word je arm.",
+    choices: [
+      Choice(id: 1, description: "Blijf zoeken (If Energy 2)", outcome: 25),
+      Choice(id: 2, description: "Blijf zoeken", outcome: 26),
+      Choice(id: 3, description: "Blijf zoeken (If Fat 2)", outcome: 27),
+      Choice(id: 4, description: "Blijf zoeken (If Stress 3)", outcome: 28),
+      Choice(id: 5, description: "Stop met zoeken", outcome: 31),
+    ],
+    explanationNeeded: true,
+    explanation: "Onvoorspelbare omgeving",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "assets/images/bear_situation.png",
+  ),
+
+  Situation(
+    id: 25,
+    description: "Je vindt een succesvolle baan!",
+    choices: [
+      Choice(id: 1, description: "Verder", outcome: 100),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  Situation(
+    id: 26,
+    description: "Je vindt een matige baan, oké voor nu.",
+    choices: [
+      Choice(id: 1, description: "Verder", outcome: 101),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  Situation(
+    id: 27,
+    description: "Je hebt geen energie meer en geeft op.",
+    choices: [
+      Choice(id: 1, description: "Opnieuw proberen", outcome: 102),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  Situation(
+    id: 28,
+    description: "Je hebt teveel stress en geeft op.",
+    choices: [
+      Choice(id: 1, description: "Ga verder", outcome: 102),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  Situation(
+    id: 29,
+    description: "Je hebt het goed gedaan en krijgt een promotie!",
+    choices: [
+      Choice(id: 1, description: "Ga verder", outcome: 100),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  Situation(
+    id: 30,
+    description: "Je doet een matige prestatie, je houdt je baan voor nu.",
+    choices: [
+      Choice(id: 1, description: "Ga verder", outcome: 101),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  Situation(
+    id: 31,
+    description: "Je vindt geen baan.",
+    choices: [
+      Choice(id: 1, description: "Ga verder", outcome: 102),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  Situation(
+    id: 32,
+    description: "Je bent ontslagen.",
+    choices: [
+      Choice(id: 1, description: "Ga verder", outcome: 102),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  // ─────────────────────────────────────────────────────────────
+  // END STATES (REFINED)
+  // ─────────────────────────────────────────────────────────────
+
+  Situation(
+    id: 100,
+    description: "Jaren later heb je een stabiele carrière en een comfortabel leven.",
+    choices: [
+      Choice(id: 1, description: "Opnieuw spelen", outcome: 1),
+    ],
+    explanationNeeded: false,
+    explanation: "Jaren later heb je een stabiele en succesvolle carrière opgebouwd. Je leven is comfortabel en voorspelbaar geworden.",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  Situation(
+    id: 101,
+    description: "Jaren later leef je een gemiddeld leven met werk, rust en af en toe stress.",
+    choices: [
+      Choice(id: 1, description: "Opnieuw spelen", outcome: 1),
+    ],
+    explanationNeeded: false,
+    explanation: "Jaren later leid je een gemiddeld leven. Werk, vrije tijd en stress houden elkaar in balans, maar het voelt soms leeg en routinematig.",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
+
+  Situation(
+    id: 102,
+    description: "Jaren later ben je vooral bezig met stress en rondkomen.",
+    choices: [
+      Choice(id: 1, description: "Opnieuw spelen", outcome: 1),
+    ],
+    explanationNeeded: false,
+    explanation: "Jaren later heeft je levensstijl je ingehaald. Stress en uitputting bepalen je dagelijks leven en stabiliteit is moeilijk geworden.",
+    situationImagePath: "assets/images/bear_situation.png",
+    explanationImagePath: "",
+  ),
 ];
+
+
