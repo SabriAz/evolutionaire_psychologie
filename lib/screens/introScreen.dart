@@ -251,7 +251,7 @@ class _IntroScreenState extends State<IntroScreen> with TickerProviderStateMixin
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40),
           child: _outlinedText(
-            "Denk je dat jij kiest\nwat je doet?",
+            "Denk je dat jij kiest wat je doet?",
             30,
           ),
         ),
