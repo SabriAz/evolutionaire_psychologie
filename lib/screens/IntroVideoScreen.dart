@@ -16,6 +16,7 @@ class IntroVideoScreen extends StatefulWidget {
 
 class _IntroVideoScreenState extends State<IntroVideoScreen> {
   late VideoPlayerController _controller;
+  bool _navigated = false;
 
   @override
   void initState() {
@@ -28,9 +29,11 @@ class _IntroVideoScreenState extends State<IntroVideoScreen> {
       });
 
     _controller.addListener(() {
+      if (_navigated) return;
       if (_controller.value.isInitialized &&
           _controller.value.position >= _controller.value.duration &&
           _controller.value.duration != Duration.zero) {
+        _navigated = true;
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(

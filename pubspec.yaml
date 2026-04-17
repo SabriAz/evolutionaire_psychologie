@@ -63,6 +63,11 @@ flutter:
     - assets/images/introScreenImages/
     - assets/sound/
     - assets/videos/video_tijdlijn_oertijd.mp4
+
+  fonts:
+    - family: JejuHallasan
+      fonts:
+        - asset: assets/fonts/JejuHallasan-Regular.ttf
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

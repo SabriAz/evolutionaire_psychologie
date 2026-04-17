@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'UXADE Evolutionaire Psychologie',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'JejuHallasan',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
