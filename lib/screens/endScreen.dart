@@ -71,7 +71,7 @@ class EndScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (_) => IntroVideoScreen(
-                          situations: prehistoric_situations,
+                          situations: situations,
                         ),
                       ),
                           (route) => false,

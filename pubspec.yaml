@@ -62,7 +62,7 @@ flutter:
     - assets/images/explanationImages/
     - assets/images/introScreenImages/
     - assets/images/storyImages_modern/
-    - assets/videos/video_tijdlijn_oertijd.mp4
+    - assets/videos/
 
   fonts:
     - family: JejuHallasan

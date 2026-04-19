@@ -72,7 +72,7 @@ class _IntroVideoScreenState extends State<IntroVideoScreen> {
           ),
 
           Positioned(
-            top: 40,
+            bottom: 40,
             right: 20,
             child: MenuButton(
               text: "Skip",
