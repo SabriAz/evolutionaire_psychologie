@@ -1,7 +1,7 @@
 import 'package:firebase_demo_test/screens/introScreen.dart';
 import 'package:flutter/material.dart';
 import 'modeSelectScreen.dart';
-import '../widgets/menu_button.dart';
+import '../widgets/menuButton.dart';
 
 class MainMenuScreen extends StatelessWidget {
   const MainMenuScreen({super.key});

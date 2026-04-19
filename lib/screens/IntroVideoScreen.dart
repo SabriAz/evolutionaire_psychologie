@@ -1,7 +1,8 @@
+import 'package:firebase_demo_test/screens/situationScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import '../widgets/menu_button.dart';
-import 'situationScreen.dart';
+import '../widgets/menuButton.dart';
+import 'tutorialScreen.dart';
 import '../models/situation.dart';
 
 class IntroVideoScreen extends StatefulWidget {
@@ -15,30 +16,28 @@ class IntroVideoScreen extends StatefulWidget {
 
 class _IntroVideoScreenState extends State<IntroVideoScreen> {
   late VideoPlayerController _controller;
+  bool _navigated = false;
 
   @override
   void initState() {
     super.initState();
 
-    _controller =
-    VideoPlayerController.asset("assets/videos/video_tijdlijn_oertijd.mp4")
+    _controller = VideoPlayerController.asset("assets/videos/video_tijdlijn_oertijd.mp4")
       ..initialize().then((_) {
         setState(() {});
         _controller.play();
       });
 
     _controller.addListener(() {
+      if (_navigated) return;
       if (_controller.value.isInitialized &&
           _controller.value.position >= _controller.value.duration &&
           _controller.value.duration != Duration.zero) {
+        _navigated = true;
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (_) =>
-                SituationScreen(
-                  situation: widget.situations[0],
-                  situations: widget.situations,
-                ),
+            builder: (_) => TutorialScreen(situations: widget.situations),
           ),
         );
       }
@@ -49,22 +48,6 @@ class _IntroVideoScreenState extends State<IntroVideoScreen> {
   void dispose() {
     _controller.dispose();
     super.dispose();
-  }
-
-  void _skip() {
-    _controller.pause();
-    _controller.dispose();
-
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (_) =>
-            SituationScreen(
-              situation: widget.situations[0],
-              situations: widget.situations,
-            ),
-      ),
-    );
   }
 
   @override
@@ -81,7 +64,6 @@ class _IntroVideoScreenState extends State<IntroVideoScreen> {
             ),
           ),
 
-          // Skip button
           Positioned(
             top: 40,
             right: 20,
@@ -91,10 +73,7 @@ class _IntroVideoScreenState extends State<IntroVideoScreen> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => SituationScreen(
-                      situation: widget.situations[0],
-                      situations: widget.situations,
-                    ),
+                    builder: (_) => TutorialScreen(situations: widget.situations),
                   ),
                 );
               },
