@@ -15,7 +15,7 @@ class TutorialScreen extends StatelessWidget {
       body: Stack(
         children: [
           Image.asset(
-            "assets/images/storyImages/01.wakker_worden.png",
+            "assets/images/storyImages_prehistoric/01.wakker_worden.png",
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,

@@ -17,7 +17,9 @@ class EndScreen extends StatelessWidget {
       body: Stack(
         children: [
           Image.asset(
-            "assets/images/homescreen_background.png",
+            isWin
+                ? "assets/images/storyImages_prehistoric/100_succes_1.png"
+                : "assets/images/storyImages_prehistoric/99_gameOver_1.png",
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
@@ -32,11 +34,6 @@ class EndScreen extends StatelessWidget {
                 Text(
                   isWin ? "Je hebt het overleefd" : "Game Over",
                   style: const TextStyle(fontSize: 28, color: Colors.white),
-                ),
-                Image.asset(
-                  isWin
-                      ? "assets/images/win.png"
-                      : "assets/images/gameover.png",
                 ),
 
                 const SizedBox(height: 30),

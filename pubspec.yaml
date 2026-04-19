@@ -58,10 +58,10 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/
-    - assets/images/storyImages/
+    - assets/images/storyImages_prehistoric/
     - assets/images/explanationImages/
     - assets/images/introScreenImages/
-    - assets/sound/
+    - assets/storyImages_prehistoric/
     - assets/videos/video_tijdlijn_oertijd.mp4
 
   fonts:
