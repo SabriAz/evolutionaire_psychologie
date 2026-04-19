@@ -1,6 +1,5 @@
 import 'package:firebase_demo_test/models/situations.dart';
 import 'package:flutter/material.dart';
-import 'situationScreen.dart';
 import 'IntroVideoScreen.dart';
 
 class ModeSelectScreen extends StatelessWidget {
@@ -69,7 +68,9 @@ class HomeScreenBody extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (_) => SituationScreen(situation: modern_situations[0], situations: modern_situations,),
+                              builder: (_) => IntroVideoScreen(
+                                situations: modern_situations,
+                              ),
                             )
                         );
                       },
