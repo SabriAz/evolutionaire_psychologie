@@ -61,7 +61,7 @@ flutter:
     - assets/images/storyImages_prehistoric/
     - assets/images/explanationImages/
     - assets/images/introScreenImages/
-    - assets/images/storyImages_prehistoric/
+    - assets/images/storyImages_modern/
     - assets/videos/video_tijdlijn_oertijd.mp4
 
   fonts:
