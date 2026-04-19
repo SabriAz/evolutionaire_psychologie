@@ -1,6 +1,7 @@
 import 'package:firebase_demo_test/screens/situationScreen.dart';
 import 'package:flutter/material.dart';
 import '../models/situation.dart';
+import '../models/situations.dart';
 import '../widgets/speechBubble.dart';
 
 class ExplanationScreen extends StatefulWidget {
@@ -124,7 +125,9 @@ class _ExplanationScreenState extends State<ExplanationScreen>
                                 Transform.translate(
                                   offset: const Offset(-30, 0),
                                   child: Image.asset(
-                                    "assets/images/modern_guide.png",
+                                    widget.situations == modern_situations
+                                        ? "assets/images/modern_guide.png"
+                                        : "assets/images/prehistoric_guide.png",
                                     height: 250,
                                     width: 250,
                                     fit: BoxFit.contain,

@@ -52,7 +52,9 @@ class _SituationScreenState extends State<SituationScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (_) => EndScreen(isWin: outcome == 100),
+          builder: (_) => EndScreen(
+              isWin: outcome == 100,
+          situations: widget.situations,),
         ),
       );
       return;
