@@ -722,7 +722,7 @@ List<Situation> modern_situations = [
     id: 2,
     description: "Je scrollt social media.",
     choices: [
-      Choice(id: 1, description: "Blijf scrollen (Stress +1)", outcome: 4),
+      Choice(id: 1, description: "Blijf scrollen", outcome: 4, statReward: 'stress'),
       Choice(id: 2, description: "Leg je telefoon weg", outcome: 5),
     ],
     explanationNeeded: false,
@@ -735,7 +735,7 @@ List<Situation> modern_situations = [
     id: 3,
     description: "Je krijgt nog een melding.",
     choices: [
-      Choice(id: 1, description: "Check je telefoon (Stress +1)", outcome: 4),
+      Choice(id: 1, description: "Check je telefoon", outcome: 4, statReward: 'stress'),
       Choice(id: 2, description: "Negeer de melding", outcome: 5),
     ],
     explanationNeeded: false,
@@ -751,7 +751,7 @@ List<Situation> modern_situations = [
     id: 4,
     description: "Een vriend appt je en vraagt of je meegaat komende zondag.",
     choices: [
-      Choice(id: 1, description: "Ga mee (Energy +1)", outcome: 6),
+      Choice(id: 1, description: "Ga mee", outcome: 6, statReward: 'energy'),
       Choice(id: 2, description: "Ga niet mee", outcome: 6),
     ],
     explanationNeeded: true,
@@ -764,7 +764,7 @@ List<Situation> modern_situations = [
     id: 5,
     description: "Je komt een vriend tegen en vraagt of je meegaat zondag.",
     choices: [
-      Choice(id: 1, description: "Ga mee (Energy +1)", outcome: 6),
+      Choice(id: 1, description: "Ga mee", outcome: 6, statReward: 'energy'),
       Choice(id: 2, description: "Ga niet mee", outcome: 6),
     ],
     explanationNeeded: true,
@@ -778,7 +778,7 @@ List<Situation> modern_situations = [
     description: "Je maag begint te knorren.",
     choices: [
       Choice(id: 1, description: "Bestel wat", outcome: 7),
-      Choice(id: 2, description: "Ga wat halen (Energy +1)", outcome: 8),
+      Choice(id: 2, description: "Ga wat halen", outcome: 8, statReward: 'energy'),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -793,8 +793,8 @@ List<Situation> modern_situations = [
     id: 7,
     description: "Online kom je een snackbar tegen.",
     choices: [
-      Choice(id: 1, description: "Bestel snack (Fat +1)", outcome: 10),
-      Choice(id: 2, description: "Scroll door", outcome: 9),
+      Choice(id: 1, description: "Bestel snack", outcome: 10, statReward: 'fat'),
+      Choice(id: 2, description: "Scroll door", outcome: 94),
     ],
     explanationNeeded: true,
     explanation: "Vroeger moest je eten pakken wanneer je het zag, nu eten we door terwijl het overal beschikbaar is.",
@@ -806,7 +806,7 @@ List<Situation> modern_situations = [
     id: 8,
     description: "Onderweg kom je een snackbar tegen.",
     choices: [
-      Choice(id: 1, description: "Haal een snack (Fat +1)", outcome: 9),
+      Choice(id: 1, description: "Haal een snack", outcome: 9, statReward: 'fat'),
       Choice(id: 2, description: "Loop door", outcome: 9),
     ],
     explanationNeeded: true,
@@ -819,24 +819,12 @@ List<Situation> modern_situations = [
     id: 9,
     description: "Je komt nog een snackbar tegen.",
     choices: [
-      Choice(id: 1, description: "Haal nog een snack (Fat +1)", outcome: 9),
+      Choice(id: 1, description: "Haal nog een snack", outcome: 10),
       Choice(id: 2, description: "Loop door", outcome: 10),
     ],
     explanationNeeded: false,
     explanation: "",
     situationImagePath: "assets/images/storyImages_modern/9m_herhaalde_verleiding.png",
-    explanationImagePath: "",
-  ),
-  Situation(
-    id: 95,
-    description: "Je komt nog een snackbar tegen.",
-    choices: [
-      Choice(id: 1, description: "Bestel nog een snack (Fat +1)", outcome: 10),
-      Choice(id: 2, description: "Scroll door", outcome: 11),
-    ],
-    explanationNeeded: false,
-    explanation: "",
-    situationImagePath: "assets/images/storyImages_modern/m95_eindeloos_scrollen.png",
     explanationImagePath: "",
   ),
 
@@ -848,9 +836,9 @@ List<Situation> modern_situations = [
     id: 10,
     description: "Maar wat als er een nieuwe actie is?",
     choices: [
-      Choice(id: 1, description: "Bestel wat gezonds (Energy +1)", outcome: 12),
+      Choice(id: 1, description: "Bestel wat gezonds", outcome: 12, statReward: 'energy'),
       Choice(id: 2, description: "Bestel niks", outcome: 12),
-      Choice(id: 3, description: "Bestel toch een snack (Fat +1)", outcome: 12),
+      Choice(id: 3, description: "Bestel toch een snack", outcome: 12, statReward: 'fat'),
     ],
     explanationNeeded: true,
     explanation: "Vroeger leverde iets nieuws echte voordelen op, nu blijven we eindeloos zoeken zonder ooit tevreden te zijn.",
@@ -862,9 +850,9 @@ List<Situation> modern_situations = [
     id: 11,
     description: "Maar wat als er een nieuwe actie is?",
     choices: [
-      Choice(id: 1, description: "Haal wat gezonds (Energy +1)", outcome: 93),
+      Choice(id: 1, description: "Haal wat gezonds", outcome: 93, statReward: 'energy'),
       Choice(id: 2, description: "Haal niks", outcome: 93),
-      Choice(id: 3, description: "Haal toch een snack (Fat +1)", outcome: 9),
+      Choice(id: 3, description: "Haal toch een snack", outcome: 9, statReward: 'fat'),
     ],
     explanationNeeded: true,
     explanation: "Vroeger leverde iets nieuws echte voordelen op, nu blijven we eindeloos zoeken zonder ooit tevreden te zijn.",
@@ -873,7 +861,7 @@ List<Situation> modern_situations = [
   ),
   Situation(
     id: 94,
-    description: "Je besluit te gaan scrollen",
+    description: "Je raakt afgeleid en besluit te gaan scrollen",
     choices: [
       Choice(id: 1, description: "Scroll Instagram", outcome: 12),
       Choice(id: 2, description: "Scroll Tiktok", outcome: 12),
@@ -902,7 +890,7 @@ List<Situation> modern_situations = [
     id: 12,
     description: "Online zie je de perfecte levens van iedereen.",
     choices: [
-      Choice(id: 1, description: "Vergelijk jezelf (Stress +1)", outcome: 14),
+      Choice(id: 1, description: "Vergelijk jezelf", outcome: 14, statReward: 'stress'),
       Choice(id: 2, description: "Negeer het", outcome: 14),
     ],
     explanationNeeded: true,
@@ -915,7 +903,7 @@ List<Situation> modern_situations = [
     id: 13,
     description: "Je ziet een groep succesvolle jongens voorbij komen.",
     choices: [
-      Choice(id: 1, description: "Vergelijk jezelf (Stess +1)", outcome: 15),
+      Choice(id: 1, description: "Vergelijk jezelf", outcome: 15, statReward: 'stress'),
       Choice(id: 2, description: "Negeer het", outcome: 15),
     ],
     explanationNeeded: true,
@@ -928,7 +916,7 @@ List<Situation> modern_situations = [
     id: 14,
     description: "Je komt nog meer perfecte levens online tegen.",
     choices: [
-      Choice(id: 1, description: "Vergelijk jezelf (Stress +1)", outcome: 16),
+      Choice(id: 1, description: "Vergelijk jezelf", outcome: 16, statReward: 'stress'),
       Choice(id: 2, description: "Leg je telefoon weg", outcome: 16),
     ],
     explanationNeeded: false,
@@ -941,7 +929,7 @@ List<Situation> modern_situations = [
     id: 15,
     description: "Je bent thuis aangekomen.",
     choices: [
-      Choice(id: 1, description: "Pak je telefoon (Stress +1)", outcome: 16),
+      Choice(id: 1, description: "Pak je telefoon", outcome: 16, statReward: 'stress'),
       Choice(id: 2, description: "Ga relaxen", outcome: 16),
     ],
     explanationNeeded: false,
@@ -1020,12 +1008,24 @@ List<Situation> modern_situations = [
     explanationImagePath: "",
   ),
 
+  Situation(
+    id: 92,
+    description: "Je vindt helemaal niets...",
+    choices: [
+      Choice(id: 1, description: "Ga door", outcome: 20),
+    ],
+    explanationNeeded: false,
+    explanation: "",
+    situationImagePath: "assets/images/storyImages_modern/21m_zolder_zoeken.png",
+    explanationImagePath: "",
+  ),
+
 
   Situation(
     id: 19,
     description: "Je wordt overrompeld door de hoeveelheid informatie.",
     choices: [
-      Choice(id: 1, description: "Blijf zoeken (Stress +1)", outcome: 24),
+      Choice(id: 1, description: "Blijf zoeken", outcome: 24, statReward: 'stress'),
       Choice(id: 2, description: "Stop met zoeken", outcome: 24),
     ],
     explanationNeeded: true,
@@ -1056,11 +1056,8 @@ List<Situation> modern_situations = [
     id: 23,
     description: "Je moet wel echt de baan behouden, anders word je arm.",
     choices: [
-      Choice(id: 1, description: "Blijf werken (If Energy 2)", outcome: 29),
-      Choice(id: 2, description: "Blijf werken", outcome: 30),
-      Choice(id: 3, description: "Blijf werken (If Fat 2)", outcome: 27),
-      Choice(id: 4, description: "Blijf werken (If Stress 3)", outcome: 28),
-      Choice(id: 5, description: "Stop met werken", outcome: 32),
+      Choice(id: 1, description: "Blijf werken", outcome: 30, isStatCheck: true),
+      Choice(id: 2, description: "Stop met werken", outcome: 32),
     ],
     explanationNeeded: true,
     explanation: "Vroeger hielp vooruitdenken je overleven, nu blijven we hangen in zorgen over dingen die nog niet eens gebeuren.",
@@ -1072,11 +1069,8 @@ List<Situation> modern_situations = [
     id: 24,
     description: "Je hebt wel echt een baan nodig, anders word je arm.",
     choices: [
-      Choice(id: 1, description: "Blijf zoeken (If Energy 2)", outcome: 25),
-      Choice(id: 2, description: "Blijf zoeken", outcome: 26),
-      Choice(id: 3, description: "Blijf zoeken (If Fat 2)", outcome: 27),
-      Choice(id: 4, description: "Blijf zoeken (If Stress 3)", outcome: 28),
-      Choice(id: 5, description: "Stop met zoeken", outcome: 31),
+      Choice(id: 1, description: "Blijf zoeken", outcome: 26, isStatCheck: true),
+      Choice(id: 3, description: "Stop met zoeken", outcome: 31),
     ],
     explanationNeeded: true,
     explanation: "Vroeger hielp vooruitdenken je overleven, nu blijven we hangen in zorgen over dingen die nog niet eens gebeuren.",

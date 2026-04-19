@@ -3,6 +3,7 @@ import 'package:firebase_demo_test/widgets/choiceButton.dart';
 import 'package:firebase_demo_test/widgets/timer.dart';
 import 'package:flutter/material.dart';
 import '../models/gameState.dart';
+import '../models/situations.dart';
 import 'explanationScreen.dart';
 import 'endScreen.dart';
 import 'mainMenuScreen.dart';
@@ -29,6 +30,21 @@ class _SituationScreenState extends State<SituationScreen> {
     if (_weaponPickupIds.contains(widget.situation.id)) {
       GameState().hasWeapon = true;
     }
+
+    if (choice.statReward != null) {
+      switch (choice.statReward) {
+        case 'energy':
+          GameState().energy++;
+          break;
+        case 'fat':
+          GameState().fat++;
+          break;
+        case 'stress':
+          GameState().stress++;
+          break;
+      }
+    }
+
 
     int outcome = _resolveOutcome(choice);
 
@@ -75,11 +91,29 @@ class _SituationScreenState extends State<SituationScreen> {
   }
 
   int _resolveOutcome(Choice choice) {
+
+    //moderne checks
+    if (choice.isStatCheck) {
+      if (widget.situation.id == 23) {
+        if (GameState().energy >= 2) return 29;   // promotie
+        if (GameState().fat >= 2) return 27;       // uitgeput
+        if (GameState().stress >= 3) return 28;    // te veel stress
+        return 30;                                  // gewoon oké
+      }
+      if (widget.situation.id == 24) {
+        if (GameState().energy >= 2) return 25;   // top baan
+        if (GameState().fat >= 2) return 27;
+        if (GameState().stress >= 3) return 28;
+        return 26;                                  // matige baan
+      }
+    }
+
+    //oertijd checks
     if (!choice.isAttack) return choice.outcome;
     if (GameState().hasWeapon) return choice.outcome;
-
     if (widget.situation.id == _bearSituationId) return 1001;
     if (widget.situation.id == _wolfSituationId) return 1004;
+
 
     return choice.outcome;
   }
