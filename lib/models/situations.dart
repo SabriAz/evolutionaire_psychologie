@@ -831,7 +831,7 @@ List<Situation> modern_situations = [
     id: 95,
     description: "Je komt nog een snackbar tegen.",
     choices: [
-      Choice(id: 1, description: "Bestel nog een snack (Fat +1)", outcome: 95),
+      Choice(id: 1, description: "Bestel nog een snack (Fat +1)", outcome: 10),
       Choice(id: 2, description: "Scroll door", outcome: 11),
     ],
     explanationNeeded: false,
