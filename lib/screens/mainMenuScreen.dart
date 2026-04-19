@@ -1,4 +1,5 @@
 import 'package:firebase_demo_test/screens/introScreen.dart';
+import 'package:firebase_demo_test/screens/resultScreen.dart';
 import 'package:flutter/material.dart';
 import 'modeSelectScreen.dart';
 import '../widgets/menuButton.dart';
@@ -74,6 +75,10 @@ class MainMenuScreen extends StatelessWidget {
                   child: MenuButton(
                     text: "Extra's",
                     onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ResultScreen()),
+                      );
                       print("Extra's geopend");
                     },
                   ),
