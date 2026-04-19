@@ -1204,8 +1204,8 @@ List<Situation> modern_situations = [
       Choice(id: 1, description: "Opnieuw spelen", outcome: 1),
     ],
     explanationNeeded: false,
-    explanation: "assets/images/storyImages_modern/101_gemiddeld_einde.png",
-    situationImagePath: "assets/images/bear_situation.png",
+    explanation: "",
+    situationImagePath: "assets/images/storyImages_modern/101_gemiddeld_einde.png",
     explanationImagePath: "",
   ),
 
