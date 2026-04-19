@@ -713,9 +713,9 @@ List<Situation> modern_situations = [
       Choice(id: 2, description: "Sta op", outcome: 3),
     ],
     explanationNeeded: true,
-    explanation: "Energie besparen",
-    situationImagePath: "assets/images/bear_situation.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    explanation: "Vroeger spaarde je energie om te overleven, nu kiezen we vaak voor gemak terwijl actie juist beter is.",
+    situationImagePath: "assets/images/storyImages_modern/1m_wakker_worden.png",
+    explanationImagePath: "assets/images/explanationImages/1.Energie_besparen_split.png",
   ),
 
   Situation(
@@ -727,7 +727,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/2m_scrollen_in_bed.png",
     explanationImagePath: "",
   ),
 
@@ -740,7 +740,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/3m_nieuwe_melding.png",
     explanationImagePath: "",
   ),
 
@@ -755,9 +755,9 @@ List<Situation> modern_situations = [
       Choice(id: 2, description: "Ga niet mee", outcome: 6),
     ],
     explanationNeeded: true,
-    explanation: "Afhankelijkheid van de groep",
-    situationImagePath: "assets/images/bear_situation.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    explanation: "Vroeger had je de groep nodig om te overleven, nu voelen kleine sociale signalen nog steeds als iets groots.",
+    situationImagePath: "assets/images/storyImages_modern/4m_appje_vriend.png",
+    explanationImagePath: "assets/images/explanationImages/8.sociale_vergelijking_split.png",
   ),
 
   Situation(
@@ -768,9 +768,9 @@ List<Situation> modern_situations = [
       Choice(id: 2, description: "Ga niet mee", outcome: 6),
     ],
     explanationNeeded: true,
-    explanation: "Afhankelijkheid van de groep",
-    situationImagePath: "assets/images/bear_situation.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    explanation: "Vroeger had je de groep nodig om te overleven, nu voelen kleine sociale signalen nog steeds als iets groots.",
+    situationImagePath: "assets/images/storyImages_modern/5m_vriend_real_life.png",
+    explanationImagePath: "assets/images/explanationImages/8.sociale_vergelijking_split.png",
   ),
 
   Situation(
@@ -782,7 +782,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/6m_honger_keuken.png",
     explanationImagePath: "",
   ),
 
@@ -797,9 +797,9 @@ List<Situation> modern_situations = [
       Choice(id: 2, description: "Scroll door", outcome: 9),
     ],
     explanationNeeded: true,
-    explanation: "Schaarste aan voedsel",
-    situationImagePath: "assets/images/bear_situation.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    explanation: "Vroeger moest je eten pakken wanneer je het zag, nu eten we door terwijl het overal beschikbaar is.",
+    situationImagePath: "assets/images/storyImages_modern/7m_online_snackbar.png",
+    explanationImagePath: "assets/images/explanationImages/4.eten_split.png",
   ),
 
   Situation(
@@ -810,9 +810,9 @@ List<Situation> modern_situations = [
       Choice(id: 2, description: "Loop door", outcome: 9),
     ],
     explanationNeeded: true,
-    explanation: "Schaarste aan voedsel",
-    situationImagePath: "assets/images/bear_situation.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    explanation: "Vroeger moest je eten pakken wanneer je het zag, nu eten we door terwijl het overal beschikbaar is.",
+    situationImagePath: "assets/images/storyImages_modern/8_snackbar_straat.png",
+    explanationImagePath: "assets/images/explanationImages/4.eten_split.png",
   ),
 
   Situation(
@@ -824,7 +824,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/9m_herhaalde_verleiding.png",
     explanationImagePath: "",
   ),
   Situation(
@@ -836,7 +836,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/m95_eindeloos_scrollen.png",
     explanationImagePath: "",
   ),
 
@@ -853,9 +853,9 @@ List<Situation> modern_situations = [
       Choice(id: 3, description: "Bestel toch een snack (Fat +1)", outcome: 12),
     ],
     explanationNeeded: true,
-    explanation: "Nieuwe kansen ontdekken",
-    situationImagePath: "assets/images/bear_situation.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    explanation: "Vroeger leverde iets nieuws echte voordelen op, nu blijven we eindeloos zoeken zonder ooit tevreden te zijn.",
+    situationImagePath: "assets/images/storyImages_modern/10m_nieuwe_actie.png",
+    explanationImagePath: "assets/images/explanationImages/2.ondekken_vs_scrollen_split.png",
   ),
 
   Situation(
@@ -867,9 +867,9 @@ List<Situation> modern_situations = [
       Choice(id: 3, description: "Haal toch een snack (Fat +1)", outcome: 9),
     ],
     explanationNeeded: true,
-    explanation: "Nieuwe kansen ontdekken",
-    situationImagePath: "assets/images/bear_situation.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    explanation: "Vroeger leverde iets nieuws echte voordelen op, nu blijven we eindeloos zoeken zonder ooit tevreden te zijn.",
+    situationImagePath: "assets/images/storyImages_modern/11m_straat_billboard.png",
+    explanationImagePath: "assets/images/explanationImages/2.ondekken_vs_scrollen_split.png",
   ),
   Situation(
     id: 94,
@@ -880,7 +880,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/94m_doelloos_scrollen.png",
     explanationImagePath: "",
   ),
   Situation(
@@ -892,7 +892,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/93m_lopen_naar_huis.png",
     explanationImagePath: "",
   ),
   // ─────────────────────────────────────────────────────────────
@@ -906,9 +906,9 @@ List<Situation> modern_situations = [
       Choice(id: 2, description: "Negeer het", outcome: 14),
     ],
     explanationNeeded: true,
-    explanation: "Hiërarchie binnen de groep",
-    situationImagePath: "assets/images/modern_12_hierarchy_online.png",
-    explanationImagePath: "assets/images/expl_hierarchy.png",
+    explanation: "Vroeger maakte je sociale rang uit, tegenwoordig vergelijken we constant op sociale media.",
+    situationImagePath: "assets/images/storyImages_modern/12m_perfecte_levens_online.png",
+    explanationImagePath: "assets/images/explanationImages/8.sociale_vergelijking_split.png",
   ),
 
   Situation(
@@ -919,9 +919,9 @@ List<Situation> modern_situations = [
       Choice(id: 2, description: "Negeer het", outcome: 15),
     ],
     explanationNeeded: true,
-    explanation: "Hiërarchie binnen de groep",
-    situationImagePath: "assets/images/bear_situation.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    explanation: "Vroeger maakte je sociale rang uit, tegenwoordig vergelijken we constant op sociale media.",
+    situationImagePath: "assets/images/storyImages_modern/13m_groep_jongens.png",
+    explanationImagePath: "assets/images/explanationImages/8.sociale_vergelijking_split.png",
   ),
 
   Situation(
@@ -933,7 +933,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/14m_meer_vergelijking.png",
     explanationImagePath: "",
   ),
 
@@ -946,7 +946,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/15m_thuis_zitten.png",
     explanationImagePath: "",
   ),
 
@@ -961,9 +961,9 @@ List<Situation> modern_situations = [
       Choice(id: 2, description: "Ga niet aan het werk", outcome: 18),
     ],
     explanationNeeded: true,
-    explanation: "Direct gevaar",
-    situationImagePath: "assets/images/bear_situation.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    explanation: "Vroeger was gevaar direct en fysiek, nu reageert je lichaam hetzelfde op stress zonder dat er echt gevaar is.",
+    situationImagePath: "assets/images/storyImages_modern/16m_werk_belt.png",
+    explanationImagePath: "assets/images/explanationImages/7.dreiging_vs_stress_split.png",
   ),
 
   Situation(
@@ -975,7 +975,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/17m_werken.png",
     explanationImagePath: "",
   ),
 
@@ -988,7 +988,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/18m_ontslagen.png",
     explanationImagePath: "",
   ),
 
@@ -1004,7 +1004,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/21m_zolder_zoeken.png",
     explanationImagePath: "",
   ),
 
@@ -1017,7 +1017,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/21m_zolder_zoeken.png",
     explanationImagePath: "",
   ),
 
@@ -1030,22 +1030,22 @@ List<Situation> modern_situations = [
       Choice(id: 2, description: "Stop met zoeken", outcome: 24),
     ],
     explanationNeeded: true,
-    explanation: "Beperkte informatie",
-    situationImagePath: "assets/images/bear_situation.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    explanation: "Vroeger moest je actief zoeken naar informatie, nu worden we overspoeld en verliezen we focus.",
+    situationImagePath: "assets/images/storyImages_modern/19m_overload_infi.png",
+    explanationImagePath: "assets/images/explanationImages/6.focus_split.png",
   ),
 
   Situation(
     id: 20,
     description: "Je wordt overrompeld door de hoeveelheid informatie.",
     choices: [
-      Choice(id: 1, description: "assets/images/bear_situation.png", outcome: 23),
-      Choice(id: 2, description: "assets/images/bear_situation.png", outcome: 23),
+      Choice(id: 1, description: "Blijf werken", outcome: 23),
+      Choice(id: 2, description: "Stop met werken", outcome: 23),
     ],
     explanationNeeded: true,
-    explanation: "Beperkte informatie",
-    situationImagePath: "assets/images/bear_situation.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    explanation: "Vroeger moest je actief zoeken naar informatie, nu worden we overspoeld en verliezen we focus.",
+    situationImagePath: "assets/images/storyImages_modern/20m_extreme_overload.png",
+    explanationImagePath: "assets/images/explanationImages/6.focus_split.png",
   ),
 
 
@@ -1064,9 +1064,9 @@ List<Situation> modern_situations = [
       Choice(id: 5, description: "Stop met werken", outcome: 32),
     ],
     explanationNeeded: true,
-    explanation: "Onvoorspelbare omgeving",
-    situationImagePath: "assets/images/bear_situation.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    explanation: "Vroeger hielp vooruitdenken je overleven, nu blijven we hangen in zorgen over dingen die nog niet eens gebeuren.",
+    situationImagePath: "assets/images/storyImages_modern/23m_werkdruk.png",
+    explanationImagePath: "assets/images/explanationImages/5.problemen_split.png",
   ),
 
   Situation(
@@ -1080,9 +1080,9 @@ List<Situation> modern_situations = [
       Choice(id: 5, description: "Stop met zoeken", outcome: 31),
     ],
     explanationNeeded: true,
-    explanation: "Onvoorspelbare omgeving",
-    situationImagePath: "assets/images/bear_situation.png",
-    explanationImagePath: "assets/images/bear_situation.png",
+    explanation: "Vroeger hielp vooruitdenken je overleven, nu blijven we hangen in zorgen over dingen die nog niet eens gebeuren.",
+    situationImagePath: "assets/images/storyImages_modern/24m_mentale_druk.png",
+    explanationImagePath: "assets/images/explanationImages/5.problemen_split.png",
   ),
 
   Situation(
@@ -1093,7 +1093,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/25m_succesvolle_baan.png",
     explanationImagePath: "",
   ),
 
@@ -1105,7 +1105,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/26m_gemmidelde_baan.png",
     explanationImagePath: "",
   ),
 
@@ -1117,7 +1117,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/27m_uitputting.png",
     explanationImagePath: "",
   ),
 
@@ -1129,7 +1129,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/28m_extreme_stress.png",
     explanationImagePath: "",
   ),
 
@@ -1141,7 +1141,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/29m_promotie2_1.png",
     explanationImagePath: "",
   ),
 
@@ -1153,7 +1153,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/30m_doorgaan_zonder_gevoel.png",
     explanationImagePath: "",
   ),
 
@@ -1165,7 +1165,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/31m_ontslagen_vibe.png",
     explanationImagePath: "",
   ),
 
@@ -1177,7 +1177,7 @@ List<Situation> modern_situations = [
     ],
     explanationNeeded: false,
     explanation: "",
-    situationImagePath: "assets/images/bear_situation.png",
+    situationImagePath: "assets/images/storyImages_modern/31m_ontslagen_vibe.png",
     explanationImagePath: "",
   ),
 
@@ -1187,13 +1187,13 @@ List<Situation> modern_situations = [
 
   Situation(
     id: 100,
-    description: "Jaren later heb je een stabiele carrière en een comfortabel leven.",
+    description: "Jaren later heb je een stabiele en succesvolle carrière opgebouwd. Je leven is comfortabel en voorspelbaar geworden.",
     choices: [
       Choice(id: 1, description: "Opnieuw spelen", outcome: 1),
     ],
     explanationNeeded: false,
-    explanation: "Jaren later heb je een stabiele en succesvolle carrière opgebouwd. Je leven is comfortabel en voorspelbaar geworden.",
-    situationImagePath: "assets/images/bear_situation.png",
+    explanation: "",
+    situationImagePath: "assets/images/storyImages_modern/100m_goed_einde.png",
     explanationImagePath: "",
   ),
 
@@ -1204,7 +1204,7 @@ List<Situation> modern_situations = [
       Choice(id: 1, description: "Opnieuw spelen", outcome: 1),
     ],
     explanationNeeded: false,
-    explanation: "Jaren later leid je een gemiddeld leven. Werk, vrije tijd en stress houden elkaar in balans, maar het voelt soms leeg en routinematig.",
+    explanation: "assets/images/storyImages_modern/101_gemiddeld_einde.png",
     situationImagePath: "assets/images/bear_situation.png",
     explanationImagePath: "",
   ),
@@ -1216,7 +1216,7 @@ List<Situation> modern_situations = [
       Choice(id: 1, description: "Opnieuw spelen", outcome: 1),
     ],
     explanationNeeded: false,
-    explanation: "Jaren later heeft je levensstijl je ingehaald. Stress en uitputting bepalen je dagelijks leven en stabiliteit is moeilijk geworden.",
+    explanation: "assets/images/storyImages_modern/102_slecht_einde.png",
     situationImagePath: "assets/images/bear_situation.png",
     explanationImagePath: "",
   ),
