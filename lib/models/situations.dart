@@ -1000,7 +1000,7 @@ List<Situation> modern_situations = [
     description: "Je vindt geen enkel boek.",
     choices: [
       Choice(id: 1, description: "Gebruik het internet", outcome: 19),
-      Choice(id: 2, description: "Blijf zoeken", outcome: 21),
+      Choice(id: 2, description: "Blijf zoeken", outcome: 22),
     ],
     explanationNeeded: false,
     explanation: "",
@@ -1010,10 +1010,9 @@ List<Situation> modern_situations = [
 
   Situation(
     id: 22,
-    description: "Je vindt geen enkel boek.",
+    description: "Je vindt helemaal niets...",
     choices: [
-      Choice(id: 1, description: "Gebruik het internet", outcome: 20),
-      Choice(id: 2, description: "Blijf zoeken", outcome: 22),
+      Choice(id: 1, description: "Ga door", outcome: 24),
     ],
     explanationNeeded: false,
     explanation: "",
