@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+import '../models/gameState.dart';
+
 class CountdownTimer extends StatefulWidget {
   final int timer;
   final VoidCallback onFinished;
@@ -45,8 +47,8 @@ class _TimerState extends State<CountdownTimer> {
       height: 70,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Color(0xFF99783C),
-        border: Border.all(color: Color(0xFF99783C), width: 4),
+        color: GameState().themeColor,
+        border: Border.all(color: GameState().themeColor, width: 4),
         boxShadow: [
           BoxShadow(color: Colors.black, blurRadius: 6, offset: Offset(2, 2)),
         ],
@@ -60,7 +62,7 @@ class _TimerState extends State<CountdownTimer> {
             child: CircularProgressIndicator(
               value: currentSeconds / widget.timer,
               strokeWidth: 5,
-              backgroundColor: Color(0xFF99783C),
+              backgroundColor: GameState().themeColor,
               valueColor: AlwaysStoppedAnimation<Color>(
                 widget.stopped ? Colors.grey : Colors.white,
               ),
@@ -69,11 +71,14 @@ class _TimerState extends State<CountdownTimer> {
           Text(
             "$currentSeconds",
             style: TextStyle(
+              fontFamily: 'Alata',
+              // ← nieuw
               color: widget.stopped ? Colors.grey : Colors.white,
               fontSize: 22,
               fontWeight: FontWeight.bold,
               shadows: [
-                Shadow(color: Colors.black54, blurRadius: 4, offset: Offset(1, 1))
+                Shadow(
+                    color: Colors.black54, blurRadius: 4, offset: Offset(1, 1))
               ],
             ),
           ),

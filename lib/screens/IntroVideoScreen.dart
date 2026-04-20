@@ -1,6 +1,7 @@
 import 'package:firebase_demo_test/screens/situationScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import '../models/gameState.dart';
 import '../models/situations.dart';
 import '../widgets/menuButton.dart';
 import 'tutorialScreen.dart';
@@ -28,6 +29,7 @@ class _IntroVideoScreenState extends State<IntroVideoScreen> {
   @override
   void initState() {
     super.initState();
+    GameState().isModern = widget.situations == modern_situations;
 
     _controller = VideoPlayerController.asset(_videoPath)
       ..initialize().then((_) {
