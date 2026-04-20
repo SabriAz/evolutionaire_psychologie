@@ -3,7 +3,6 @@ import 'package:firebase_demo_test/widgets/choiceButton.dart';
 import 'package:firebase_demo_test/widgets/timer.dart';
 import 'package:flutter/material.dart';
 import '../models/gameState.dart';
-import '../models/situations.dart';
 import 'explanationScreen.dart';
 import 'endScreen.dart';
 import 'mainMenuScreen.dart';
@@ -21,6 +20,7 @@ class SituationScreen extends StatefulWidget {
 class _SituationScreenState extends State<SituationScreen> {
   int? selectedChoiceId;
   bool _choiceMade = false;
+  double _timerProgress = 1.0;
 
   static const _weaponPickupIds = {13, 98};
   static const _bearSituationId = 26;
@@ -258,6 +258,9 @@ class _SituationScreenState extends State<SituationScreen> {
             child: CountdownTimer(
               timer: 12,
               stopped: _choiceMade,
+              onTick: (progress) {
+                setState(() => _timerProgress = progress);
+              },
               onFinished: () {
                 if (!_choiceMade) {
                   _navigateNext(widget.situation.choices[0]);
@@ -274,6 +277,17 @@ class _SituationScreenState extends State<SituationScreen> {
                 child: Center(
                   child: Stack(
                     children: [
+                      Positioned(
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        child: LinearProgressIndicator(
+                          value: _timerProgress,
+                          backgroundColor: Colors.white24,
+                          valueColor: AlwaysStoppedAnimation<Color>(GameState().themeColor),
+                          minHeight: 6,
+                        ),
+                      ),
                       Text(
                         widget.situation.description,
                         textAlign: TextAlign.center,
