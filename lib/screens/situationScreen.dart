@@ -166,7 +166,7 @@ class _SituationScreenState extends State<SituationScreen> with SingleTickerProv
             right: 16,
             child: IconButton(
               style: IconButton.styleFrom(
-                backgroundColor: Colors.brown,
+                backgroundColor: GameState().themeColor,
                 shape: const CircleBorder(),
                 padding: const EdgeInsets.all(10),
               ),
@@ -180,7 +180,7 @@ class _SituationScreenState extends State<SituationScreen> with SingleTickerProv
                       decoration: BoxDecoration(
                         color: const Color(0xFF5C3A1E),
                         borderRadius: BorderRadius.circular(4),
-                        border: Border.all(color: const Color(0xFF99783C), width: 3),
+                        border: Border.all(color: GameState().themeColor, width: 3),
                         boxShadow: [
                           BoxShadow(color: Colors.black, blurRadius: 10, offset: Offset(4, 4)),
                         ],
@@ -203,8 +203,7 @@ class _SituationScreenState extends State<SituationScreen> with SingleTickerProv
                             ),
                           ),
                           const SizedBox(height: 12),
-                          Container(height: 2, color: const Color(0xFF99783C)),
-                          const SizedBox(height: 16),
+                          Container(height: 2, color: GameState().themeColor),                          const SizedBox(height: 16),
                           Text(
                             "Weet je zeker dat je wil stoppen met spelen?",
                             textAlign: TextAlign.center,
@@ -220,8 +219,7 @@ class _SituationScreenState extends State<SituationScreen> with SingleTickerProv
                               Expanded(
                                 child: OutlinedButton(
                                   style: OutlinedButton.styleFrom(
-                                    side: BorderSide(color: const Color(0xFF99783C), width: 2),
-                                    padding: const EdgeInsets.symmetric(vertical: 12),
+                                    side: BorderSide(color: GameState().themeColor, width: 2),                                    padding: const EdgeInsets.symmetric(vertical: 12),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(4),
                                     ),
@@ -229,15 +227,14 @@ class _SituationScreenState extends State<SituationScreen> with SingleTickerProv
                                   onPressed: () => Navigator.pop(context),
                                   child: Text(
                                     "Blijf hier",
-                                    style: TextStyle(color: const Color(0xFFE8C97A), fontSize: 15),
-                                  ),
+                                    style: TextStyle(color: Colors.white, fontSize: 15),                                  ),
                                 ),
                               ),
                               const SizedBox(width: 12),
                               Expanded(
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: const Color(0xFF99783C),
+                                    backgroundColor: GameState().themeColor,
                                     padding: const EdgeInsets.symmetric(vertical: 12),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(4),
