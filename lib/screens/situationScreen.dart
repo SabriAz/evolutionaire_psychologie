@@ -48,13 +48,14 @@ class _SituationScreenState extends State<SituationScreen> {
 
     int outcome = _resolveOutcome(choice);
 
-    if (outcome == 100 || outcome == 101) {
+    if (outcome == 100 || outcome == 101 || outcome == 102) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (_) => EndScreen(
-              isWin: outcome == 100,
-          situations: widget.situations,),
+            isWin: outcome == 100 || outcome == 101,
+            situations: widget.situations,
+          ),
         ),
       );
       return;
