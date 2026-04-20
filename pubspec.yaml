@@ -68,6 +68,9 @@ flutter:
     - family: JejuHallasan
       fonts:
         - asset: assets/fonts/JejuHallasan-Regular.ttf
+    - family: Alata
+      fonts:
+        - asset: assets/fonts/Alata-Regular.ttf
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
