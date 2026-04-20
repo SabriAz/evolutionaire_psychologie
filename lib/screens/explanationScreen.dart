@@ -46,7 +46,7 @@ class _ExplanationScreenState extends State<ExplanationScreen>
       CurvedAnimation(parent: _controller, curve: Curves.easeIn),
     );
 
-    Future.delayed(const Duration(seconds: 1), () {
+    Future.delayed(const Duration(seconds: 3), () {
       if (mounted) _showCharacter();
     });
   }
@@ -55,7 +55,7 @@ class _ExplanationScreenState extends State<ExplanationScreen>
     setState(() => _characterVisible = true);
     _controller.forward();
 
-    Future.delayed(const Duration(seconds: 1), () {
+    Future.delayed(const Duration(seconds: 4), () {
       if (mounted) setState(() => _canNavigate = true);
     });
   }
