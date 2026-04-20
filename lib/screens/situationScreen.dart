@@ -125,6 +125,7 @@ class _SituationScreenState extends State<SituationScreen> with SingleTickerProv
     }
 
     if (!choice.isAttack) return choice.outcome;
+    if (GameState().hasWeapon && widget.situation.id == 11) return 14;
     if (GameState().hasWeapon) return choice.outcome;
     if (widget.situation.id == _bearSituationId) return 1001;
     if (widget.situation.id == _wolfSituationId) return 1004;

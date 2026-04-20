@@ -179,7 +179,7 @@ List<Situation> prehistoric_situations = [
     id: 11,
     description: "Een donkere grot. Beschutting of gevaar.",
     choices: [
-      Choice(id: 1, description: "Verken de grot", outcome: 13),
+      Choice(id: 1, description: "Verken de grot", outcome: 13, isAttack: true), //isAttack is om te checken of gebruiker al speer heeft, dan mogen ze niet nog een keer de speer vinden
       Choice(id: 2, description: "Loop door", outcome: 14),
     ],
     explanationNeeded: true,
