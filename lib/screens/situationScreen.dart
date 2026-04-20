@@ -17,14 +17,30 @@ class SituationScreen extends StatefulWidget {
   State<StatefulWidget> createState() => _SituationScreenState();
 }
 
-class _SituationScreenState extends State<SituationScreen> {
+class _SituationScreenState extends State<SituationScreen> with SingleTickerProviderStateMixin {
   int? selectedChoiceId;
   bool _choiceMade = false;
-  double _timerProgress = 1.0;
+  late AnimationController _progressController;
 
   static const _weaponPickupIds = {13, 98};
   static const _bearSituationId = 26;
   static const _wolfSituationId = 27;
+
+  @override
+  void initState() {
+    super.initState();
+    _progressController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 12),
+      value: 1.0,
+    )..reverse();
+  }
+
+  @override
+  void dispose() {
+    _progressController.dispose();
+    super.dispose();
+  }
 
   void _navigateNext(Choice choice) {
     if (_weaponPickupIds.contains(widget.situation.id)) {
@@ -44,7 +60,6 @@ class _SituationScreenState extends State<SituationScreen> {
           break;
       }
     }
-
 
     int outcome = _resolveOutcome(choice);
 
@@ -94,29 +109,25 @@ class _SituationScreenState extends State<SituationScreen> {
   }
 
   int _resolveOutcome(Choice choice) {
-
-    //moderne checks
     if (choice.isStatCheck) {
       if (widget.situation.id == 23) {
-        if (GameState().energy >= 2) return 29;   // promotie
-        if (GameState().fat >= 2) return 27;       // uitgeput
-        if (GameState().stress >= 3) return 28;    // te veel stress
-        return 30;                                  // gewoon oké
-      }
-      if (widget.situation.id == 24) {
-        if (GameState().energy >= 2) return 25;   // top baan
+        if (GameState().energy >= 2) return 29;
         if (GameState().fat >= 2) return 27;
         if (GameState().stress >= 3) return 28;
-        return 26;                                  // matige baan
+        return 30;
+      }
+      if (widget.situation.id == 24) {
+        if (GameState().energy >= 2) return 25;
+        if (GameState().fat >= 2) return 27;
+        if (GameState().stress >= 3) return 28;
+        return 26;
       }
     }
 
-    //oertijd checks
     if (!choice.isAttack) return choice.outcome;
     if (GameState().hasWeapon) return choice.outcome;
     if (widget.situation.id == _bearSituationId) return 1001;
     if (widget.situation.id == _wolfSituationId) return 1004;
-
 
     return choice.outcome;
   }
@@ -131,6 +142,22 @@ class _SituationScreenState extends State<SituationScreen> {
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
+          ),
+
+          // Vloeiende timer balk bovenaan
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: AnimatedBuilder(
+              animation: _progressController,
+              builder: (context, _) => LinearProgressIndicator(
+                value: _progressController.value,
+                backgroundColor: Colors.white24,
+                valueColor: AlwaysStoppedAnimation<Color>(GameState().themeColor),
+                minHeight: 9,
+              ),
+            ),
           ),
 
           Positioned(
@@ -174,15 +201,11 @@ class _SituationScreenState extends State<SituationScreen> {
                               ],
                             ),
                           ),
-
                           const SizedBox(height: 12),
-
                           Container(height: 2, color: const Color(0xFF99783C)),
-
                           const SizedBox(height: 16),
-
                           Text(
-                            "Weet je zeker dat je wil stoppen met overleven?",
+                            "Weet je zeker dat je wil stoppen met spelen?",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white70,
@@ -190,9 +213,7 @@ class _SituationScreenState extends State<SituationScreen> {
                               height: 1.4,
                             ),
                           ),
-
                           const SizedBox(height: 24),
-
                           Row(
                             children: [
                               Expanded(
@@ -258,9 +279,6 @@ class _SituationScreenState extends State<SituationScreen> {
             child: CountdownTimer(
               timer: 12,
               stopped: _choiceMade,
-              onTick: (progress) {
-                setState(() => _timerProgress = progress);
-              },
               onFinished: () {
                 if (!_choiceMade) {
                   _navigateNext(widget.situation.choices[0]);
@@ -277,17 +295,6 @@ class _SituationScreenState extends State<SituationScreen> {
                 child: Center(
                   child: Stack(
                     children: [
-                      Positioned(
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        child: LinearProgressIndicator(
-                          value: _timerProgress,
-                          backgroundColor: Colors.white24,
-                          valueColor: AlwaysStoppedAnimation<Color>(GameState().themeColor),
-                          minHeight: 6,
-                        ),
-                      ),
                       Text(
                         widget.situation.description,
                         textAlign: TextAlign.center,
@@ -323,6 +330,7 @@ class _SituationScreenState extends State<SituationScreen> {
                           setState(() {
                             selectedChoiceId = choice.id;
                             _choiceMade = true;
+                            _progressController.stop();
                           });
                           Future.delayed(const Duration(milliseconds: 600), () {
                             _navigateNext(choice);

@@ -29,7 +29,9 @@ class _IntroVideoScreenState extends State<IntroVideoScreen> {
   @override
   void initState() {
     super.initState();
-    GameState().isModern = widget.situations == modern_situations;
+    GameState().themeColor = widget.situations == modern_situations
+        ? const Color(0xFF693014)
+        : const Color(0xFF99783C);
 
     _controller = VideoPlayerController.asset(_videoPath)
       ..initialize().then((_) {
