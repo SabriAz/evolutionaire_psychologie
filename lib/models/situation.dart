@@ -16,10 +16,12 @@ class Choice{
   final String description;
   final int outcome;
   final bool isAttack;
+  final bool isStatCheck;
+  final String? statReward;
 
 
 
-  const Choice ({required this.id, required this.description, required this.outcome, this.isAttack = false,});
+  const Choice ({required this.id, required this.description, required this.outcome, this.isAttack = false, this.isStatCheck = false, this.statReward});
 
 }
 

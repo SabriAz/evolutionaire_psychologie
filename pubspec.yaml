@@ -61,13 +61,16 @@ flutter:
     - assets/images/storyImages_prehistoric/
     - assets/images/explanationImages/
     - assets/images/introScreenImages/
-    - assets/storyImages_prehistoric/
-    - assets/videos/video_tijdlijn_oertijd.mp4
+    - assets/images/storyImages_modern/
+    - assets/videos/
 
   fonts:
     - family: JejuHallasan
       fonts:
         - asset: assets/fonts/JejuHallasan-Regular.ttf
+    - family: Alata
+      fonts:
+        - asset: assets/fonts/Alata-Regular.ttf
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

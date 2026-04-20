@@ -17,26 +17,60 @@ class SituationScreen extends StatefulWidget {
   State<StatefulWidget> createState() => _SituationScreenState();
 }
 
-class _SituationScreenState extends State<SituationScreen> {
+class _SituationScreenState extends State<SituationScreen> with SingleTickerProviderStateMixin {
   int? selectedChoiceId;
   bool _choiceMade = false;
+  late AnimationController _progressController;
 
   static const _weaponPickupIds = {13, 98};
   static const _bearSituationId = 26;
   static const _wolfSituationId = 27;
+
+  @override
+  void initState() {
+    super.initState();
+    _progressController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 12),
+      value: 1.0,
+    )..reverse();
+  }
+
+  @override
+  void dispose() {
+    _progressController.dispose();
+    super.dispose();
+  }
 
   void _navigateNext(Choice choice) {
     if (_weaponPickupIds.contains(widget.situation.id)) {
       GameState().hasWeapon = true;
     }
 
+    if (choice.statReward != null) {
+      switch (choice.statReward) {
+        case 'energy':
+          GameState().energy++;
+          break;
+        case 'fat':
+          GameState().fat++;
+          break;
+        case 'stress':
+          GameState().stress++;
+          break;
+      }
+    }
+
     int outcome = _resolveOutcome(choice);
 
-    if (outcome == 100 || outcome == 101) {
+    if (outcome == 100 || outcome == 101 || outcome == 102) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (_) => EndScreen(isWin: outcome == 100),
+          builder: (_) => EndScreen(
+            isWin: outcome == 100 || outcome == 101,
+            situations: widget.situations,
+          ),
         ),
       );
       return;
@@ -75,9 +109,24 @@ class _SituationScreenState extends State<SituationScreen> {
   }
 
   int _resolveOutcome(Choice choice) {
-    if (!choice.isAttack) return choice.outcome;
-    if (GameState().hasWeapon) return choice.outcome;
+    if (choice.isStatCheck) {
+      if (widget.situation.id == 23) {
+        if (GameState().energy >= 2) return 29;
+        if (GameState().fat >= 2) return 27;
+        if (GameState().stress >= 3) return 28;
+        return 30;
+      }
+      if (widget.situation.id == 24) {
+        if (GameState().energy >= 2) return 25;
+        if (GameState().fat >= 2) return 27;
+        if (GameState().stress >= 3) return 28;
+        return 26;
+      }
+    }
 
+    if (!choice.isAttack) return choice.outcome;
+    if (GameState().hasWeapon && widget.situation.id == 11) return 14;
+    if (GameState().hasWeapon) return choice.outcome;
     if (widget.situation.id == _bearSituationId) return 1001;
     if (widget.situation.id == _wolfSituationId) return 1004;
 
@@ -96,12 +145,28 @@ class _SituationScreenState extends State<SituationScreen> {
             height: double.infinity,
           ),
 
+          // Vloeiende timer balk bovenaan
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: AnimatedBuilder(
+              animation: _progressController,
+              builder: (context, _) => LinearProgressIndicator(
+                value: _progressController.value,
+                backgroundColor: Colors.white24,
+                valueColor: AlwaysStoppedAnimation<Color>(GameState().themeColor),
+                minHeight: 9,
+              ),
+            ),
+          ),
+
           Positioned(
             top: 30,
             right: 16,
             child: IconButton(
               style: IconButton.styleFrom(
-                backgroundColor: Colors.brown,
+                backgroundColor: GameState().themeColor,
                 shape: const CircleBorder(),
                 padding: const EdgeInsets.all(10),
               ),
@@ -115,7 +180,7 @@ class _SituationScreenState extends State<SituationScreen> {
                       decoration: BoxDecoration(
                         color: const Color(0xFF5C3A1E),
                         borderRadius: BorderRadius.circular(4),
-                        border: Border.all(color: const Color(0xFF99783C), width: 3),
+                        border: Border.all(color: GameState().themeColor, width: 3),
                         boxShadow: [
                           BoxShadow(color: Colors.black, blurRadius: 10, offset: Offset(4, 4)),
                         ],
@@ -137,15 +202,10 @@ class _SituationScreenState extends State<SituationScreen> {
                               ],
                             ),
                           ),
-
                           const SizedBox(height: 12),
-
-                          Container(height: 2, color: const Color(0xFF99783C)),
-
-                          const SizedBox(height: 16),
-
+                          Container(height: 2, color: GameState().themeColor),                          const SizedBox(height: 16),
                           Text(
-                            "Weet je zeker dat je wil stoppen met overleven?",
+                            "Weet je zeker dat je wil stoppen met spelen?",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white70,
@@ -153,16 +213,13 @@ class _SituationScreenState extends State<SituationScreen> {
                               height: 1.4,
                             ),
                           ),
-
                           const SizedBox(height: 24),
-
                           Row(
                             children: [
                               Expanded(
                                 child: OutlinedButton(
                                   style: OutlinedButton.styleFrom(
-                                    side: BorderSide(color: const Color(0xFF99783C), width: 2),
-                                    padding: const EdgeInsets.symmetric(vertical: 12),
+                                    side: BorderSide(color: GameState().themeColor, width: 2),                                    padding: const EdgeInsets.symmetric(vertical: 12),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(4),
                                     ),
@@ -170,15 +227,14 @@ class _SituationScreenState extends State<SituationScreen> {
                                   onPressed: () => Navigator.pop(context),
                                   child: Text(
                                     "Blijf hier",
-                                    style: TextStyle(color: const Color(0xFFE8C97A), fontSize: 15),
-                                  ),
+                                    style: TextStyle(color: Colors.white, fontSize: 15),                                  ),
                                 ),
                               ),
                               const SizedBox(width: 12),
                               Expanded(
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: const Color(0xFF99783C),
+                                    backgroundColor: GameState().themeColor,
                                     padding: const EdgeInsets.symmetric(vertical: 12),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(4),
@@ -272,6 +328,7 @@ class _SituationScreenState extends State<SituationScreen> {
                           setState(() {
                             selectedChoiceId = choice.id;
                             _choiceMade = true;
+                            _progressController.stop();
                           });
                           Future.delayed(const Duration(milliseconds: 600), () {
                             _navigateNext(choice);
