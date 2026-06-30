@@ -24,32 +24,38 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: OrientationBuilder(
-        builder: (context, orientation) {
-          final size = MediaQuery.of(context).size;
-          final isPhoneSize = size.shortestSide < 600;
-
-          if (orientation == Orientation.portrait || !isPhoneSize) {
-            return Scaffold(
-              backgroundColor: Colors.black,
-              body: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.screen_rotation, color: Colors.white, size: 64),
-                    SizedBox(height: 20),
-                    Text(
-                      "Draai je telefoon\nom te spelen",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.white, fontSize: 22),
+      home: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(
+            maxWidth: 926,
+            maxHeight: 428,
+          ),
+          child: OrientationBuilder(
+            builder: (context, orientation) {
+              if (orientation == Orientation.portrait) {
+                return Scaffold(
+                  backgroundColor: Colors.black,
+                  body: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.screen_rotation, color: Colors.white,
+                            size: 64),
+                        SizedBox(height: 20),
+                        Text(
+                          "Draai je scherm\nom te spelen",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.white, fontSize: 22),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
-            );
-          }
-          return const MainMenuScreen();
-        },
+                  ),
+                );
+              }
+              return const MainMenuScreen();
+            },
+          ),
+        ),
       ),
     );
   }
