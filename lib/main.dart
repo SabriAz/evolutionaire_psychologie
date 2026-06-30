@@ -26,7 +26,10 @@ class MyApp extends StatelessWidget {
       ),
       home: OrientationBuilder(
         builder: (context, orientation) {
-          if (orientation == Orientation.portrait) {
+          final size = MediaQuery.of(context).size;
+          final isPhoneSize = size.shortestSide < 600;
+
+          if (orientation == Orientation.portrait || !isPhoneSize) {
             return Scaffold(
               backgroundColor: Colors.black,
               body: Center(
@@ -36,7 +39,7 @@ class MyApp extends StatelessWidget {
                     Icon(Icons.screen_rotation, color: Colors.white, size: 64),
                     SizedBox(height: 20),
                     Text(
-                      "Draai je scherm\nom te spelen",
+                      "Draai je telefoon\nom te spelen",
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white, fontSize: 22),
                     ),
