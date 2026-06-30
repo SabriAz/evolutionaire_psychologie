@@ -24,36 +24,38 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(
-            maxWidth: 926,
-            maxHeight: 428,
-          ),
-          child: OrientationBuilder(
-            builder: (context, orientation) {
-              if (orientation == Orientation.portrait) {
-                return Scaffold(
-                  backgroundColor: Colors.black,
-                  body: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.screen_rotation, color: Colors.white,
-                            size: 64),
-                        SizedBox(height: 20),
-                        Text(
-                          "Draai je scherm\nom te spelen",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 22),
-                        ),
-                      ],
+      home: Container(
+        color: Colors.black,
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: 926,
+              maxHeight: 428,
+            ),
+            child: OrientationBuilder(
+              builder: (context, orientation) {
+                if (orientation == Orientation.portrait) {
+                  return Scaffold(
+                    backgroundColor: Colors.black,
+                    body: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.screen_rotation, color: Colors.white, size: 64),
+                          SizedBox(height: 20),
+                          Text(
+                            "Draai je scherm\nom te spelen",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.white, fontSize: 22),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                );
-              }
-              return const MainMenuScreen();
-            },
+                  );
+                }
+                return const MainMenuScreen();
+              },
+            ),
           ),
         ),
       ),
