@@ -97,51 +97,52 @@ class _ExplanationScreenState extends State<ExplanationScreen>
               height: double.infinity,
             ),
 
-            if (_characterVisible)
+            if (_characterVisible) ...[
               Container(
                 color: Colors.black.withValues(alpha: 0.4),
-                child: Positioned(
-                  bottom: 0,
-                  right: 0,
-                  left: 0,
-                  child: SlideTransition(
-                    position: _slideAnimation,
-                    child: FadeTransition(
-                      opacity: _fadeAnimation,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 80),
-                              child: SpeechBubble(
-                                text: widget.situation.explanation,
-                              ),
+              ),
+              Positioned(
+                bottom: 0,
+                right: 0,
+                left: 0,
+                child: SlideTransition(
+                  position: _slideAnimation,
+                  child: FadeTransition(
+                    opacity: _fadeAnimation,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 80),
+                            child: SpeechBubble(
+                              text: widget.situation.explanation,
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Transform.translate(
-                                  offset: const Offset(-30, 0),
-                                  child: Image.asset(
-                                    widget.situations == modern_situations
-                                        ? "assets/images/modern_guide.png"
-                                        : "assets/images/prehistoric_guide.png",
-                                    height: 250,
-                                    width: 250,
-                                    fit: BoxFit.contain,
-                                  ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Transform.translate(
+                                offset: const Offset(-30, 0),
+                                child: Image.asset(
+                                  widget.situations == modern_situations
+                                      ? "assets/images/modern_guide.png"
+                                      : "assets/images/prehistoric_guide.png",
+                                  height: 250,
+                                  width: 250,
+                                  fit: BoxFit.contain,
                                 ),
-                              ],
-                            ),
-                          ],
-                        ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
                 ),
               ),
+            ],
 
             if (_canNavigate)
               Positioned(
